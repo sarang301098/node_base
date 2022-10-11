@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { validate } from 'express-validation';
 
-import { handleError, openLimiter, authenticate } from '../middleware';
+import { handleError, openLimiter } from '../middleware';
 import {
   signupValidation,
   signUp,
@@ -9,8 +9,6 @@ import {
   login,
   refreshTokenValidation,
   refreshToken,
-  resendOtpValidation,
-  resendOtp,
 } from '../controller/auth';
 
 const router = Router();
@@ -39,7 +37,4 @@ const refresh = (): Router =>
     handleError(refreshToken()),
   );
 
-const resendotp = (): Router =>
-  router.post('/resend-otp', authenticate, validate(resendOtpValidation), handleError(resendOtp()));
-
-export default (): Router => router.use([signup(), signin(), refresh(), resendotp()]);
+export default (): Router => router.use([signup(), signin(), refresh()]);

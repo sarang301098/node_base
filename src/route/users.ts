@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { validate } from 'express-validation';
 
-import { authenticate, singleFileS3, handleError, checkUserType } from '../middleware';
+import { authenticate, singleFileS3, handleError } from '../middleware';
 import {
   changePassword,
   changePasswordValidation,
@@ -23,18 +23,8 @@ import {
   updateUserValidation,
   resetPassword,
   resetPasswordValidation,
-  changeProfileStatusValidation,
-  changeProfileStatus,
-  changeMobileNumberValidation,
-  changeMobileNumber,
-  verifyOtpValidation,
-  verifyOtp,
-  verifyEmailValidation,
-  verifyEmail,
-  changeUserStatusValidation,
-  changeUserStatus,
 } from '../controller/users';
-import { Media, PropaneUserType } from '../constants';
+import { Media } from '../constants';
 
 const router = Router();
 
@@ -82,28 +72,6 @@ const postUpdatePassword = (): Router =>
     handleError(updatePassword()),
   );
 
-const postChangeMobile = (): Router =>
-  router.post(
-    '/change-mobile-number',
-    authenticate,
-    validate(changeMobileNumberValidation, { context: true }),
-    handleError(changeMobileNumber()),
-  );
-
-const postverifyMobile = (): Router =>
-  router.post(
-    '/verify-otp',
-    validate(verifyOtpValidation, { context: true }),
-    handleError(verifyOtp()),
-  );
-
-const postVerifyEmail = (): Router =>
-  router.post(
-    '/verify-email',
-    validate(verifyEmailValidation, { context: true }),
-    handleError(verifyEmail()),
-  );
-
 const getProfile = (): Router => router.get('/profile/me', authenticate, handleError(profile()));
 
 const getUser = (): Router =>
@@ -130,24 +98,6 @@ const patchResetPassword = (): Router =>
     handleError(resetPassword()),
   );
 
-const patchChangeProfileStatus = (): Router =>
-  router.patch(
-    '/profile-status-change',
-    authenticate,
-    checkUserType(PropaneUserType.ADMIN, PropaneUserType.SUB_ADMIN),
-    validate(changeProfileStatusValidation, { context: true }),
-    handleError(changeProfileStatus()),
-  );
-
-const patchChangeUserStatus = (): Router =>
-  router.patch(
-    '/status-change',
-    authenticate,
-    checkUserType(PropaneUserType.ADMIN, PropaneUserType.SUB_ADMIN),
-    validate(changeUserStatusValidation, { context: true }),
-    handleError(changeUserStatus()),
-  );
-
 export default (): Router =>
   router.use([
     getUser(),
@@ -155,15 +105,10 @@ export default (): Router =>
     getProfile(),
     patchAvatar(),
     postCreateUser(),
-    postVerifyEmail(),
-    postChangeMobile(),
-    postverifyMobile(),
     putUpdateProfile(),
     postForgetPassword(),
     getUsersByUserType(),
     patchResetPassword(),
     postUpdatePassword(),
     patchChangePassword(),
-    patchChangeUserStatus(),
-    patchChangeProfileStatus(),
   ]);

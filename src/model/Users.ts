@@ -2,6 +2,7 @@ import {
   Column,
   Entity,
   OneToOne,
+  OneToMany,
   BaseEntity,
   DeleteDateColumn,
   CreateDateColumn,
@@ -10,6 +11,7 @@ import {
 } from 'typeorm';
 
 import { Tokens } from './Tokens';
+import { ContactUs } from './ContactUs';
 
 import { PropaneUserType } from '../constants';
 
@@ -74,4 +76,7 @@ export class Users extends BaseEntity {
 
   @OneToOne(() => Tokens, (tokens) => tokens.user)
   token!: Tokens;
+
+  @OneToMany(() => ContactUs, (ContactUs) => ContactUs.user)
+  contactUs!: ContactUs[];
 }
