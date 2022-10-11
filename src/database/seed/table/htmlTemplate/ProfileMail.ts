@@ -15,7 +15,7 @@ export const profile = (message: string): string => {
                                         <tbody>
                                             <tr>
                                                 <td valign="middle" align="center" style="padding: 0px;">
-                                                <img src="https://service-pb-s3.s3.ap-south-1.amazonaws.com/propane-brothers-app/logo-big.png" alt="logo" download="false" style="height: 110px;" />
+                                                <img src="" alt="logo" download="false" style="height: 110px;" />
                                                 </td>
                                             </tr>
                                         </tbody>

@@ -60,6 +60,7 @@ export const getProductTimeSlotsValidation = {
     date: Joi.date().greater(moment().startOf('day').subtract(1, 'd').toDate()).required(),
   }),
 };
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const getProductTimeSlots = () => async (req: Request, res: Response): Promise<any> => {
   let {
     query: { vendorIds, date },

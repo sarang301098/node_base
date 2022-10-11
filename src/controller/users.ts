@@ -5,7 +5,7 @@ import { Joi } from 'express-validation';
 import ForgetPasswordService from '../service/ForgetPasswordService';
 import UpdatePasswordService from '../service/UpdatePasswordService';
 import { createOtp } from '../service/random';
-// import { SmsService } from '../service/Sms';
+import { SmsService } from '../service/Sms';
 import { MailService } from '../service/Mail';
 import { hashPassword, comparePassword } from '../service/password';
 import { BadRequestError, UnauthorizedError } from '../error';
@@ -37,13 +37,7 @@ export const getUsersValidation = {
       .default('createdAt'),
   }),
 };
-/**
- * Title: Get All Users API;
- * Created By: Sarang Patel;
- * steps:
- *    1) Create find condition for the users also including the pagination setups.
- *    2) Find the users and send it as a response.
- */
+
 export const getAll = () => async (req: Request, res: Response): Promise<void> => {
   const {
     query: { search, userType, email, page, perPage, sort, sortBy },
@@ -114,13 +108,6 @@ export const createUserValidation = {
       .required(),
   }),
 };
-/**
- * Title: Create User API;
- * Created By: Sarang Patel;
- * steps:
- *    1) Create users data and store it in the database by the save method.
- *    2) Set that data as a response.
- */
 export const createUser = () => async (req: Request, res: Response): Promise<void> => {
   const {
     body: { fullName, email, password, userType },
@@ -266,14 +253,13 @@ export const changeMobileNumber = () => async (req: Request, res: Response): Pro
   });
   await userVerificationRepo.save(verification);
 
-  // TODO Send sms when credentials are available
-  // const smsService = new SmsService();
-  // const smsBody = {
-  //   to: `${user?.countryCode}${user?.mobileNumber}`,
-  //   body: `Hello ${user?.fullName}, your mobile verification code is: ${mobileOtp}`,
-  // };
+  const smsService = new SmsService();
+  const smsBody = {
+    to: `${user?.countryCode}${user?.mobileNumber}`,
+    body: `Hello ${user?.fullName}, your mobile verification code is: ${mobileOtp}`,
+  };
 
-  // await smsService.send(smsBody);
+  await smsService.send(smsBody);
 
   res.status(200).json({ message: 'VERIFICATION_SENT_SUCCESS' });
 };
