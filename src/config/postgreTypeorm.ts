@@ -12,7 +12,7 @@ const typeormConfig = {
   username: config.POSTGRES_USER,
   password: config.POSTGRES_PASSWORD,
   database: config.POSTGRES_DB,
-  synchronize: false, // TODO: Make true on development
+  // synchronize: true, // TODO: Make true on development
   logging: ['error'],
   dropSchema: false, // TODO: Make true on test
   namingStrategy: new SnakeNamingStrategy(),
