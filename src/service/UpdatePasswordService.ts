@@ -6,7 +6,6 @@ import { hashPassword } from './password';
 import { PropaneUserType, Token } from '../constants';
 
 import { Users } from '../model/Users';
-import { VendorDetails } from '../model/VendorDetails';
 
 import { BadRequestError, UnauthorizedError } from '../error';
 import { ITokenBase, verifyToken, isForgetPasswordToken } from '../service/token';
@@ -75,16 +74,6 @@ class UpdatePasswordService {
           id: decoded.sub,
         },
       });
-    }
-
-    // update isPasswordReset of the vendors
-    if (user && user?.userType === PropaneUserType.VENDOR) {
-      const vendorsRepo = getRepository(VendorDetails);
-      const vendor = await vendorsRepo.findOne({ where: { user } });
-
-      if (vendor && !vendor?.isResetPassword) {
-        await vendorsRepo.save(Object.assign({}, vendor, { isResetPassword: true }));
-      }
     }
 
     if (!user) {
