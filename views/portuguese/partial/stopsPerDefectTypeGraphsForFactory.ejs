@@ -1,0 +1,253 @@
+<% var defectColorStopsPerDefectGraph = {
+  'Point':'#8ECDD6' ,
+  'Horizontal':'#2E7C85' ,
+  'Vertical':'#09262B',
+  'Oil':'#83C5BE'
+}; %>
+<% var defectTypesNames = {
+  'Point' :'Pontual',
+  'Horizontal' :'Horizontal',
+  'Vertical' :'Vertical',
+  'Oil' :'Óleo'
+}; %>
+
+function loadStopsPerDefectTypeForMonth() {
+  var res = graphDataFactory.stopsPerDefectData.data;
+  var defectColor = JSON.parse(`<%- JSON.stringify(defectColorStopsPerDefectGraph) %>`);
+  let data = {
+    dataset: [{ label: "Stops per defect type", data: [] }],
+    total: 0,
+  };
+  let pointDefect = 0,
+      horizontalDefect = 0,
+      verticalDefect = 0,
+      oilDefect = 0;
+
+      if (res && res.groups) {
+        Object.entries(res.groups).forEach(([date, count]) => {
+          if (count.data.Point) {
+            pointDefect += count.data.Point;
+          }
+          if (count.data.Horizontal) {
+            horizontalDefect += count.data.Horizontal;
+          }
+          if (count.data.Vertical){
+            verticalDefect += count.data.Vertical;
+          }
+          if (count.data.Oil) {
+            oilDefect += count.data.Oil;
+          }
+        });
+      }
+
+  data.total = pointDefect + horizontalDefect + verticalDefect + oilDefect;
+
+  var stopsPerDefectTypeFactoryForMonthChart = new Chart(
+    document.getElementById("stopsPerDefectTypeFactoryForMonth"),
+    {
+      plugins:[ChartDataLabels],
+      type: "doughnut",
+      data: {
+        labels: ['Point', 'Horizontal', 'Vertical', 'Oil'],
+        datasets: [
+          {
+            data: [pointDefect, horizontalDefect, verticalDefect, oilDefect],
+            backgroundColor: Object.values(defectColor),
+            hoverBorderWidth: 2,
+          },
+        ],
+      },
+      options: {
+        plugins: {
+          datalabels: {
+            anchor: 'center',
+            color: function(context) {
+              var index = context.dataIndex;
+              var value = context.dataset.data[index];
+              return value !== 0 ? (index === 0 ? 'black' : 'white') : 'white';
+            },
+            display: function(context) {
+              var index = context.dataIndex;
+              var value = context.dataset.data[index];
+              return value > 0;
+            },
+            font: {
+              size: '18',
+              weight: 'bold',
+              family: "'Titillium Web', sans-serif",
+            },
+          }
+        },
+        responsive: false,
+        maintainAspectRatio: false,
+        cutoutPercentage: 50,
+        legend: {
+          display: false,
+          position: 'right',
+        },
+        tooltips: {
+          backgroundColor: 'rgb(20,90,105)',
+          displayColors: false,
+          cornerRadius: 6,
+          xPadding: 10,
+          yPadding: 8,
+          titleAlign: 'center',
+          position: 'average',
+          mode: 'label',
+        },
+        elements: {
+          arc: {
+            borderWidth: '10px',
+          },
+        },
+      },
+    }
+  );
+}
+
+function loadStopsPerDefectTypeFactory() {
+  var res = graphDataFactory.stopsPerDefectData.data;
+  var defectColor = JSON.parse(`<%- JSON.stringify(defectColorStopsPerDefectGraph) %>`);
+  var defectTypes = JSON.parse(`<%- JSON.stringify(defectTypesNames) %>`);
+  var limit = 0;
+  var stepSize = graphDataFactory.stopsPerDefectData.totalStops;
+  let data = {
+    dataset: [{ label: "Stops per Defect Type", data: [] }],
+    total: 0,
+  };
+  let weeks = [],
+    dataset = [];
+  let completeDefects = {};
+  if (res && res.groups) {
+    Object.entries(res.groups).forEach(([date, count]) => {
+      let totalCount = 0;
+      Object.keys(count.data).forEach((ele) => {
+        if (ele !== 'weekNumber') {
+          totalCount += count.data[ele];
+          if (count.data[ele]) {
+            stepSize = Math.min(stepSize, count.data[ele]);
+          }
+          if (Array.isArray(completeDefects[ele])) {
+            completeDefects[ele] = [
+              ...completeDefects[ele],
+              count.data[ele],
+            ];
+          } else {
+            completeDefects[ele] = [
+              completeDefects[ele],
+              count.data[ele],
+            ];
+          }
+        }
+      });
+      limit = Math.max(limit, totalCount);
+      weeks.push(count.data.weekNumber);
+    });
+  }
+  Object.keys(completeDefects).map((defect) => {
+    completeDefects[defect] = completeDefects[defect].slice(
+      1,
+      completeDefects[defect].length
+    );
+  });
+
+  var colorIndex = 0;
+  data.total = graphDataFactory.stopsPerDefectData.total;
+  Object.keys(completeDefects).map((defect) => {
+    dataset.push({
+      label: defectTypes[defect],
+      data: completeDefects[defect],
+      backgroundColor: defectColor[defect],
+      datalabels: {
+        color: defectColor[defect],
+        <!-- display: 'auto', -->
+      },
+      hoverBackgroundColor: defectColor[defect],
+      hoverBorderWidth: 2,
+    });
+  });
+
+  var stopsPerDefectTypeFactory = new Chart(
+    document.getElementById("stopsPerDefectTypeFactory"),
+    {
+      plugins:[ChartDataLabels],
+      type: "bar",
+      data: {
+        labels: weeks,
+        datasets: dataset,
+      },
+      aspectRatio: 2,
+      options: {
+        layout: {
+          padding: {
+            top: 30
+          },
+        },
+        maintainAspectRatio: false,
+        scales: {
+          xAxes: [
+            {
+              scaleLabel: {
+                display: true,
+                labelString: 'Semana',
+                fontColor: '#000000',
+                fontSize: 18,
+              },
+              stacked: false,
+              gridLines: { display: false },
+              display: true,
+              ticks: {
+                fontColor: '#000000',
+                fontSize: 16,
+              },
+            },
+          ],
+          yAxes: [
+            {
+              scaleLabel: {
+                display: true,
+                labelString: '#Paragens',
+                fontColor: '#000000',
+                fontSize: 18,
+              },
+              ticks: {
+                callback: function(value) {
+                    return Math.abs(Math.ceil(value) - value) > 0 ? undefined : value;
+                  },
+                min: 0,
+                fontColor: '#000000',
+                fontSize: 16,
+                maxTicksLimit: 5,
+                // autoSkip: true,
+                // autoSkipPadding: 10,
+              },
+              stacked: false,
+              display: true,
+              gridLines: { display: true }
+            },
+          ],
+        }, // scales
+        legend: {
+          display: true,
+          position: "right",
+          labels: {
+            boxWidth: 10,
+          },
+          align: 'end',
+        },
+        plugins: {
+          datalabels: {
+            anchor: 'end',
+            align: 'top',
+            offset: 4,
+            font: {
+              size: '18',
+              weight: 'bold',
+              family: "'Titillium Web', sans-serif",
+            },
+          }
+        }
+      },
+    }
+  );
+}

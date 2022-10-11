@@ -1,0 +1,929 @@
+[2022-06-27T04:51:04.338Z][backend][info] Server started - PORT: 3333
+[2022-06-27T05:24:48.016Z][backend][error] GET /cylinderSize/vendors/all?orderType=2&vendorId=b7d43122-dec2-4fe3-a737-499ab5526608&categoryId=1&productId=3 
+User: {
+  id: '763cfabe-9460-415f-b248-1751b2cfd8f2',
+  email: 'sgar@bhojani.com'
+}
+Params: {}
+Query: {
+  orderType: 2,
+  vendorId: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  categoryId: 1,
+  productId: 3
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T05:24:57.422Z][backend][error] GET /cylinderSize/vendors/all?orderType=2&vendorId=b7d43122-dec2-4fe3-a737-499ab5526608&categoryId=1&productId=3 
+User: {
+  id: '763cfabe-9460-415f-b248-1751b2cfd8f2',
+  email: 'sgar@bhojani.com'
+}
+Params: {}
+Query: {
+  orderType: 2,
+  vendorId: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  categoryId: 1,
+  productId: 3
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T05:25:05.035Z][backend][error] GET /cylinderSize/vendors/all?orderType=2&vendorId=b7d43122-dec2-4fe3-a737-499ab5526608&categoryId=1&productId=3 
+User: {
+  id: '763cfabe-9460-415f-b248-1751b2cfd8f2',
+  email: 'sgar@bhojani.com'
+}
+Params: {}
+Query: {
+  orderType: 2,
+  vendorId: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  categoryId: 1,
+  productId: 3
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T05:25:34.269Z][backend][error] GET /cylinderSize/vendors/all?orderType=2&vendorId=b7d43122-dec2-4fe3-a737-499ab5526608&categoryId=1&productId=3 
+User: {
+  id: '763cfabe-9460-415f-b248-1751b2cfd8f2',
+  email: 'sgar@bhojani.com'
+}
+Params: {}
+Query: {
+  orderType: 2,
+  vendorId: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  categoryId: 1,
+  productId: 3
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T05:25:49.393Z][backend][error] GET /cylinderSize/vendors/all?orderType=2&vendorId=b7d43122-dec2-4fe3-a737-499ab5526608&categoryId=1&productId=3 
+User: {
+  id: '763cfabe-9460-415f-b248-1751b2cfd8f2',
+  email: 'sgar@bhojani.com'
+}
+Params: {}
+Query: {
+  orderType: 2,
+  vendorId: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  categoryId: 1,
+  productId: 3
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T05:25:57.640Z][backend][error] GET /cylinderSize/vendors/all?orderType=2&vendorId=b7d43122-dec2-4fe3-a737-499ab5526608&categoryId=1&productId=3 
+User: {
+  id: '763cfabe-9460-415f-b248-1751b2cfd8f2',
+  email: 'sgar@bhojani.com'
+}
+Params: {}
+Query: {
+  orderType: 2,
+  vendorId: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  categoryId: 1,
+  productId: 3
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T05:26:38.707Z][backend][error] GET /cylinderSize/vendors/all?orderType=2&vendorId=b7d43122-dec2-4fe3-a737-499ab5526608&categoryId=1&productId=3 
+User: {
+  id: '763cfabe-9460-415f-b248-1751b2cfd8f2',
+  email: 'sgar@bhojani.com'
+}
+Params: {}
+Query: {
+  orderType: 2,
+  vendorId: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  categoryId: 1,
+  productId: 3
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T05:27:04.242Z][backend][error] GET /cylinderSize/vendors/all?orderType=2&vendorId=b7d43122-dec2-4fe3-a737-499ab5526608&categoryId=1&productId=3 
+User: {
+  id: '763cfabe-9460-415f-b248-1751b2cfd8f2',
+  email: 'sgar@bhojani.com'
+}
+Params: {}
+Query: {
+  orderType: 2,
+  vendorId: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  categoryId: 1,
+  productId: 3
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T05:27:22.673Z][backend][error] GET /cylinderSize/vendors/all?orderType=2&vendorId=b7d43122-dec2-4fe3-a737-499ab5526608&categoryId=1&productId=3 
+User: {
+  id: '763cfabe-9460-415f-b248-1751b2cfd8f2',
+  email: 'sgar@bhojani.com'
+}
+Params: {}
+Query: {
+  orderType: 2,
+  vendorId: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  categoryId: 1,
+  productId: 3
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T05:30:47.872Z][backend][error] GET /cylinderSize/vendors/all?orderType=2&vendorId=b7d43122-dec2-4fe3-a737-499ab5526608&categoryId=1&productId=3 
+User: {
+  id: '763cfabe-9460-415f-b248-1751b2cfd8f2',
+  email: 'sgar@bhojani.com'
+}
+Params: {}
+Query: {
+  orderType: 2,
+  vendorId: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  categoryId: 1,
+  productId: 3
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T05:31:39.011Z][backend][error] GET /cylinderSize/vendors/all?orderType=2&vendorId=b7d43122-dec2-4fe3-a737-499ab5526608&categoryId=1&productId=3 
+User: {
+  id: '763cfabe-9460-415f-b248-1751b2cfd8f2',
+  email: 'sgar@bhojani.com'
+}
+Params: {}
+Query: {
+  orderType: 2,
+  vendorId: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  categoryId: 1,
+  productId: 3
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T05:37:27.376Z][backend][error] GET /cylinderSize/vendors/all?orderType=2&vendorId=1a3db8b3-57d5-4946-bf64-a86ab6a42e39&categoryId=1&productId=5 
+User: {
+  id: '763cfabe-9460-415f-b248-1751b2cfd8f2',
+  email: 'sgar@bhojani.com'
+}
+Params: {}
+Query: {
+  orderType: 2,
+  vendorId: '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+  categoryId: 1,
+  productId: 5
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T05:39:06.958Z][backend][error] GET /cylinderSize/vendors/all?orderType=2&vendorId=b7d43122-dec2-4fe3-a737-499ab5526608&categoryId=1&productId=3 
+User: {
+  id: '763cfabe-9460-415f-b248-1751b2cfd8f2',
+  email: 'sgar@bhojani.com'
+}
+Params: {}
+Query: {
+  orderType: 2,
+  vendorId: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  categoryId: 1,
+  productId: 3
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T05:42:56.644Z][backend][error] GET /cylinderSize/vendors/all?orderType=2&vendorId=1a3db8b3-57d5-4946-bf64-a86ab6a42e39&categoryId=1&productId=5 
+User: {
+  id: '763cfabe-9460-415f-b248-1751b2cfd8f2',
+  email: 'sgar@bhojani.com'
+}
+Params: {}
+Query: {
+  orderType: 2,
+  vendorId: '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+  categoryId: 1,
+  productId: 5
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T05:46:14.309Z][backend][error] GET /cylinderSize/vendors/all?orderType=2&vendorId=1a3db8b3-57d5-4946-bf64-a86ab6a42e39&categoryId=1&productId=2 
+User: {
+  id: '763cfabe-9460-415f-b248-1751b2cfd8f2',
+  email: 'sgar@bhojani.com'
+}
+Params: {}
+Query: {
+  orderType: 2,
+  vendorId: '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+  categoryId: 1,
+  productId: 2
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T05:46:45.833Z][backend][error] GET /cylinderSize/vendors/all?orderType=2&vendorId=1a3db8b3-57d5-4946-bf64-a86ab6a42e39&categoryId=1&productId=2 
+User: {
+  id: '763cfabe-9460-415f-b248-1751b2cfd8f2',
+  email: 'sgar@bhojani.com'
+}
+Params: {}
+Query: {
+  orderType: 2,
+  vendorId: '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+  categoryId: 1,
+  productId: 2
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T05:52:30.716Z][backend][error] GET /cylinderSize/vendors/all?orderType=2&vendorId=1a3db8b3-57d5-4946-bf64-a86ab6a42e39&categoryId=1&productId=2 
+User: {
+  id: '763cfabe-9460-415f-b248-1751b2cfd8f2',
+  email: 'sgar@bhojani.com'
+}
+Params: {}
+Query: {
+  orderType: 2,
+  vendorId: '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+  categoryId: 1,
+  productId: 2
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T05:53:01.129Z][backend][error] GET /cylinderSize/vendors/all?orderType=2&vendorId=b7d43122-dec2-4fe3-a737-499ab5526608&categoryId=1&productId=3 
+User: {
+  id: '763cfabe-9460-415f-b248-1751b2cfd8f2',
+  email: 'sgar@bhojani.com'
+}
+Params: {}
+Query: {
+  orderType: 2,
+  vendorId: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  categoryId: 1,
+  productId: 3
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T05:53:26.719Z][backend][error] GET /cylinderSize/vendors/all?orderType=2&vendorId=b7d43122-dec2-4fe3-a737-499ab5526608&categoryId=1&productId=3 
+User: {
+  id: '763cfabe-9460-415f-b248-1751b2cfd8f2',
+  email: 'sgar@bhojani.com'
+}
+Params: {}
+Query: {
+  orderType: 2,
+  vendorId: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  categoryId: 1,
+  productId: 3
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T05:53:50.452Z][backend][error] GET /cylinderSize/vendors/all?orderType=2&vendorId=1a3db8b3-57d5-4946-bf64-a86ab6a42e39&categoryId=1&productId=5 
+User: {
+  id: '763cfabe-9460-415f-b248-1751b2cfd8f2',
+  email: 'sgar@bhojani.com'
+}
+Params: {}
+Query: {
+  orderType: 2,
+  vendorId: '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+  categoryId: 1,
+  productId: 5
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T05:56:07.353Z][backend][error] GET /cylinderSize/vendors/all?orderType=2&vendorId=1a3db8b3-57d5-4946-bf64-a86ab6a42e39&categoryId=1&productId=2 
+User: {
+  id: '763cfabe-9460-415f-b248-1751b2cfd8f2',
+  email: 'sgar@bhojani.com'
+}
+Params: {}
+Query: {
+  orderType: 2,
+  vendorId: '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+  categoryId: 1,
+  productId: 2
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T05:56:44.560Z][backend][error] GET /cylinderSize/vendors/all?orderType=2&vendorId=1a3db8b3-57d5-4946-bf64-a86ab6a42e39&categoryId=1&productId=2 
+User: {
+  id: '763cfabe-9460-415f-b248-1751b2cfd8f2',
+  email: 'sgar@bhojani.com'
+}
+Params: {}
+Query: {
+  orderType: 2,
+  vendorId: '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+  categoryId: 1,
+  productId: 2
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T06:13:50.476Z][backend][error] GET /cylinderSize/vendors/all?orderType=2&vendorId=b7d43122-dec2-4fe3-a737-499ab5526608&categoryId=1&productId=3 
+User: {
+  id: '763cfabe-9460-415f-b248-1751b2cfd8f2',
+  email: 'sgar@bhojani.com'
+}
+Params: {}
+Query: {
+  orderType: 2,
+  vendorId: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  categoryId: 1,
+  productId: 3
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T06:16:15.398Z][backend][error] GET /cylinderSize/vendors/all?orderType=2&vendorId=b7d43122-dec2-4fe3-a737-499ab5526608&categoryId=1&productId=3 
+User: {
+  id: '763cfabe-9460-415f-b248-1751b2cfd8f2',
+  email: 'sgar@bhojani.com'
+}
+Params: {}
+Query: {
+  orderType: 2,
+  vendorId: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  categoryId: 1,
+  productId: 3
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T06:16:29.596Z][backend][error] GET /cylinderSize/vendors/all?productId=4&vendorId=1a3db8b3-57d5-4946-bf64-a86ab6a42e39&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 4,
+  vendorId: '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T06:16:33.473Z][backend][error] GET /cylinderSize/vendors/all?productId=4&vendorId=1a3db8b3-57d5-4946-bf64-a86ab6a42e39&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 4,
+  vendorId: '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T06:16:34.277Z][backend][error] GET /cylinderSize/vendors/all?productId=4&vendorId=1a3db8b3-57d5-4946-bf64-a86ab6a42e39&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 4,
+  vendorId: '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T06:16:48.247Z][backend][error] GET /cylinderSize/vendors/all?productId=4&vendorId=1a3db8b3-57d5-4946-bf64-a86ab6a42e39&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 4,
+  vendorId: '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T06:16:48.951Z][backend][error] GET /cylinderSize/vendors/all?productId=4&vendorId=1a3db8b3-57d5-4946-bf64-a86ab6a42e39&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 4,
+  vendorId: '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T06:17:04.113Z][backend][error] GET /cylinderSize/vendors/all?productId=4&vendorId=1a3db8b3-57d5-4946-bf64-a86ab6a42e39&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 4,
+  vendorId: '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T06:17:04.773Z][backend][error] GET /cylinderSize/vendors/all?productId=4&vendorId=1a3db8b3-57d5-4946-bf64-a86ab6a42e39&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 4,
+  vendorId: '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T06:17:08.581Z][backend][error] GET /cylinderSize/vendors/all?productId=4&vendorId=1a3db8b3-57d5-4946-bf64-a86ab6a42e39&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 4,
+  vendorId: '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T06:17:09.310Z][backend][error] GET /cylinderSize/vendors/all?productId=4&vendorId=1a3db8b3-57d5-4946-bf64-a86ab6a42e39&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 4,
+  vendorId: '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T06:17:10.134Z][backend][error] GET /cylinderSize/vendors/all?productId=4&vendorId=1a3db8b3-57d5-4946-bf64-a86ab6a42e39&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 4,
+  vendorId: '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T06:17:10.790Z][backend][error] GET /cylinderSize/vendors/all?productId=4&vendorId=1a3db8b3-57d5-4946-bf64-a86ab6a42e39&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 4,
+  vendorId: '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T06:17:11.469Z][backend][error] GET /cylinderSize/vendors/all?productId=4&vendorId=1a3db8b3-57d5-4946-bf64-a86ab6a42e39&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 4,
+  vendorId: '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T06:17:12.245Z][backend][error] GET /cylinderSize/vendors/all?productId=4&vendorId=1a3db8b3-57d5-4946-bf64-a86ab6a42e39&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 4,
+  vendorId: '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T06:17:30.038Z][backend][error] GET /cylinderSize/vendors/all?productId=4&vendorId=1a3db8b3-57d5-4946-bf64-a86ab6a42e39&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 4,
+  vendorId: '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T06:17:30.869Z][backend][error] GET /cylinderSize/vendors/all?productId=4&vendorId=1a3db8b3-57d5-4946-bf64-a86ab6a42e39&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 4,
+  vendorId: '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T06:17:42.147Z][backend][error] GET /cylinderSize/vendors/all?productId=4&vendorId=1a3db8b3-57d5-4946-bf64-a86ab6a42e39&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 4,
+  vendorId: '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T06:17:47.237Z][backend][error] GET /cylinderSize/vendors/all?productId=4&vendorId=1a3db8b3-57d5-4946-bf64-a86ab6a42e39&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 4,
+  vendorId: '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T06:17:47.902Z][backend][error] GET /cylinderSize/vendors/all?productId=4&vendorId=1a3db8b3-57d5-4946-bf64-a86ab6a42e39&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 4,
+  vendorId: '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T06:17:48.420Z][backend][error] GET /cylinderSize/vendors/all?productId=4&vendorId=1a3db8b3-57d5-4946-bf64-a86ab6a42e39&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 4,
+  vendorId: '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T06:20:29.941Z][backend][error] GET /cylinderSize/vendors/all?productId=4&vendorId=1a3db8b3-57d5-4946-bf64-a86ab6a42e39&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 4,
+  vendorId: '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.vendorProductsPricing.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-27T06:29:51.905Z][backend][info] Server started - PORT: 3333
+[2022-06-27T06:30:29.562Z][backend][info] Server started - PORT: 3333
+[2022-06-27T06:31:19.758Z][backend][info] Server started - PORT: 3333
+[2022-06-27T06:40:15.176Z][backend][info] Server started - PORT: 3333
+[2022-06-27T06:43:57.629Z][backend][info] Server started - PORT: 3333
+[2022-06-27T06:44:03.780Z][backend][info] Server started - PORT: 3333
+[2022-06-27T06:44:30.414Z][backend][info] Server started - PORT: 3333
+[2022-06-27T06:46:55.809Z][backend][info] Server started - PORT: 3333
+[2022-06-27T06:54:48.191Z][backend][info] Server started - PORT: 3333
+[2022-06-27T06:58:50.846Z][backend][info] Server started - PORT: 3333
+[2022-06-27T07:00:30.787Z][backend][info] Server started - PORT: 3333
+[2022-06-27T07:01:59.213Z][backend][info] Server started - PORT: 3333
+[2022-06-27T07:02:54.491Z][backend][info] Server started - PORT: 3333
+[2022-06-27T07:30:41.203Z][backend][info] Server started - PORT: 3333
+[2022-06-27T07:30:43.836Z][backend][error] GET /cylinderSize/vendors/all?productId=3&vendorId=b7d43122-dec2-4fe3-a737-499ab5526608&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 3,
+  vendorId: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+QueryFailedError: ER_BAD_FIELD_ERROR: Unknown column 'vendorProductTiers.price' in 'field list'
+[2022-06-27T07:30:56.022Z][backend][info] Server started - PORT: 3333
+[2022-06-27T07:40:08.958Z][backend][info] Server started - PORT: 3333
+[2022-06-27T07:43:20.483Z][backend][info] Server started - PORT: 3333
+[2022-06-27T07:59:09.441Z][backend][info] Server started - PORT: 3333
+[2022-06-27T08:12:32.432Z][backend][info] Server started - PORT: 3333
+[2022-06-27T08:12:40.993Z][backend][error] GET /cylinderSize/vendors/all?productId=3&vendorId=b7d43122-dec2-4fe3-a737-499ab5526608&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 3,
+  vendorId: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+TypeError: Cannot read properties of undefined (reading 'cylinderSize')
+[2022-06-27T08:28:13.957Z][backend][info] Server started - PORT: 3333
+[2022-06-27T08:29:09.339Z][backend][info] Server started - PORT: 3333
+[2022-06-27T08:31:40.645Z][backend][info] Server started - PORT: 3333
+[2022-06-27T08:34:21.402Z][backend][info] Server started - PORT: 3333
+[2022-06-27T08:37:34.949Z][backend][info] Server started - PORT: 3333
+[2022-06-27T08:56:44.988Z][backend][info] Server started - PORT: 3333
+[2022-06-27T08:56:48.533Z][backend][error] GET /cylinderSize/vendors/all?productId=3&vendorId=b7d43122-dec2-4fe3-a737-499ab5526608&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 3,
+  vendorId: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+TypeORMError: Relation with property path vendorProductTiers in entity was not found.
+[2022-06-27T08:57:03.069Z][backend][error] GET /cylinderSize/vendors/all?productId=3&vendorId=b7d43122-dec2-4fe3-a737-499ab5526608&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 3,
+  vendorId: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+TypeORMError: Relation with property path vendorProductTiers in entity was not found.
+[2022-06-27T08:57:46.333Z][backend][info] Server started - PORT: 3333
+[2022-06-27T08:57:51.984Z][backend][error] GET /cylinderSize/vendors/all?productId=3&vendorId=b7d43122-dec2-4fe3-a737-499ab5526608&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 3,
+  vendorId: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+TypeORMError: Relation with property path vendorProductTiers in entity was not found.
+[2022-06-27T08:58:15.412Z][backend][info] Server started - PORT: 3333
+[2022-06-27T08:58:19.156Z][backend][error] GET /cylinderSize/vendors/all?productId=3&vendorId=b7d43122-dec2-4fe3-a737-499ab5526608&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 3,
+  vendorId: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+QueryFailedError: ER_NONUNIQ_TABLE: Not unique table/alias: 'vendorProduct'
+[2022-06-27T08:58:30.459Z][backend][info] Server started - PORT: 3333
+[2022-06-27T08:58:30.875Z][backend][error] GET /cylinderSize/vendors/all?productId=3&vendorId=b7d43122-dec2-4fe3-a737-499ab5526608&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 3,
+  vendorId: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+QueryFailedError: ER_BAD_FIELD_ERROR: Unknown column 'vendorProductTiers.id' in 'field list'
+[2022-06-27T08:58:59.323Z][backend][info] Server started - PORT: 3333
+[2022-06-27T08:59:21.333Z][backend][info] Server started - PORT: 3333
+[2022-06-27T08:59:31.034Z][backend][info] Server started - PORT: 3333
+[2022-06-27T08:59:32.095Z][backend][error] GET /cylinderSize/vendors/all?productId=3&vendorId=b7d43122-dec2-4fe3-a737-499ab5526608&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 3,
+  vendorId: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+EntityColumnNotFound: No entity column "productId" was found.
+[2022-06-27T08:59:34.936Z][backend][error] GET /cylinderSize/vendors/all?productId=3&vendorId=b7d43122-dec2-4fe3-a737-499ab5526608&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 3,
+  vendorId: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+EntityColumnNotFound: No entity column "productId" was found.
+[2022-06-27T09:00:00.123Z][backend][info] Server started - PORT: 3333
+[2022-06-27T09:00:21.022Z][backend][info] Server started - PORT: 3333
+[2022-06-27T09:00:21.136Z][backend][error] GET /cylinderSize/vendors/all?productId=3&vendorId=b7d43122-dec2-4fe3-a737-499ab5526608&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 3,
+  vendorId: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+EntityColumnNotFound: No entity column "productId" was found.
+[2022-06-27T09:00:56.125Z][backend][info] Server started - PORT: 3333
+[2022-06-27T09:01:03.483Z][backend][error] GET /cylinderSize/vendors/all?productId=3&vendorId=b7d43122-dec2-4fe3-a737-499ab5526608&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 3,
+  vendorId: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+EntityColumnNotFound: No entity column "productId" was found.
+[2022-06-27T09:01:04.406Z][backend][error] GET /cylinderSize/vendors/all?productId=3&vendorId=b7d43122-dec2-4fe3-a737-499ab5526608&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 3,
+  vendorId: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+EntityColumnNotFound: No entity column "productId" was found.
+[2022-06-27T09:01:05.066Z][backend][error] GET /cylinderSize/vendors/all?productId=3&vendorId=b7d43122-dec2-4fe3-a737-499ab5526608&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 3,
+  vendorId: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+EntityColumnNotFound: No entity column "productId" was found.
+[2022-06-27T09:01:34.396Z][backend][info] Server started - PORT: 3333
+[2022-06-27T09:05:43.856Z][backend][info] Server started - PORT: 3333
+[2022-06-27T09:05:47.650Z][backend][error] GET /cylinderSize/vendors/all?productId=3&vendorId=b7d43122-dec2-4fe3-a737-499ab5526608&orderType=2&categoryId=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  productId: 3,
+  vendorId: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  orderType: 2,
+  categoryId: 1
+}
+Body: {}
+EntityColumnNotFound: No entity column "productId" was found.
+[2022-06-27T09:06:46.490Z][backend][info] Server started - PORT: 3333
+[2022-06-27T09:14:19.434Z][backend][info] Server started - PORT: 3333
+[2022-06-27T09:15:55.607Z][backend][info] Server started - PORT: 3333
+[2022-06-27T09:16:06.457Z][backend][info] Server started - PORT: 3333
+[2022-06-27T09:16:17.750Z][backend][info] Server started - PORT: 3333
+[2022-06-27T09:16:27.772Z][backend][info] Server started - PORT: 3333
+[2022-06-27T09:16:37.468Z][backend][info] Server started - PORT: 3333
+[2022-06-27T09:48:52.138Z][backend][error] POST /auth/signin?userType=user&deviceId=fh0il9KdRzezlC5_dTOuf7:APA91bGDw3mVwZ8Ia8TEk68IMWlPAjfPRS2CnoHMlJihdQsvNir-7SgYF61CU-iR6x9zV-sicLKjiJYYetWum-AESeuONChKca78xHMEaQlVnnKlvtjb215DYQKD3K3GPDjYa2Y_PYaV&deviceType=A&'******' 
+User: {}
+Params: {}
+Query: {
+  userType: 'user',
+  deviceId: 'fh0il9KdRzezlC5_dTOuf7:APA91bGDw3mVwZ8Ia8TEk68IMWlPAjfPRS2CnoHMlJihdQsvNir-7SgYF61CU-iR6x9zV-sicLKjiJYYetWum-AESeuONChKca78xHMEaQlVnnKlvtjb215DYQKD3K3GPDjYa2Y_PYaV',
+  deviceType: 'A',
+  '******'
+  countryCode: '+91',
+  mobileNumber: '7417417417'
+}
+Body: {
+  userType: 'user',
+  deviceId: 'fh0il9KdRzezlC5_dTOuf7:APA91bGDw3mVwZ8Ia8TEk68IMWlPAjfPRS2CnoHMlJihdQsvNir-7SgYF61CU-iR6x9zV-sicLKjiJYYetWum-AESeuONChKca78xHMEaQlVnnKlvtjb215DYQKD3K3GPDjYa2Y_PYaV',
+  deviceType: 'A',
+  '******'
+  countryCode: '+91',
+  mobileNumber: '7417417417'
+}
+Error: Incorrect credentials
+[2022-06-27T09:49:12.187Z][backend][error] POST /auth/signin?userType=user&deviceId=fh0il9KdRzezlC5_dTOuf7:APA91bGDw3mVwZ8Ia8TEk68IMWlPAjfPRS2CnoHMlJihdQsvNir-7SgYF61CU-iR6x9zV-sicLKjiJYYetWum-AESeuONChKca78xHMEaQlVnnKlvtjb215DYQKD3K3GPDjYa2Y_PYaV&deviceType=A&'******' 
+User: {}
+Params: {}
+Query: {
+  userType: 'user',
+  deviceId: 'fh0il9KdRzezlC5_dTOuf7:APA91bGDw3mVwZ8Ia8TEk68IMWlPAjfPRS2CnoHMlJihdQsvNir-7SgYF61CU-iR6x9zV-sicLKjiJYYetWum-AESeuONChKca78xHMEaQlVnnKlvtjb215DYQKD3K3GPDjYa2Y_PYaV',
+  deviceType: 'A',
+  '******'
+  countryCode: '+91',
+  mobileNumber: '7417417417'
+}
+Body: {
+  userType: 'user',
+  deviceId: 'fh0il9KdRzezlC5_dTOuf7:APA91bGDw3mVwZ8Ia8TEk68IMWlPAjfPRS2CnoHMlJihdQsvNir-7SgYF61CU-iR6x9zV-sicLKjiJYYetWum-AESeuONChKca78xHMEaQlVnnKlvtjb215DYQKD3K3GPDjYa2Y_PYaV',
+  deviceType: 'A',
+  '******'
+  countryCode: '+91',
+  mobileNumber: '7417417417'
+}
+Error: Incorrect credentials
+[2022-06-27T09:49:22.237Z][backend][error] POST /auth/signin?userType=user&deviceId=fh0il9KdRzezlC5_dTOuf7:APA91bGDw3mVwZ8Ia8TEk68IMWlPAjfPRS2CnoHMlJihdQsvNir-7SgYF61CU-iR6x9zV-sicLKjiJYYetWum-AESeuONChKca78xHMEaQlVnnKlvtjb215DYQKD3K3GPDjYa2Y_PYaV&deviceType=A&'******' 
+User: {}
+Params: {}
+Query: {
+  userType: 'user',
+  deviceId: 'fh0il9KdRzezlC5_dTOuf7:APA91bGDw3mVwZ8Ia8TEk68IMWlPAjfPRS2CnoHMlJihdQsvNir-7SgYF61CU-iR6x9zV-sicLKjiJYYetWum-AESeuONChKca78xHMEaQlVnnKlvtjb215DYQKD3K3GPDjYa2Y_PYaV',
+  deviceType: 'A',
+  '******'
+  countryCode: '+91',
+  mobileNumber: '7417417417'
+}
+Body: {
+  userType: 'user',
+  deviceId: 'fh0il9KdRzezlC5_dTOuf7:APA91bGDw3mVwZ8Ia8TEk68IMWlPAjfPRS2CnoHMlJihdQsvNir-7SgYF61CU-iR6x9zV-sicLKjiJYYetWum-AESeuONChKca78xHMEaQlVnnKlvtjb215DYQKD3K3GPDjYa2Y_PYaV',
+  deviceType: 'A',
+  '******'
+  countryCode: '+91',
+  mobileNumber: '7417417417'
+}
+Error: Incorrect credentials
+[2022-06-27T10:03:35.898Z][backend][info] Server started - PORT: 3333
+[2022-06-27T10:06:31.984Z][backend][info] Server started - PORT: 3333
+[2022-06-27T10:06:58.199Z][backend][info] Server started - PORT: 3333
+[2022-06-27T10:09:13.393Z][backend][info] Server started - PORT: 3333
+[2022-06-27T10:09:29.290Z][backend][info] Server started - PORT: 3333
+[2022-06-27T10:11:10.927Z][backend][info] Server started - PORT: 3333
+[2022-06-27T10:29:45.389Z][backend][info] Server started - PORT: 3333
+[2022-06-27T10:31:15.808Z][backend][info] Server started - PORT: 3333
+[2022-06-27T10:31:35.381Z][backend][info] Server started - PORT: 3333
+[2022-06-27T10:32:12.233Z][backend][info] Server started - PORT: 3333
+[2022-06-27T10:34:46.116Z][backend][info] Server started - PORT: 3333
+[2022-06-27T10:37:43.626Z][backend][info] Server started - PORT: 3333
+[2022-06-27T10:38:24.599Z][backend][info] Server started - PORT: 3333

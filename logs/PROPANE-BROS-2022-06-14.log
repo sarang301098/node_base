@@ -1,0 +1,245 @@
+[2022-06-14T06:19:01.263Z][backend][info] Server started - PORT: 3333
+[2022-06-14T06:25:55.969Z][backend][info] Gracefully shutting down
+[2022-06-14T06:25:55.971Z][backend][info] Gracefully shutting down
+[2022-06-14T06:36:33.351Z][backend][info] Server started - PORT: 3333
+[2022-06-14T07:11:26.065Z][backend][info] Server started - PORT: 3333
+[2022-06-14T07:11:34.518Z][backend][info] Gracefully shutting down
+[2022-06-14T07:11:34.523Z][backend][info] Gracefully shutting down
+[2022-06-14T07:11:38.789Z][backend][info] Server started - PORT: 3333
+[2022-06-14T07:12:37.890Z][backend][info] Server started - PORT: 3333
+[2022-06-14T07:14:04.472Z][backend][info] Server started - PORT: 3333
+[2022-06-14T07:16:37.546Z][backend][info] Gracefully shutting down
+[2022-06-14T07:16:37.549Z][backend][info] Gracefully shutting down
+[2022-06-14T07:16:42.860Z][backend][info] Server started - PORT: 3333
+[2022-06-14T07:17:00.039Z][backend][info] Gracefully shutting down
+[2022-06-14T07:17:00.042Z][backend][info] Gracefully shutting down
+[2022-06-14T07:17:03.201Z][backend][info] Server started - PORT: 3333
+[2022-06-14T07:18:35.150Z][backend][info] Gracefully shutting down
+[2022-06-14T07:18:35.155Z][backend][info] Gracefully shutting down
+[2022-06-14T07:18:38.259Z][backend][info] Server started - PORT: 3333
+[2022-06-14T07:21:58.713Z][backend][info] Server started - PORT: 3333
+[2022-06-14T07:22:07.602Z][backend][info] Server started - PORT: 3333
+[2022-06-14T07:22:15.284Z][backend][info] Server started - PORT: 3333
+[2022-06-14T07:26:09.355Z][backend][info] Server started - PORT: 3333
+[2022-06-14T07:26:24.781Z][backend][info] Server started - PORT: 3333
+[2022-06-14T07:26:31.308Z][backend][error] GET /dashboard/admin/orders?page=1&perPage=10&isTodayDelivered=true&sort=DESC 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {
+  page: 1,
+  perPage: 10,
+  isTodayDelivered: true,
+  sort: 'DESC',
+  sortBy: 'customer',
+  search: null,
+  categoryId: null,
+  driverId: null,
+  vendorId: null
+}
+Body: {}
+QueryFailedError: ER_BAD_FIELD_ERROR: Unknown column 'order.service_charge' in 'field list'
+[2022-06-14T07:26:39.664Z][backend][error] GET /dashboard/admin/orders?page=1&perPage=10&isTodayDelivered=true&sort=DESC 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {
+  page: 1,
+  perPage: 10,
+  isTodayDelivered: true,
+  sort: 'DESC',
+  sortBy: 'customer',
+  search: null,
+  categoryId: null,
+  driverId: null,
+  vendorId: null
+}
+Body: {}
+QueryFailedError: ER_BAD_FIELD_ERROR: Unknown column 'order.service_charge' in 'field list'
+[2022-06-14T07:28:37.352Z][backend][error] GET /dashboard/admin/orders?page=1&perPage=10&isTodayDelivered=true&sort=DESC 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {
+  page: 1,
+  perPage: 10,
+  isTodayDelivered: true,
+  sort: 'DESC',
+  sortBy: 'customer',
+  search: null,
+  categoryId: null,
+  driverId: null,
+  vendorId: null
+}
+Body: {}
+QueryFailedError: ER_BAD_FIELD_ERROR: Unknown column 'order.service_charge' in 'field list'
+[2022-06-14T07:28:53.223Z][backend][info] Server started - PORT: 3333
+[2022-06-14T07:29:05.338Z][backend][error] GET /dashboard/admin/orders?page=1&perPage=10&isTodayDelivered=true&sort=DESC 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {
+  page: 1,
+  perPage: 10,
+  isTodayDelivered: true,
+  sort: 'DESC',
+  sortBy: 'customer',
+  search: null,
+  categoryId: null,
+  driverId: null,
+  vendorId: null
+}
+Body: {}
+QueryFailedError: ER_BAD_FIELD_ERROR: Unknown column 'order.service_charge' in 'field list'
+[2022-06-14T07:30:16.367Z][backend][info] Server started - PORT: 3333
+[2022-06-14T07:30:37.403Z][backend][info] Server started - PORT: 3333
+[2022-06-14T07:31:00.154Z][backend][info] Server started - PORT: 3333
+[2022-06-14T07:31:20.427Z][backend][info] Server started - PORT: 3333
+[2022-06-14T07:36:48.504Z][backend][info] Server started - PORT: 3333
+[2022-06-14T07:42:01.081Z][backend][info] Server started - PORT: 3333
+[2022-06-14T07:42:07.945Z][backend][error] GET /stripe/account/?code=ac_LsEoJXalX3oeVMqfnLLsHeHzU0VoqjgR&state=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTUxOTIxNjEsImV4cCI6MTY1Nzc4NDE2MSwiYXVkIjoiYWNjZXNzX3Rva2VuIiwic3ViIjoiMDM4ZjVhMWEtZWRmMS00M2UyLWFkZTUtZmIwZTc0MWJlMWQxIn0.glaNt_wlqX3UJWie-vLvU3G67nnQGbyRt-zmgWmvIa8 
+User: {}
+Params: {}
+Query: {
+  code: 'ac_LsEoJXalX3oeVMqfnLLsHeHzU0VoqjgR',
+  state: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTUxOTIxNjEsImV4cCI6MTY1Nzc4NDE2MSwiYXVkIjoiYWNjZXNzX3Rva2VuIiwic3ViIjoiMDM4ZjVhMWEtZWRmMS00M2UyLWFkZTUtZmIwZTc0MWJlMWQxIn0.glaNt_wlqX3UJWie-vLvU3G67nnQGbyRt-zmgWmvIa8'
+}
+Body: {}
+Error: Invalid code.
+[2022-06-14T07:44:49.738Z][backend][info] Server started - PORT: 3333
+[2022-06-14T07:49:37.633Z][backend][info] Server started - PORT: 3333
+[2022-06-14T07:55:24.916Z][backend][info] Server started - PORT: 3333
+[2022-06-14T09:15:32.066Z][backend][info] Server started - PORT: 3333
+[2022-06-14T09:44:35.760Z][backend][info] Server started - PORT: 3333
+[2022-06-14T09:47:39.429Z][backend][info] Server started - PORT: 3333
+[2022-06-14T09:47:57.410Z][backend][info] Server started - PORT: 3333
+[2022-06-14T09:48:09.652Z][backend][info] Server started - PORT: 3333
+[2022-06-14T09:57:45.231Z][backend][error] POST /orders 
+User: {
+  id: 'a6fe9ca6-5447-4435-9736-9881c8a5c26f',
+  email: 'pratik.r@peerbits.com'
+}
+Params: {}
+Query: {}
+Body: { stripeCardId: 'card_1LAWTpJegOrZGWtLm41i3wFG' }
+Error: err
+[2022-06-14T10:03:00.133Z][backend][info] Server started - PORT: 3333
+[2022-06-14T10:03:04.987Z][backend][error] POST /orders 
+User: {
+  id: 'a6fe9ca6-5447-4435-9736-9881c8a5c26f',
+  email: 'pratik.r@peerbits.com'
+}
+Params: {}
+Query: {}
+Body: { stripeCardId: 'card_1LAWTpJegOrZGWtLm41i3wFG' }
+Error: err
+[2022-06-14T10:11:47.998Z][backend][info] Server started - PORT: 3333
+[2022-06-14T10:11:52.541Z][backend][error] POST /orders 
+User: {
+  id: 'a6fe9ca6-5447-4435-9736-9881c8a5c26f',
+  email: 'pratik.r@peerbits.com'
+}
+Params: {}
+Query: {}
+Body: { stripeCardId: 'card_1LAWTpJegOrZGWtLm41i3wFG' }
+Error: err
+[2022-06-14T10:16:30.883Z][backend][info] Server started - PORT: 3333
+[2022-06-14T10:18:05.912Z][backend][error] POST /orders 
+User: {
+  id: 'a6fe9ca6-5447-4435-9736-9881c8a5c26f',
+  email: 'pratik.r@peerbits.com'
+}
+Params: {}
+Query: {}
+Body: { stripeCardId: 'card_1LAWTpJegOrZGWtLm41i3wFG' }
+Error: Error in payment
+[2022-06-14T10:19:50.956Z][backend][info] Server started - PORT: 3333
+[2022-06-14T10:20:04.116Z][backend][error] POST /orders 
+User: {
+  id: 'a6fe9ca6-5447-4435-9736-9881c8a5c26f',
+  email: 'pratik.r@peerbits.com'
+}
+Params: {}
+Query: {}
+Body: { stripeCardId: 'card_1LAWTpJegOrZGWtLm41i3wFG' }
+Error: Error in payment
+[2022-06-14T10:21:26.234Z][backend][info] Server started - PORT: 3333
+[2022-06-14T10:21:58.286Z][backend][error] POST /orders 
+User: {
+  id: 'a6fe9ca6-5447-4435-9736-9881c8a5c26f',
+  email: 'pratik.r@peerbits.com'
+}
+Params: {}
+Query: {}
+Body: { stripeCardId: 'card_1LAWTpJegOrZGWtLm41i3wFG' }
+Error: Error in payment
+[2022-06-14T10:22:51.097Z][backend][info] Server started - PORT: 3333
+[2022-06-14T10:23:14.968Z][backend][error] POST /orders 
+User: {
+  id: 'a6fe9ca6-5447-4435-9736-9881c8a5c26f',
+  email: 'pratik.r@peerbits.com'
+}
+Params: {}
+Query: {}
+Body: { stripeCardId: 'card_1LAWTpJegOrZGWtLm41i3wFG' }
+Error: Error in payment
+[2022-06-14T10:26:05.934Z][backend][info] Server started - PORT: 3333
+[2022-06-14T10:26:20.779Z][backend][info] Server started - PORT: 3333
+[2022-06-14T10:26:39.531Z][backend][error] POST /orders 
+User: {
+  id: 'a6fe9ca6-5447-4435-9736-9881c8a5c26f',
+  email: 'pratik.r@peerbits.com'
+}
+Params: {}
+Query: {}
+Body: { stripeCardId: 'card_1LAWTpJegOrZGWtLm41i3wFG' }
+Error: Error in payment
+[2022-06-14T10:27:51.664Z][backend][error] POST /orders 
+User: {
+  id: 'a6fe9ca6-5447-4435-9736-9881c8a5c26f',
+  email: 'pratik.r@peerbits.com'
+}
+Params: {}
+Query: {}
+Body: { stripeCardId: 'card_1LAWTpJegOrZGWtLm41i3wFG' }
+Error: Error in payment
+[2022-06-14T10:28:12.654Z][backend][info] Server started - PORT: 3333
+[2022-06-14T10:28:16.587Z][backend][error] POST /orders 
+User: {
+  id: 'a6fe9ca6-5447-4435-9736-9881c8a5c26f',
+  email: 'pratik.r@peerbits.com'
+}
+Params: {}
+Query: {}
+Body: { stripeCardId: 'card_1LAWTpJegOrZGWtLm41i3wFG' }
+Error: Error in payment
+[2022-06-14T10:30:24.549Z][backend][info] Server started - PORT: 3333
+[2022-06-14T10:32:24.261Z][backend][info] Server started - PORT: 3333
+[2022-06-14T10:53:24.855Z][backend][info] Server started - PORT: 3333
+[2022-06-14T11:15:22.901Z][backend][info] Server started - PORT: 3333
+[2022-06-14T11:15:34.328Z][backend][info] Server started - PORT: 3333
+[2022-06-14T11:16:20.807Z][backend][info] Server started - PORT: 3333
+[2022-06-14T11:21:12.973Z][backend][info] Server started - PORT: 3333
+[2022-06-14T11:21:23.924Z][backend][info] Gracefully shutting down
+[2022-06-14T11:21:23.929Z][backend][info] Gracefully shutting down
+[2022-06-14T11:21:28.017Z][backend][info] Server started - PORT: 3333
+[2022-06-14T11:22:29.913Z][backend][info] Server started - PORT: 3333
+[2022-06-14T11:24:08.275Z][backend][info] Server started - PORT: 3333
+[2022-06-14T11:25:34.421Z][backend][info] Server started - PORT: 3333
+[2022-06-14T11:25:39.763Z][backend][info] Server started - PORT: 3333
+[2022-06-14T11:25:46.343Z][backend][info] Server started - PORT: 3333
+[2022-06-14T11:36:21.067Z][backend][info] Server started - PORT: 3333
+[2022-06-14T11:38:14.312Z][backend][info] Server started - PORT: 3333
+[2022-06-14T11:44:50.287Z][backend][info] Server started - PORT: 3333
+[2022-06-14T11:59:05.858Z][backend][info] Server started - PORT: 3333
+[2022-06-14T12:12:00.512Z][backend][info] Server started - PORT: 3333
+[2022-06-14T12:28:38.875Z][backend][info] Gracefully shutting down
+[2022-06-14T12:28:38.890Z][backend][info] Gracefully shutting down

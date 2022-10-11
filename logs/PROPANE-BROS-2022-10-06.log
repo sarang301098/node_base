@@ -1,0 +1,102 @@
+[2022-10-06T19:17:39.495Z][backend][error] Unable to connect to database.  ER_TABLE_EXISTS_ERROR: Table 'ratings' already exists 
+ QueryFailedError: ER_TABLE_EXISTS_ERROR: Table 'ratings' already exists
+    at QueryFailedError.TypeORMError [as constructor] (/Users/sarang_3010/Documents/propane/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/sarang_3010/Documents/propane/src/error/QueryFailedError.ts:9:9)
+    at Query.<anonymous> (/Users/sarang_3010/Documents/propane/src/driver/mysql/MysqlQueryRunner.ts:195:37)
+    at Query.<anonymous> (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/Connection.js:526:10)
+    at Query._callback (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/Connection.js:488:16)
+    at Query.Sequence.end (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Query.ErrorPacket (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/protocol/sequences/Query.js:92:8)
+    at Protocol._parsePacket (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/protocol/Parser.js:43:10)
+[2022-10-06T19:18:37.127Z][backend][error] Unable to connect to database.  Entity "Ratings" does not have a primary column. Primary column is required to have in all your entities. Use @PrimaryColumn decorator to add a primary column to your entity. 
+ MissingPrimaryColumnError: Entity "Ratings" does not have a primary column. Primary column is required to have in all your entities. Use @PrimaryColumn decorator to add a primary column to your entity.
+    at MissingPrimaryColumnError.TypeORMError [as constructor] (/Users/sarang_3010/Documents/propane/src/error/TypeORMError.ts:7:9)
+    at new MissingPrimaryColumnError (/Users/sarang_3010/Documents/propane/src/error/MissingPrimaryColumnError.ts:6:9)
+    at EntityMetadataValidator.validate (/Users/sarang_3010/Documents/propane/src/metadata-builder/EntityMetadataValidator.ts:58:19)
+    at /Users/sarang_3010/Documents/propane/src/metadata-builder/EntityMetadataValidator.ts:46:56
+    at Array.forEach (<anonymous>)
+    at EntityMetadataValidator.validateMany (/Users/sarang_3010/Documents/propane/src/metadata-builder/EntityMetadataValidator.ts:46:25)
+    at Connection.buildMetadatas (/Users/sarang_3010/Documents/propane/src/connection/Connection.ts:518:33)
+    at Connection.<anonymous> (/Users/sarang_3010/Documents/propane/src/connection/Connection.ts:186:18)
+    at step (/Users/sarang_3010/Documents/propane/node_modules/tslib/tslib.js:143:27)
+    at Object.next (/Users/sarang_3010/Documents/propane/node_modules/tslib/tslib.js:124:57)
+[2022-10-06T19:18:54.536Z][backend][error] Unable to connect to database.  ER_TABLE_EXISTS_ERROR: Table 'ratings' already exists 
+ QueryFailedError: ER_TABLE_EXISTS_ERROR: Table 'ratings' already exists
+    at QueryFailedError.TypeORMError [as constructor] (/Users/sarang_3010/Documents/propane/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/sarang_3010/Documents/propane/src/error/QueryFailedError.ts:9:9)
+    at Query.<anonymous> (/Users/sarang_3010/Documents/propane/src/driver/mysql/MysqlQueryRunner.ts:195:37)
+    at Query.<anonymous> (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/Connection.js:526:10)
+    at Query._callback (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/Connection.js:488:16)
+    at Query.Sequence.end (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Query.ErrorPacket (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/protocol/sequences/Query.js:92:8)
+    at Protocol._parsePacket (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/protocol/Parser.js:43:10)
+[2022-10-06T19:19:34.890Z][backend][error] Unable to connect to database.  Entity metadata for DriverDetails#rating was not found. Check if you specified a correct entity object and if it's connected in the connection options. 
+ TypeORMError: Entity metadata for DriverDetails#rating was not found. Check if you specified a correct entity object and if it's connected in the connection options.
+    at new TypeORMError (/Users/sarang_3010/Documents/propane/src/error/TypeORMError.ts:7:9)
+    at /Users/sarang_3010/Documents/propane/src/metadata-builder/EntityMetadataBuilder.ts:681:23
+    at Array.forEach (<anonymous>)
+    at EntityMetadataBuilder.computeInverseProperties (/Users/sarang_3010/Documents/propane/src/metadata-builder/EntityMetadataBuilder.ts:676:34)
+    at /Users/sarang_3010/Documents/propane/src/metadata-builder/EntityMetadataBuilder.ts:119:56
+    at Array.forEach (<anonymous>)
+    at EntityMetadataBuilder.build (/Users/sarang_3010/Documents/propane/src/metadata-builder/EntityMetadataBuilder.ts:119:25)
+    at ConnectionMetadataBuilder.buildEntityMetadatas (/Users/sarang_3010/Documents/propane/src/connection/ConnectionMetadataBuilder.ts:65:111)
+    at Connection.buildMetadatas (/Users/sarang_3010/Documents/propane/src/connection/Connection.ts:510:59)
+    at Connection.<anonymous> (/Users/sarang_3010/Documents/propane/src/connection/Connection.ts:186:18)
+[2022-10-06T19:20:24.235Z][backend][error] Unable to connect to database.  ER_TABLE_EXISTS_ERROR: Table 'ratings' already exists 
+ QueryFailedError: ER_TABLE_EXISTS_ERROR: Table 'ratings' already exists
+    at QueryFailedError.TypeORMError [as constructor] (/Users/sarang_3010/Documents/propane/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/sarang_3010/Documents/propane/src/error/QueryFailedError.ts:9:9)
+    at Query.<anonymous> (/Users/sarang_3010/Documents/propane/src/driver/mysql/MysqlQueryRunner.ts:195:37)
+    at Query.<anonymous> (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/Connection.js:526:10)
+    at Query._callback (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/Connection.js:488:16)
+    at Query.Sequence.end (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Query.ErrorPacket (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/protocol/sequences/Query.js:92:8)
+    at Protocol._parsePacket (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/protocol/Parser.js:43:10)
+[2022-10-06T19:20:44.701Z][backend][error] Unable to connect to database.  ER_TABLE_EXISTS_ERROR: Table 'ratings' already exists 
+ QueryFailedError: ER_TABLE_EXISTS_ERROR: Table 'ratings' already exists
+    at QueryFailedError.TypeORMError [as constructor] (/Users/sarang_3010/Documents/propane/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/sarang_3010/Documents/propane/src/error/QueryFailedError.ts:9:9)
+    at Query.<anonymous> (/Users/sarang_3010/Documents/propane/src/driver/mysql/MysqlQueryRunner.ts:195:37)
+    at Query.<anonymous> (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/Connection.js:526:10)
+    at Query._callback (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/Connection.js:488:16)
+    at Query.Sequence.end (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Query.ErrorPacket (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/protocol/sequences/Query.js:92:8)
+    at Protocol._parsePacket (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/protocol/Parser.js:43:10)
+[2022-10-06T19:21:22.375Z][backend][error] Unable to connect to database.  ER_TABLE_EXISTS_ERROR: Table 'ratings' already exists 
+ QueryFailedError: ER_TABLE_EXISTS_ERROR: Table 'ratings' already exists
+    at QueryFailedError.TypeORMError [as constructor] (/Users/sarang_3010/Documents/propane/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/sarang_3010/Documents/propane/src/error/QueryFailedError.ts:9:9)
+    at Query.<anonymous> (/Users/sarang_3010/Documents/propane/src/driver/mysql/MysqlQueryRunner.ts:195:37)
+    at Query.<anonymous> (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/Connection.js:526:10)
+    at Query._callback (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/Connection.js:488:16)
+    at Query.Sequence.end (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Query.ErrorPacket (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/protocol/sequences/Query.js:92:8)
+    at Protocol._parsePacket (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/protocol/Parser.js:43:10)
+[2022-10-06T19:21:37.139Z][backend][error] Unable to connect to database.  ER_TABLE_EXISTS_ERROR: Table 'ratings' already exists 
+ QueryFailedError: ER_TABLE_EXISTS_ERROR: Table 'ratings' already exists
+    at QueryFailedError.TypeORMError [as constructor] (/Users/sarang_3010/Documents/propane/src/error/TypeORMError.ts:7:9)
+    at new QueryFailedError (/Users/sarang_3010/Documents/propane/src/error/QueryFailedError.ts:9:9)
+    at Query.<anonymous> (/Users/sarang_3010/Documents/propane/src/driver/mysql/MysqlQueryRunner.ts:195:37)
+    at Query.<anonymous> (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/Connection.js:526:10)
+    at Query._callback (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/Connection.js:488:16)
+    at Query.Sequence.end (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/protocol/sequences/Sequence.js:83:24)
+    at Query.ErrorPacket (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/protocol/sequences/Query.js:92:8)
+    at Protocol._parsePacket (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/sarang_3010/Documents/propane/node_modules/mysql/lib/protocol/Parser.js:43:10)
+[2022-10-06T19:21:46.922Z][backend][info] Server started - PORT: 3333
+[2022-10-06T19:21:50.815Z][backend][info] Gracefully shutting down
+[2022-10-06T19:21:50.821Z][backend][info] Gracefully shutting down
+[2022-10-06T19:22:03.147Z][backend][info] Server started - PORT: 3333
+[2022-10-06T19:25:38.222Z][backend][info] Gracefully shutting down
+[2022-10-06T19:25:38.231Z][backend][info] Gracefully shutting down

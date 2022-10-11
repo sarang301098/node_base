@@ -1,0 +1,24 @@
+definitions:
+  services:
+    docker-configuration:
+      memory: 4096
+      type: docker
+pipelines:
+  branches:
+    Development:
+      - step:
+          name: Working on Creating Build
+          size: 2x
+          caches:
+            - docker
+          services: [docker-configuration]
+          script:
+            - docker build -t cloudpeerbits/propane-bros-api .
+            - docker login --username $DOCKER_HUB_USER --password $DOCKER_HUB_PWD
+            - docker push cloudpeerbits/propane-bros-api
+            - pipe: atlassian/ssh-run:0.2.6
+              variables:
+                SSH_USER: '$user'
+                SERVER: '$PEERBITS_CLOUD_SERVER'
+                MODE: 'script'
+                COMMAND: 'scripts/start_server.sh'

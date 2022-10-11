@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div style="background-color: #53808b; border: 30px solid #53808b;">
+    <table align="center" cellpadding="0" cellspacing="0" border="0" bgcolor="#F8F7FA"
+      style="width:600px;max-width:600px; padding: 30px;">
+      <tbody>
+        <tr>
+          <td style="padding-right:10px;padding-left:10px">
+            <table cellpadding="0" cellspacing="0" border="0" bgcolor="#F8F7FA"
+              style="width:600px;max-width:600px; padding: 30px;">
+              <tbody>
+                <tr style="height:30px">
+                  <td align="center">
+                    <img <% if(company.logo) { %> src="<%= company.logo %>" <% } else { %>
+                      src="https://ci5.googleusercontent.com/proxy/3gopdgjdvKyPFvebONAv7Z8HC8bZdO0KET9sPSo2OOV9IJaFIM_iUQyr1LKEAZRGYKlE2urfZq9Upg=s0-d-e1-ft#https://www.smartex.ai/img/smartex2.png"
+                      <% } %> alt="Logo" height="50" border="0" class="CToWUd" /><br></td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table align="center" cellpadding="0" cellspacing="0" border="0" bgcolor="#F8F7FA"
+              style="width:600px;max-width:600px;">
+              <tbody>
+                <tr>
+                  <td colspan="2" style="background:rgb(255,255,255);border-radius:8px">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tbody>
+                        <tr>
+                          <td style="font-family:&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif">
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            style="font-family:-apple-system,BlinkMacSystemFont,Roboto,&quot;Helvetica neue&quot;,Helvetica,Tahoma,Arial,sans-serif;padding:32px 40px"
+                            align="">
+                            <h2
+                              style="color:rgb(64,64,64);font-weight:300;margin:0px 0px 12px;font-size:24px;line-height:30px;font-family:-apple-system,BlinkMacSystemFont,Roboto,&quot;Helvetica neue&quot;,Helvetica,Tahoma,Arial,sans-serif">
+                              Hi Support,
+                            </h2>
+                            <span
+                              style="color:rgb(102,102,102);font-weight:400;font-size:15px;line-height:21px;font-family:-apple-system,BlinkMacSystemFont,Roboto,&quot;Helvetica neue&quot;,Helvetica,Tahoma,Arial,sans-serif">We
+                              have found some problems in the factory. Please find the
+                              problem information and factory data below.</span>
+                            <br><br>
+                            <% if(content) { %>
+                            <h2 style="padding-bottom: 0px;">Description</h2>
+                            <span
+                              style="color:rgb(102,102,102);font-weight:400;font-size:15px;line-height:21px;font-family:-apple-system,BlinkMacSystemFont,Roboto,&quot;Helvetica neue&quot;,Helvetica,Tahoma,Arial,sans-serif"><%= content %></span>
+                            <% } %>
+                            <br><br>
+
+
+                            <div>
+                              <table width="100%">
+                                <tr>
+                                  <td valign="top" halign="left">
+                                    <table style="border-collapse: collapse;width: 50%;">
+                                      <tr>
+                                        <td
+                                          style="padding: 8px;text-align: left;border-bottom: 1px solid #ddd;font-weight:400;font-size:20px;line-height:21px;font-family:-apple-system,BlinkMacSystemFont,Roboto,&quot;Helvetica neue&quot;,Helvetica,Tahoma,Arial,sans-serif"
+                                          colspan="2">
+                                          Company
+                                          Information</td>
+                                      </tr>
+                                      <tr>
+                                        <td
+                                          style="padding: 8px;text-align: left;border-bottom: 1px solid #ddd;font-weight:400;font-size:15px;line-height:21px;font-family:-apple-system,BlinkMacSystemFont,Roboto,&quot;Helvetica neue&quot;,Helvetica,Tahoma,Arial,sans-serif">
+                                          Name </td>
+                                        <td
+                                          style="padding: 8px;text-align: left;border-bottom: 1px solid #ddd;font-weight:400;font-size:15px;line-height:21px;font-family:-apple-system,BlinkMacSystemFont,Roboto,&quot;Helvetica neue&quot;,Helvetica,Tahoma,Arial,sans-serif">
+                                          <%= company.name %></td>
+                                      </tr>
+                                      <tr>
+                                        <td
+                                          style="padding: 8px;text-align: left;border-bottom: 1px solid #ddd;font-weight:400;font-size:15px;line-height:21px;font-family:-apple-system,BlinkMacSystemFont,Roboto,&quot;Helvetica neue&quot;,Helvetica,Tahoma,Arial,sans-serif">
+                                          Email </td>
+                                        <td
+                                          style="padding: 8px;text-align: left;border-bottom: 1px solid #ddd;font-weight:400;font-size:15px;line-height:21px;font-family:-apple-system,BlinkMacSystemFont,Roboto,&quot;Helvetica neue&quot;,Helvetica,Tahoma,Arial,sans-serif">
+                                          <%= company.email %></td>
+                                      </tr>
+                                      <tr>
+                                        <td
+                                          style="padding: 8px;text-align: left;border-bottom: 1px solid #ddd;font-weight:400;font-size:15px;line-height:21px;font-family:-apple-system,BlinkMacSystemFont,Roboto,&quot;Helvetica neue&quot;,Helvetica,Tahoma,Arial,sans-serif">
+                                          Contact </td>
+                                        <td
+                                          style="padding: 8px;text-align: left;border-bottom: 1px solid #ddd;font-weight:400;font-size:15px;line-height:21px;font-family:-apple-system,BlinkMacSystemFont,Roboto,&quot;Helvetica neue&quot;,Helvetica,Tahoma,Arial,sans-serif">
+                                          <%= company.mobileContact %></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                  <td valign="top" halign="right">
+                                    <table style="border-collapse: collapse;width: 50%;">
+                                      <tr>
+                                        <td
+                                          style="padding: 8px;text-align: left;border-bottom: 1px solid #ddd;font-weight:400;font-size:20px;line-height:21px;font-family:-apple-system,BlinkMacSystemFont,Roboto,&quot;Helvetica neue&quot;,Helvetica,Tahoma,Arial,sans-serif"
+                                          colspan="2">
+                                          Factory
+                                          Information</td>
+                                      </tr>
+                                      <tr>
+                                        <td
+                                          style="padding: 8px;text-align: left;border-bottom: 1px solid #ddd;font-weight:400;font-size:15px;line-height:21px;font-family:-apple-system,BlinkMacSystemFont,Roboto,&quot;Helvetica neue&quot;,Helvetica,Tahoma,Arial,sans-serif">
+                                          Name </td>
+                                        <td
+                                          style="padding: 8px;text-align: left;border-bottom: 1px solid #ddd;font-weight:400;font-size:15px;line-height:21px;font-family:-apple-system,BlinkMacSystemFont,Roboto,&quot;Helvetica neue&quot;,Helvetica,Tahoma,Arial,sans-serif">
+                                          <%= factory.name %></td>
+                                      </tr>
+                                      <tr>
+                                        <td
+                                          style="padding: 8px;text-align: left;border-bottom: 1px solid #ddd;font-weight:400;font-size:15px;line-height:21px;font-family:-apple-system,BlinkMacSystemFont,Roboto,&quot;Helvetica neue&quot;,Helvetica,Tahoma,Arial,sans-serif">
+                                          Email </td>
+                                        <td
+                                          style="padding: 8px;text-align: left;border-bottom: 1px solid #ddd;font-weight:400;font-size:15px;line-height:21px;font-family:-apple-system,BlinkMacSystemFont,Roboto,&quot;Helvetica neue&quot;,Helvetica,Tahoma,Arial,sans-serif">
+                                          <%= factory.email %></td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </div>
+                            <p
+                              style="color:rgb(102,102,102);font-weight:400;font-size:17px;line-height:24px;font-family:-apple-system,BlinkMacSystemFont,Roboto,&quot;Helvetica neue&quot;,Helvetica,Tahoma,Arial,sans-serif;margin-bottom:6px;margin-top:22px">
+                              Best Regards,
+                            </p>
+                            <div dir="ltr" data-smartmail="gmail_signature">
+                              <div dir="ltr">
+                                <div>
+                                  <div dir="ltr">
+                                    <div dir="ltr">
+                                      <div dir="ltr">
+                                        <div dir="ltr">
+                                          <div dir="ltr">
+                                            <table cellspacing="0" cellpadding="0"
+                                              style="width:400px;font-size:9pt;font-family:Arial,sans-serif;line-height:normal">
+                                              <tbody>
+                                                <tr style="height:30px">
+                                                  <td><a href="https://www.smartex.ai/" rel="noopener" target="_blank"
+                                                      data-saferedirecturl="https://www.google.com/url?q=https://www.smartex.ai/&amp;source=gmail&amp;ust=1597396235276000&amp;usg=AFQjCNE3QXF824sCuio-S2kkrmEQxn0hwg"><img
+                                                        src="https://ci5.googleusercontent.com/proxy/3gopdgjdvKyPFvebONAv7Z8HC8bZdO0KET9sPSo2OOV9IJaFIM_iUQyr1LKEAZRGYKlE2urfZq9Upg=s0-d-e1-ft#https://www.smartex.ai/img/smartex2.png"
+                                                        alt="Logo" width="120" border="0" class="CToWUd" /><br>
+                                                  </td>
+                                                </tr>
+                                                <tr style="height:17px">
+                                                  <td style="font-family:Arial,sans-serif;height:17px">
+                                                    <font color="#000000">
+                                                      <br>
+                                                    </font>
+                                                    <table cellspacing="0" cellpadding="0"
+                                                      style="width:400px;font-size:9pt;line-height:normal">
+                                                      <tbody>
+                                                        <tr>
+                                                          <td style="font-family:Arial,sans-serif;color:rgb(62,62,62)">
+                                                            San
+                                                            Francisco
+                                                            USA |
+                                                            Shenzhen
+                                                            CN
+                                                            | Porto
+                                                            PT<br><br>
+                                                          </td>
+                                                        </tr>
+                                                        <tr style="margin-top: 0px;height:15px">
+                                                          <td><span
+                                                              style="font-size:9pt;font-weight:bold;font-family:Arial,sans-serif;color:rgb(0,0,0); position:relative; top: -50px;"><br><br><a
+                                                                href="http://www.smartex.ai/" rel="noopener"
+                                                                target="_blank"
+                                                                data-saferedirecturl="https://www.google.com/url?q=http://www.smartex.ai/&amp;source=gmail&amp;ust=1597396235276000&amp;usg=AFQjCNFvWU152GutES6g6_jRTBsZNgP2lQ">www.smartex.ai</a><br><br></span>
+                                                          </td>
+                                                        </tr>
+                                                      </tbody>
+                                                    </table>
+                                                  </td>
+
+                                                </tr>
+
+                                                <tr>
+                                                  <td><span
+                                                      style="display:inline-block;height:20px; position: relative; top: -30px;"><a
+                                                        href="https://www.facebook.com/smartex.pt" rel="noopener"
+                                                        target="_blank"
+                                                        data-saferedirecturl="https://www.google.com/url?q=https://www.facebook.com/smartex.pt&amp;source=gmail&amp;ust=1597396235276000&amp;usg=AFQjCNE3_VjKYc4LjG92xtUJzmQxhzMgww"><img
+                                                          alt="Facebook icon"
+                                                          src="https://ci3.googleusercontent.com/proxy/42oDLrYpBcaB8h60IedfnZoc9L0rICGXqi-mLFkHZsfqWtGUYAY11LwDcVxsQjNcjEusajIRHkUj5MKbnFOt9qsqaK1xB6naG-pE-6tYnSoxys0YvoxCrzabfvkdWZMPTEveoqXoiu1BtG8h1A=s0-d-e1-ft#https://codetwocdn.azureedge.net/images/mail-signatures/generator/traditional-large/fb.png"
+                                                          width="20" height="20" border="0"
+                                                          style="border:0px;height:20px;width:20px"
+                                                          class="CToWUd"></a>&nbsp;&nbsp;<a
+                                                        href="https://www.linkedin.com/company/smartex-pt"
+                                                        rel="noopener" target="_blank"
+                                                        data-saferedirecturl="https://www.google.com/url?q=https://www.linkedin.com/company/smartex-pt&amp;source=gmail&amp;ust=1597396235276000&amp;usg=AFQjCNEGgtn5GixeoyJpmMWJ8zuENkrjUw"><img
+                                                          alt="LinkedIn icon"
+                                                          src="https://ci6.googleusercontent.com/proxy/0du-1G2OVzIJZYsxr1O9R5DD0rvp-Q-rfuwr-P3yhhnAAKF-nw2kWImBkLkY-S1VPCCHRdBdocnDyk3MrdEK0iYxa_nl7XMk9EGbdX3VGO46c_Uoh7lv_oT_0o9hI_m2aFNY627a_R2g_YzGRQ=s0-d-e1-ft#https://codetwocdn.azureedge.net/images/mail-signatures/generator/traditional-large/ln.png"
+                                                          width="20" height="20" border="0"
+                                                          style="border:0px;height:20px;width:20px"
+                                                          class="CToWUd"></a>&nbsp;&nbsp;<a
+                                                        href="https://twitter.com/smartex_pt" rel="noopener"
+                                                        target="_blank"
+                                                        data-saferedirecturl="https://www.google.com/url?q=https://twitter.com/smartex_pt&amp;source=gmail&amp;ust=1597396235276000&amp;usg=AFQjCNEykWXsSw7MCBe15cEUlcpX6Q7GAw"><img
+                                                          alt="Twitter icon"
+                                                          src="https://ci6.googleusercontent.com/proxy/hfoi2GZ_yKzXtBTSbeVh6MREezfa8wJa6dJZV0cdUbH01m0tGzJ5HTpPzWn_L3HGMk9X513tQoL8PWPkx0-yNHpqTbPo9ehiCnwuldTJ-1jVSyOsOOj61-sTjpbC44HU2-dof-Dj7wv849IPuw=s0-d-e1-ft#https://codetwocdn.azureedge.net/images/mail-signatures/generator/traditional-large/tt.png"
+                                                          width="20" height="20" border="0"
+                                                          style="border:0px;height:20px;width:20px"
+                                                          class="CToWUd"></a>&nbsp;&nbsp;</span>
+                                                  </td>
+                                                </tr>
+                                                <tr>
+                                                  <td
+                                                    style="font-family:Arial,sans-serif;color:rgb(155,155,155);padding-top:16px;text-align:justify; position: relative; top: -30px;">
+                                                    <span style="font-size:8pt">The
+                                                      content of this
+                                                      email is
+                                                      confidential
+                                                      and intended for the
+                                                      recipient specified
+                                                      in
+                                                      message only. It is
+                                                      strictly forbidden
+                                                      to
+                                                      share any part of
+                                                      this
+                                                      message with any
+                                                      third
+                                                      party, without the
+                                                      written consent of
+                                                      the
+                                                      sender. If you
+                                                      received
+                                                      this message by
+                                                      mistake,
+                                                      please reply to this
+                                                      message and follow
+                                                      with its deletion,
+                                                      so
+                                                      that we can ensure
+                                                      such
+                                                      a mistake does not
+                                                      occur in the
+                                                      future.</span></td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,270 @@
+[2022-07-15T05:03:23.822Z][backend][info] Server started - PORT: 3333
+[2022-07-15T05:03:25.373Z][backend][info] Gracefully shutting down
+[2022-07-15T05:04:15.083Z][backend][info] Server started - PORT: 3333
+[2022-07-15T05:07:42.698Z][backend][error] POST /users/forget-'******' 
+User: {}
+Params: {}
+Query: { userType: 'driver', countryCode: '+1', mobileNumber: '9106687389' }
+Body: { userType: 'driver', countryCode: '+1', mobileNumber: '9106687389' }
+Error: Permission to send an SMS has not been enabled for the region indicated by the 'To' number: +19106687389.
+[2022-07-15T05:10:05.804Z][backend][info] Server started - PORT: 3333
+[2022-07-15T05:10:39.661Z][backend][error] POST /users/forget-'******' 
+User: {}
+Params: {}
+Query: { userType: 'driver', countryCode: '+1', mobileNumber: '9106687389' }
+Body: { userType: 'driver', countryCode: '+1', mobileNumber: '9106687389' }
+Error: Permission to send an SMS has not been enabled for the region indicated by the 'To' number: +19106687389.
+[2022-07-15T05:12:03.177Z][backend][error] Invalid credential
+[2022-07-15T05:12:03.178Z][backend][error] POST /users/forget-'******' 
+User: {}
+Params: {}
+Query: { userType: 'driver', countryCode: '+1', mobileNumber: '9106687389' }
+Body: { userType: 'driver', countryCode: '+1', mobileNumber: '9106687389' }
+Error: Invalid credential
+[2022-07-15T05:12:17.581Z][backend][error] Invalid credential
+[2022-07-15T05:12:17.582Z][backend][error] POST /users/forget-'******' 
+User: {}
+Params: {}
+Query: { userType: 'driver', countryCode: '+1', mobileNumber: '9106687389' }
+Body: { userType: 'driver', countryCode: '+1', mobileNumber: '9106687389' }
+Error: Invalid credential
+[2022-07-15T05:12:53.415Z][backend][error] POST /users/forget-'******' 
+User: {}
+Params: {}
+Query: { userType: 'driver', countryCode: '+91', mobileNumber: '9106687389' }
+Body: { userType: 'driver', countryCode: '+91', mobileNumber: '9106687389' }
+Error: The From phone number +19087389706 is not a valid, SMS-capable inbound phone number or short code for your account.
+[2022-07-15T05:14:51.274Z][backend][info] Gracefully shutting down
+[2022-07-15T05:14:51.276Z][backend][info] Gracefully shutting down
+[2022-07-15T05:14:55.245Z][backend][info] Server started - PORT: 3333
+[2022-07-15T05:15:04.656Z][backend][error] POST /users/forget-'******' 
+User: {}
+Params: {}
+Query: { userType: 'driver', countryCode: '+91', mobileNumber: '9106687389' }
+Body: { userType: 'driver', countryCode: '+91', mobileNumber: '9106687389' }
+Error: The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.
+[2022-07-15T05:16:47.869Z][backend][error] POST /users/verify-otp?userType=driver&otp=8548&countryCode=%2B1&mobileNumber=8160204448&type=2 
+User: {}
+Params: {}
+Query: {
+  userType: 'driver',
+  otp: '8548',
+  countryCode: '+1',
+  mobileNumber: '8160204448',
+  type: '2'
+}
+Body: {
+  userType: 'driver',
+  otp: '8548',
+  countryCode: '+1',
+  mobileNumber: '8160204448',
+  type: 2
+}
+EntityNotFoundError: Could not find any entity of type "Users" matching: {
+    "where": {
+        "countryCode": "+1",
+        "mobileNumber": "8160204448",
+        "userType": "driver"
+    },
+    "relations": [
+        "verificationDetails"
+    ]
+}
+[2022-07-15T05:18:56.375Z][backend][error] Invalid credential
+[2022-07-15T05:18:56.375Z][backend][error] POST /users/forget-'******' 
+User: {}
+Params: {}
+Query: { userType: 'driver', countryCode: '+1', mobileNumber: '9106687389' }
+Body: { userType: 'driver', countryCode: '+1', mobileNumber: '9106687389' }
+Error: Invalid credential
+[2022-07-15T05:19:52.781Z][backend][info] Server started - PORT: 3333
+[2022-07-15T05:22:38.202Z][backend][error] Invalid credential
+[2022-07-15T05:22:38.202Z][backend][error] POST /users/forget-'******' 
+User: {}
+Params: {}
+Query: { userType: 'driver', countryCode: '+1', mobileNumber: '9106687389' }
+Body: { userType: 'driver', countryCode: '+1', mobileNumber: '9106687389' }
+Error: Invalid credential
+[2022-07-15T05:23:20.244Z][backend][info] Server started - PORT: 3333
+[2022-07-15T05:23:29.630Z][backend][error] POST /auth/signin?userType=driver&'******' 
+User: {}
+Params: {}
+Query: {
+  userType: 'driver',
+  '******'
+  countryCode: '+1',
+  mobileNumber: '1234567880',
+  deviceId: 'eNhO_LQpQ5GDPosxLUeGIP:APA91bFGYDoUwIf-wuDZdq5kBwFTCyKMh8Usz7kFQD1wVJIKIw26B_xw4I-5t3ElUNsLYlg0v7O7L1HyssTuPhw8QkN0j8GrcTMnxBKy8YuHi-1XyB-WZNRWDNHF0LyMv8X-VAz-Mo7y',
+  deviceType: 'A'
+}
+Body: {
+  userType: 'driver',
+  '******'
+  countryCode: '+1',
+  mobileNumber: '1234567880',
+  deviceId: 'eNhO_LQpQ5GDPosxLUeGIP:APA91bFGYDoUwIf-wuDZdq5kBwFTCyKMh8Usz7kFQD1wVJIKIw26B_xw4I-5t3ElUNsLYlg0v7O7L1HyssTuPhw8QkN0j8GrcTMnxBKy8YuHi-1XyB-WZNRWDNHF0LyMv8X-VAz-Mo7y',
+  deviceType: 'A'
+}
+Error: Incorrect credentials
+[2022-07-15T05:23:37.831Z][backend][error] POST /auth/signin?userType=driver&'******' 
+User: {}
+Params: {}
+Query: {
+  userType: 'driver',
+  '******'
+  countryCode: '+1',
+  mobileNumber: '1234567880',
+  deviceId: 'eNhO_LQpQ5GDPosxLUeGIP:APA91bFGYDoUwIf-wuDZdq5kBwFTCyKMh8Usz7kFQD1wVJIKIw26B_xw4I-5t3ElUNsLYlg0v7O7L1HyssTuPhw8QkN0j8GrcTMnxBKy8YuHi-1XyB-WZNRWDNHF0LyMv8X-VAz-Mo7y',
+  deviceType: 'A'
+}
+Body: {
+  userType: 'driver',
+  '******'
+  countryCode: '+1',
+  mobileNumber: '1234567880',
+  deviceId: 'eNhO_LQpQ5GDPosxLUeGIP:APA91bFGYDoUwIf-wuDZdq5kBwFTCyKMh8Usz7kFQD1wVJIKIw26B_xw4I-5t3ElUNsLYlg0v7O7L1HyssTuPhw8QkN0j8GrcTMnxBKy8YuHi-1XyB-WZNRWDNHF0LyMv8X-VAz-Mo7y',
+  deviceType: 'A'
+}
+Error: Incorrect credentials
+[2022-07-15T05:24:09.966Z][backend][error] Invalid credential
+[2022-07-15T05:24:09.967Z][backend][error] POST /users/forget-'******' 
+User: {}
+Params: {}
+Query: { userType: 'driver', countryCode: '+1', mobileNumber: '9106687389' }
+Body: { userType: 'driver', countryCode: '+1', mobileNumber: '9106687389' }
+Error: Invalid credential
+[2022-07-15T05:25:13.420Z][backend][info] Server started - PORT: 3333
+[2022-07-15T05:25:14.676Z][backend][error] Invalid credential
+[2022-07-15T05:25:14.676Z][backend][error] POST /users/forget-'******' 
+User: {}
+Params: {}
+Query: { userType: 'driver', countryCode: '+1', mobileNumber: '9106687389' }
+Body: { userType: 'driver', countryCode: '+1', mobileNumber: '9106687389' }
+Error: Please contact admin.
+[2022-07-15T05:25:20.169Z][backend][error] Invalid credential
+[2022-07-15T05:25:20.170Z][backend][error] POST /users/forget-'******' 
+User: {}
+Params: {}
+Query: { userType: 'driver', countryCode: '+1', mobileNumber: '9106687389' }
+Body: { userType: 'driver', countryCode: '+1', mobileNumber: '9106687389' }
+Error: Please contact admin.
+[2022-07-15T05:25:27.894Z][backend][error] Invalid credential
+[2022-07-15T05:25:27.895Z][backend][error] POST /users/forget-'******' 
+User: {}
+Params: {}
+Query: { userType: 'driver', countryCode: '+1', mobileNumber: '1234567899' }
+Body: { userType: 'driver', countryCode: '+1', mobileNumber: '1234567899' }
+Error: Please contact admin.
+[2022-07-15T05:25:35.279Z][backend][error] Invalid credential
+[2022-07-15T05:25:35.280Z][backend][error] POST /users/forget-'******' 
+User: {}
+Params: {}
+Query: { userType: 'driver', countryCode: '+1', mobileNumber: '1221231564' }
+Body: { userType: 'driver', countryCode: '+1', mobileNumber: '1221231564' }
+Error: Please contact admin.
+[2022-07-15T05:26:19.174Z][backend][error] Invalid credential
+[2022-07-15T05:26:19.175Z][backend][error] POST /users/forget-'******' 
+User: {}
+Params: {}
+Query: { userType: 'driver', countryCode: '+1', mobileNumber: '1231231231' }
+Body: { userType: 'driver', countryCode: '+1', mobileNumber: '1231231231' }
+Error: Please contact admin.
+[2022-07-15T05:26:54.201Z][backend][info] Server started - PORT: 3333
+[2022-07-15T05:28:02.014Z][backend][info] Server started - PORT: 3333
+[2022-07-15T05:28:06.169Z][backend][info] Server started - PORT: 3333
+[2022-07-15T05:28:10.111Z][backend][error] Invalid credential
+[2022-07-15T05:28:10.112Z][backend][error] POST /users/forget-'******' 
+User: {}
+Params: {}
+Query: { userType: 'driver', countryCode: '+1', mobileNumber: '1231231231' }
+Body: { userType: 'driver', countryCode: '+1', mobileNumber: '1231231231' }
+Error: Invalid credential
+[2022-07-15T05:28:42.174Z][backend][error] POST /users/forget-'******' 
+User: {}
+Params: {}
+Query: { userType: 'driver', countryCode: '+91', mobileNumber: '9106687389' }
+Body: { userType: 'driver', countryCode: '+91', mobileNumber: '9106687389' }
+Error: Please contact admin.
+[2022-07-15T05:32:05.783Z][backend][error] POST /auth/signin?userType=driver&'******' 
+User: {}
+Params: {}
+Query: {
+  userType: 'driver',
+  '******'
+  countryCode: '+1',
+  mobileNumber: '9106687389',
+  deviceId: 'eNhO_LQpQ5GDPosxLUeGIP:APA91bFGYDoUwIf-wuDZdq5kBwFTCyKMh8Usz7kFQD1wVJIKIw26B_xw4I-5t3ElUNsLYlg0v7O7L1HyssTuPhw8QkN0j8GrcTMnxBKy8YuHi-1XyB-WZNRWDNHF0LyMv8X-VAz-Mo7y',
+  deviceType: 'A'
+}
+Body: {
+  userType: 'driver',
+  '******'
+  countryCode: '+1',
+  mobileNumber: '9106687389',
+  deviceId: 'eNhO_LQpQ5GDPosxLUeGIP:APA91bFGYDoUwIf-wuDZdq5kBwFTCyKMh8Usz7kFQD1wVJIKIw26B_xw4I-5t3ElUNsLYlg0v7O7L1HyssTuPhw8QkN0j8GrcTMnxBKy8YuHi-1XyB-WZNRWDNHF0LyMv8X-VAz-Mo7y',
+  deviceType: 'A'
+}
+Error: Incorrect credentials
+[2022-07-15T05:32:09.065Z][backend][error] POST /auth/signin?userType=driver&'******' 
+User: {}
+Params: {}
+Query: {
+  userType: 'driver',
+  '******'
+  countryCode: '+1',
+  mobileNumber: '9106687389',
+  deviceId: 'eNhO_LQpQ5GDPosxLUeGIP:APA91bFGYDoUwIf-wuDZdq5kBwFTCyKMh8Usz7kFQD1wVJIKIw26B_xw4I-5t3ElUNsLYlg0v7O7L1HyssTuPhw8QkN0j8GrcTMnxBKy8YuHi-1XyB-WZNRWDNHF0LyMv8X-VAz-Mo7y',
+  deviceType: 'A'
+}
+Body: {
+  userType: 'driver',
+  '******'
+  countryCode: '+1',
+  mobileNumber: '9106687389',
+  deviceId: 'eNhO_LQpQ5GDPosxLUeGIP:APA91bFGYDoUwIf-wuDZdq5kBwFTCyKMh8Usz7kFQD1wVJIKIw26B_xw4I-5t3ElUNsLYlg0v7O7L1HyssTuPhw8QkN0j8GrcTMnxBKy8YuHi-1XyB-WZNRWDNHF0LyMv8X-VAz-Mo7y',
+  deviceType: 'A'
+}
+Error: Incorrect credentials
+[2022-07-15T05:32:17.694Z][backend][error] POST /auth/signin?userType=driver&'******' 
+User: {}
+Params: {}
+Query: {
+  userType: 'driver',
+  '******'
+  countryCode: '+1',
+  mobileNumber: '9106687389',
+  deviceId: 'eNhO_LQpQ5GDPosxLUeGIP:APA91bFGYDoUwIf-wuDZdq5kBwFTCyKMh8Usz7kFQD1wVJIKIw26B_xw4I-5t3ElUNsLYlg0v7O7L1HyssTuPhw8QkN0j8GrcTMnxBKy8YuHi-1XyB-WZNRWDNHF0LyMv8X-VAz-Mo7y',
+  deviceType: 'A'
+}
+Body: {
+  userType: 'driver',
+  '******'
+  countryCode: '+1',
+  mobileNumber: '9106687389',
+  deviceId: 'eNhO_LQpQ5GDPosxLUeGIP:APA91bFGYDoUwIf-wuDZdq5kBwFTCyKMh8Usz7kFQD1wVJIKIw26B_xw4I-5t3ElUNsLYlg0v7O7L1HyssTuPhw8QkN0j8GrcTMnxBKy8YuHi-1XyB-WZNRWDNHF0LyMv8X-VAz-Mo7y',
+  deviceType: 'A'
+}
+Error: Incorrect credentials
+[2022-07-15T05:32:20.214Z][backend][error] POST /auth/signin?userType=driver&'******' 
+User: {}
+Params: {}
+Query: {
+  userType: 'driver',
+  '******'
+  countryCode: '+1',
+  mobileNumber: '9106687389',
+  deviceId: 'eNhO_LQpQ5GDPosxLUeGIP:APA91bFGYDoUwIf-wuDZdq5kBwFTCyKMh8Usz7kFQD1wVJIKIw26B_xw4I-5t3ElUNsLYlg0v7O7L1HyssTuPhw8QkN0j8GrcTMnxBKy8YuHi-1XyB-WZNRWDNHF0LyMv8X-VAz-Mo7y',
+  deviceType: 'A'
+}
+Body: {
+  userType: 'driver',
+  '******'
+  countryCode: '+1',
+  mobileNumber: '9106687389',
+  deviceId: 'eNhO_LQpQ5GDPosxLUeGIP:APA91bFGYDoUwIf-wuDZdq5kBwFTCyKMh8Usz7kFQD1wVJIKIw26B_xw4I-5t3ElUNsLYlg0v7O7L1HyssTuPhw8QkN0j8GrcTMnxBKy8YuHi-1XyB-WZNRWDNHF0LyMv8X-VAz-Mo7y',
+  deviceType: 'A'
+}
+Error: Incorrect credentials
+[2022-07-15T07:46:03.270Z][backend][info] Server started - PORT: 3333
+[2022-07-15T09:42:35.458Z][backend][info] Server started - PORT: 3333
+[2022-07-15T12:00:00.027Z][backend][info] driver assignment completed at 08:00 AM.

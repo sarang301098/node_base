@@ -1,0 +1,191 @@
+[2022-07-04T04:41:17.991Z][backend][info] Server started - PORT: 3333
+[2022-07-04T04:43:04.886Z][backend][info] Gracefully shutting down
+[2022-07-04T04:43:11.734Z][backend][info] Server started - PORT: 3333
+[2022-07-04T05:05:33.039Z][backend][error] POST /auth/signin?userType=vendor&'******' 
+User: {}
+Params: {}
+Query: {
+  userType: 'vendor',
+  '******'
+  countryCode: '+91',
+  mobileNumber: '9601235689'
+}
+Body: {
+  userType: 'vendor',
+  '******'
+  countryCode: '+91',
+  mobileNumber: '9601235689'
+}
+Error: Incorrect credentials
+[2022-07-04T05:05:37.772Z][backend][error] POST /auth/signin?userType=vendor&'******' 
+User: {}
+Params: {}
+Query: {
+  userType: 'vendor',
+  '******'
+  countryCode: '+91',
+  mobileNumber: '9601235689'
+}
+Body: {
+  userType: 'vendor',
+  '******'
+  countryCode: '+91',
+  mobileNumber: '9601235689'
+}
+Error: Incorrect credentials
+[2022-07-04T05:06:02.704Z][backend][error] GET /dashboard/vendor 
+User: {
+  id: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  email: 'sarang.p@peerbits.com'
+}
+Params: {}
+Query: {}
+Body: {}
+QueryFailedError: ER_MIX_OF_GROUP_FUNC_AND_FIELDS: In aggregated query without GROUP BY, expression #2 of SELECT list contains nonaggregated column 'propane_fix.vendorStocks.added_stock_qty'; this is incompatible with sql_mode=only_full_group_by
+[2022-07-04T06:36:30.867Z][backend][error] GET /dashboard/vendor 
+User: {
+  id: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  email: 'sarang.p@peerbits.com'
+}
+Params: {}
+Query: {}
+Body: {}
+QueryFailedError: ER_MIX_OF_GROUP_FUNC_AND_FIELDS: In aggregated query without GROUP BY, expression #2 of SELECT list contains nonaggregated column 'propane_fix.vendorStocks.added_stock_qty'; this is incompatible with sql_mode=only_full_group_by
+[2022-07-04T09:09:15.006Z][backend][info] Gracefully shutting down
+[2022-07-04T09:09:15.010Z][backend][info] Gracefully shutting down
+[2022-07-04T09:09:19.536Z][backend][info] Server started - PORT: 3333
+[2022-07-04T09:20:02.911Z][backend][info] Server started - PORT: 3333
+[2022-07-04T09:33:55.934Z][backend][info] Server started - PORT: 3333
+[2022-07-04T09:40:06.219Z][backend][info] Server started - PORT: 3333
+[2022-07-04T09:43:41.209Z][backend][info] Server started - PORT: 3333
+[2022-07-04T09:48:20.677Z][backend][info] Server started - PORT: 3333
+[2022-07-04T09:49:38.433Z][backend][info] Server started - PORT: 3333
+[2022-07-04T09:50:32.045Z][backend][info] Server started - PORT: 3333
+[2022-07-04T09:51:00.241Z][backend][info] Server started - PORT: 3333
+[2022-07-04T09:51:41.035Z][backend][info] Server started - PORT: 3333
+[2022-07-04T09:51:48.974Z][backend][info] Server started - PORT: 3333
+[2022-07-04T09:54:45.698Z][backend][info] Server started - PORT: 3333
+[2022-07-04T09:54:50.501Z][backend][info] Server started - PORT: 3333
+[2022-07-04T09:56:12.989Z][backend][info] Server started - PORT: 3333
+[2022-07-04T09:58:19.216Z][backend][info] Server started - PORT: 3333
+[2022-07-04T09:58:25.486Z][backend][info] Server started - PORT: 3333
+[2022-07-04T10:00:16.804Z][backend][info] Server started - PORT: 3333
+[2022-07-04T10:00:43.370Z][backend][info] Server started - PORT: 3333
+[2022-07-04T10:00:58.016Z][backend][info] Server started - PORT: 3333
+[2022-07-04T10:01:49.546Z][backend][info] Server started - PORT: 3333
+[2022-07-04T10:03:04.401Z][backend][info] Server started - PORT: 3333
+[2022-07-04T10:03:11.813Z][backend][info] Server started - PORT: 3333
+[2022-07-04T10:03:27.590Z][backend][info] Server started - PORT: 3333
+[2022-07-04T10:03:36.432Z][backend][info] Server started - PORT: 3333
+[2022-07-04T10:04:52.889Z][backend][info] Server started - PORT: 3333
+[2022-07-04T10:06:47.774Z][backend][info] Server started - PORT: 3333
+[2022-07-04T10:12:10.503Z][backend][info] Server started - PORT: 3333
+[2022-07-04T10:12:16.089Z][backend][info] Server started - PORT: 3333
+[2022-07-04T10:12:25.188Z][backend][info] Server started - PORT: 3333
+[2022-07-04T10:13:09.659Z][backend][info] Server started - PORT: 3333
+[2022-07-04T10:14:02.728Z][backend][info] Server started - PORT: 3333
+[2022-07-04T10:14:39.095Z][backend][info] Server started - PORT: 3333
+[2022-07-04T10:27:05.449Z][backend][info] Gracefully shutting down
+[2022-07-04T10:27:09.186Z][backend][info] Server started - PORT: 3333
+[2022-07-04T10:27:12.864Z][backend][info] Gracefully shutting down
+[2022-07-04T10:27:12.868Z][backend][info] Gracefully shutting down
+[2022-07-04T10:31:49.548Z][backend][info] Server started - PORT: 3333
+[2022-07-04T10:32:15.173Z][backend][info] Gracefully shutting down
+[2022-07-04T10:32:15.177Z][backend][info] Gracefully shutting down
+[2022-07-04T10:32:28.272Z][backend][info] Server started - PORT: 3333
+[2022-07-04T10:58:49.921Z][backend][info] Server started - PORT: 3333
+[2022-07-04T11:59:57.376Z][backend][info] Server started - PORT: 3333
+[2022-07-04T12:00:23.246Z][backend][info] Server started - PORT: 3333
+[2022-07-04T12:01:21.452Z][backend][info] Server started - PORT: 3333
+[2022-07-04T12:20:09.495Z][backend][error] GET /dashboard/vendor 
+User: {
+  id: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  email: 'sarang.p@peerbits.com'
+}
+Params: {}
+Query: {}
+Body: {}
+QueryFailedError: ER_MIX_OF_GROUP_FUNC_AND_FIELDS: In aggregated query without GROUP BY, expression #2 of SELECT list contains nonaggregated column 'propane_fix.vendorStocks.added_stock_qty'; this is incompatible with sql_mode=only_full_group_by
+[2022-07-04T12:37:20.701Z][backend][info] Server started - PORT: 3333
+[2022-07-04T12:37:22.275Z][backend][info] Gracefully shutting down
+[2022-07-04T12:37:22.279Z][backend][info] Gracefully shutting down
+[2022-07-04T12:40:52.858Z][backend][info] Server started - PORT: 3333
+[2022-07-04T12:41:10.490Z][backend][error] GET /dashboard/vendor 
+User: {
+  id: 'b7d43122-dec2-4fe3-a737-499ab5526608',
+  email: 'sarang.p@peerbits.com'
+}
+Params: {}
+Query: {}
+Body: {}
+QueryFailedError: ER_MIX_OF_GROUP_FUNC_AND_FIELDS: In aggregated query without GROUP BY, expression #2 of SELECT list contains nonaggregated column 'propane_fix.vendorStocks.added_stock_qty'; this is incompatible with sql_mode=only_full_group_by
+[2022-07-04T12:43:08.341Z][backend][error] POST /orders 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar.b@peerbits.com'
+}
+Params: {}
+Query: {}
+Body: {
+  stripeCardId: 'card_1LBdbkJegOrZGWtLohgbrshk',
+  checkForleakage: false
+}
+Error: Cart is empty
+[2022-07-04T12:44:27.765Z][backend][error] POST /orders 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar.b@peerbits.com'
+}
+Params: {}
+Query: {}
+Body: {
+  stripeCardId: 'card_1LBdbkJegOrZGWtLohgbrshk',
+  checkForleakage: false
+}
+Error: Error in payment
+[2022-07-04T12:44:33.820Z][backend][error] POST /orders 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar.b@peerbits.com'
+}
+Params: {}
+Query: {}
+Body: {
+  stripeCardId: 'card_1LBdbkJegOrZGWtLohgbrshk',
+  checkForleakage: false
+}
+Error: Error in payment
+[2022-07-04T13:02:57.352Z][backend][error] POST /orders 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar.b@peerbits.com'
+}
+Params: {}
+Query: {}
+Body: {
+  stripeCardId: 'card_1LBdbkJegOrZGWtLohgbrshk',
+  checkForleakage: false
+}
+Error: Error in payment
+[2022-07-04T13:02:59.943Z][backend][error] POST /orders 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar.b@peerbits.com'
+}
+Params: {}
+Query: {}
+Body: {
+  stripeCardId: 'card_1LBdbkJegOrZGWtLohgbrshk',
+  checkForleakage: false
+}
+Error: Error in payment
+[2022-07-04T13:12:05.548Z][backend][info] Server started - PORT: 3333
+[2022-07-04T13:34:50.612Z][backend][info] Server started - PORT: 3333
+[2022-07-04T13:35:00.579Z][backend][info] Server started - PORT: 3333
+[2022-07-04T13:39:02.054Z][backend][info] Server started - PORT: 3333
+[2022-07-04T13:39:28.123Z][backend][info] Server started - PORT: 3333
+[2022-07-04T13:39:33.444Z][backend][info] Server started - PORT: 3333
+[2022-07-04T13:43:15.805Z][backend][info] Server started - PORT: 3333
+[2022-07-04T13:51:04.067Z][backend][info] Server started - PORT: 3333
+[2022-07-04T14:01:07.169Z][backend][info] Server started - PORT: 3333
+[2022-07-04T14:04:25.093Z][backend][info] Server started - PORT: 3333

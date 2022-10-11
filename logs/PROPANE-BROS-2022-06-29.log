@@ -1,0 +1,171 @@
+[2022-06-29T05:08:53.751Z][backend][info] Server started - PORT: 3333
+[2022-06-29T06:06:37.613Z][backend][info] Server started - PORT: 3333
+[2022-06-29T06:08:38.781Z][backend][info] Server started - PORT: 3333
+[2022-06-29T06:12:24.255Z][backend][info] Server started - PORT: 3333
+[2022-06-29T06:26:29.450Z][backend][info] Server started - PORT: 3333
+[2022-06-29T06:26:32.866Z][backend][info] Server started - PORT: 3333
+[2022-06-29T09:16:48.875Z][backend][error] POST /auth/signin?userType=user&deviceId=ei2xOFSqTziCtq1niMJTLl:APA91bEJQO1HdRc5L8LYBck82g5-nXWHHeCudMc0_kZNqiGLZeiYL0NwDXuAfCG5mavJJCPryi6up6h1_uSrFBi2maHNWUxWUU3NJJcGxMQJ3pERNCuu_iyLQpsZG7YoSieHZc5V9er6&deviceType=A&'******' 
+User: {}
+Params: {}
+Query: {
+  userType: 'user',
+  deviceId: 'ei2xOFSqTziCtq1niMJTLl:APA91bEJQO1HdRc5L8LYBck82g5-nXWHHeCudMc0_kZNqiGLZeiYL0NwDXuAfCG5mavJJCPryi6up6h1_uSrFBi2maHNWUxWUU3NJJcGxMQJ3pERNCuu_iyLQpsZG7YoSieHZc5V9er6',
+  deviceType: 'A',
+  '******'
+  countryCode: '+91',
+  mobileNumber: '9876543212'
+}
+Body: {
+  userType: 'user',
+  deviceId: 'ei2xOFSqTziCtq1niMJTLl:APA91bEJQO1HdRc5L8LYBck82g5-nXWHHeCudMc0_kZNqiGLZeiYL0NwDXuAfCG5mavJJCPryi6up6h1_uSrFBi2maHNWUxWUU3NJJcGxMQJ3pERNCuu_iyLQpsZG7YoSieHZc5V9er6',
+  deviceType: 'A',
+  '******'
+  countryCode: '+91',
+  mobileNumber: '9876543212'
+}
+Error: Incorrect credentials
+[2022-06-29T09:17:15.198Z][backend][error] POST /auth/signin?userType=user&deviceId=ei2xOFSqTziCtq1niMJTLl:APA91bEJQO1HdRc5L8LYBck82g5-nXWHHeCudMc0_kZNqiGLZeiYL0NwDXuAfCG5mavJJCPryi6up6h1_uSrFBi2maHNWUxWUU3NJJcGxMQJ3pERNCuu_iyLQpsZG7YoSieHZc5V9er6&deviceType=A&'******' 
+User: {}
+Params: {}
+Query: {
+  userType: 'user',
+  deviceId: 'ei2xOFSqTziCtq1niMJTLl:APA91bEJQO1HdRc5L8LYBck82g5-nXWHHeCudMc0_kZNqiGLZeiYL0NwDXuAfCG5mavJJCPryi6up6h1_uSrFBi2maHNWUxWUU3NJJcGxMQJ3pERNCuu_iyLQpsZG7YoSieHZc5V9er6',
+  deviceType: 'A',
+  '******'
+  countryCode: '+91',
+  mobileNumber: '9876543212'
+}
+Body: {
+  userType: 'user',
+  deviceId: 'ei2xOFSqTziCtq1niMJTLl:APA91bEJQO1HdRc5L8LYBck82g5-nXWHHeCudMc0_kZNqiGLZeiYL0NwDXuAfCG5mavJJCPryi6up6h1_uSrFBi2maHNWUxWUU3NJJcGxMQJ3pERNCuu_iyLQpsZG7YoSieHZc5V9er6',
+  deviceType: 'A',
+  '******'
+  countryCode: '+91',
+  mobileNumber: '9876543212'
+}
+Error: Incorrect credentials
+[2022-06-29T09:17:29.131Z][backend][error] POST /auth/signin?userType=user&deviceId=ei2xOFSqTziCtq1niMJTLl:APA91bEJQO1HdRc5L8LYBck82g5-nXWHHeCudMc0_kZNqiGLZeiYL0NwDXuAfCG5mavJJCPryi6up6h1_uSrFBi2maHNWUxWUU3NJJcGxMQJ3pERNCuu_iyLQpsZG7YoSieHZc5V9er6&deviceType=A&'******' 
+User: {}
+Params: {}
+Query: {
+  userType: 'user',
+  deviceId: 'ei2xOFSqTziCtq1niMJTLl:APA91bEJQO1HdRc5L8LYBck82g5-nXWHHeCudMc0_kZNqiGLZeiYL0NwDXuAfCG5mavJJCPryi6up6h1_uSrFBi2maHNWUxWUU3NJJcGxMQJ3pERNCuu_iyLQpsZG7YoSieHZc5V9er6',
+  deviceType: 'A',
+  '******'
+  countryCode: '+91',
+  mobileNumber: '9876543212'
+}
+Body: {
+  userType: 'user',
+  deviceId: 'ei2xOFSqTziCtq1niMJTLl:APA91bEJQO1HdRc5L8LYBck82g5-nXWHHeCudMc0_kZNqiGLZeiYL0NwDXuAfCG5mavJJCPryi6up6h1_uSrFBi2maHNWUxWUU3NJJcGxMQJ3pERNCuu_iyLQpsZG7YoSieHZc5V9er6',
+  deviceType: 'A',
+  '******'
+  countryCode: '+91',
+  mobileNumber: '9876543212'
+}
+Error: Incorrect credentials
+[2022-06-29T09:18:05.375Z][backend][error] POST /auth/signin?userType=user&deviceId=ei2xOFSqTziCtq1niMJTLl:APA91bEJQO1HdRc5L8LYBck82g5-nXWHHeCudMc0_kZNqiGLZeiYL0NwDXuAfCG5mavJJCPryi6up6h1_uSrFBi2maHNWUxWUU3NJJcGxMQJ3pERNCuu_iyLQpsZG7YoSieHZc5V9er6&deviceType=A&'******' 
+User: {}
+Params: {}
+Query: {
+  userType: 'user',
+  deviceId: 'ei2xOFSqTziCtq1niMJTLl:APA91bEJQO1HdRc5L8LYBck82g5-nXWHHeCudMc0_kZNqiGLZeiYL0NwDXuAfCG5mavJJCPryi6up6h1_uSrFBi2maHNWUxWUU3NJJcGxMQJ3pERNCuu_iyLQpsZG7YoSieHZc5V9er6',
+  deviceType: 'A',
+  '******'
+  countryCode: '+91',
+  mobileNumber: '9876543212'
+}
+Body: {
+  userType: 'user',
+  deviceId: 'ei2xOFSqTziCtq1niMJTLl:APA91bEJQO1HdRc5L8LYBck82g5-nXWHHeCudMc0_kZNqiGLZeiYL0NwDXuAfCG5mavJJCPryi6up6h1_uSrFBi2maHNWUxWUU3NJJcGxMQJ3pERNCuu_iyLQpsZG7YoSieHZc5V9er6',
+  deviceType: 'A',
+  '******'
+  countryCode: '+91',
+  mobileNumber: '9876543212'
+}
+Error: Incorrect credentials
+[2022-06-29T09:18:21.609Z][backend][error] POST /auth/signin?userType=user&deviceId=ei2xOFSqTziCtq1niMJTLl:APA91bEJQO1HdRc5L8LYBck82g5-nXWHHeCudMc0_kZNqiGLZeiYL0NwDXuAfCG5mavJJCPryi6up6h1_uSrFBi2maHNWUxWUU3NJJcGxMQJ3pERNCuu_iyLQpsZG7YoSieHZc5V9er6&deviceType=A&'******' 
+User: {}
+Params: {}
+Query: {
+  userType: 'user',
+  deviceId: 'ei2xOFSqTziCtq1niMJTLl:APA91bEJQO1HdRc5L8LYBck82g5-nXWHHeCudMc0_kZNqiGLZeiYL0NwDXuAfCG5mavJJCPryi6up6h1_uSrFBi2maHNWUxWUU3NJJcGxMQJ3pERNCuu_iyLQpsZG7YoSieHZc5V9er6',
+  deviceType: 'A',
+  '******'
+  countryCode: '+91',
+  mobileNumber: '9876543212'
+}
+Body: {
+  userType: 'user',
+  deviceId: 'ei2xOFSqTziCtq1niMJTLl:APA91bEJQO1HdRc5L8LYBck82g5-nXWHHeCudMc0_kZNqiGLZeiYL0NwDXuAfCG5mavJJCPryi6up6h1_uSrFBi2maHNWUxWUU3NJJcGxMQJ3pERNCuu_iyLQpsZG7YoSieHZc5V9er6',
+  deviceType: 'A',
+  '******'
+  countryCode: '+91',
+  mobileNumber: '9876543212'
+}
+Error: Incorrect credentials
+[2022-06-29T09:34:25.766Z][backend][info] Server started - PORT: 3333
+[2022-06-29T09:34:47.140Z][backend][info] Server started - PORT: 3333
+[2022-06-29T09:35:19.279Z][backend][info] Server started - PORT: 3333
+[2022-06-29T09:35:58.661Z][backend][info] Server started - PORT: 3333
+[2022-06-29T09:36:38.338Z][backend][info] Server started - PORT: 3333
+[2022-06-29T09:36:41.826Z][backend][error] GET /customers/acece1c1-6344-42aa-801a-0e716d387844/orders?orderType=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar.b@peerbits.com'
+}
+Params: { id: 'acece1c1-6344-42aa-801a-0e716d387844' }
+Query: {
+  orderType: 1,
+  status: null,
+  search: null,
+  categoryId: null,
+  vendorId: null,
+  driverId: null,
+  freelanceDriverId: null
+}
+Body: {}
+TypeORMError: Provided "offset" value is not a number. Please provide a numeric value.
+[2022-06-29T09:36:46.524Z][backend][error] GET /customers/acece1c1-6344-42aa-801a-0e716d387844/orders?orderType=1 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar.b@peerbits.com'
+}
+Params: { id: 'acece1c1-6344-42aa-801a-0e716d387844' }
+Query: {
+  orderType: 1,
+  status: null,
+  search: null,
+  categoryId: null,
+  vendorId: null,
+  driverId: null,
+  freelanceDriverId: null
+}
+Body: {}
+TypeORMError: Provided "offset" value is not a number. Please provide a numeric value.
+[2022-06-29T09:37:27.408Z][backend][info] Server started - PORT: 3333
+[2022-06-29T09:58:23.110Z][backend][info] Server started - PORT: 3333
+[2022-06-29T10:09:07.017Z][backend][info] Server started - PORT: 3333
+[2022-06-29T10:09:14.444Z][backend][info] Server started - PORT: 3333
+[2022-06-29T10:12:28.807Z][backend][info] Server started - PORT: 3333
+[2022-06-29T10:19:04.622Z][backend][info] Server started - PORT: 3333
+[2022-06-29T10:20:20.504Z][backend][info] Server started - PORT: 3333
+[2022-06-29T10:36:54.421Z][backend][info] Server started - PORT: 3333
+[2022-06-29T10:39:49.653Z][backend][info] Server started - PORT: 3333
+[2022-06-29T10:49:49.579Z][backend][info] Server started - PORT: 3333
+[2022-06-29T10:50:01.709Z][backend][info] Server started - PORT: 3333
+[2022-06-29T10:50:05.932Z][backend][info] Server started - PORT: 3333
+[2022-06-29T12:37:53.729Z][backend][info] Server started - PORT: 3333
+[2022-06-29T12:38:00.674Z][backend][info] Server started - PORT: 3333
+[2022-06-29T12:48:17.670Z][backend][info] Server started - PORT: 3333
+[2022-06-29T12:51:17.992Z][backend][info] Server started - PORT: 3333
+[2022-06-29T13:02:20.264Z][backend][info] Server started - PORT: 3333
+[2022-06-29T13:02:27.871Z][backend][error] GET /dashboard/driver 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {}
+Body: {}
+TypeError: moment_1.default.tz is not a function

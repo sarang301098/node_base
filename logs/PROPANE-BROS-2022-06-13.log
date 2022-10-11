@@ -1,0 +1,81 @@
+[2022-06-13T04:28:17.872Z][backend][info] Server started - PORT: 3333
+[2022-06-13T05:22:08.208Z][backend][info] Server started - PORT: 3333
+[2022-06-13T05:40:51.752Z][backend][error] GET /stripe/account/?code=ac_LrpgxnRltrLpImo6oRRVHvCLLi9LXMM8&state=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTQ4NjA5NzMsImV4cCI6MTY1NzQ1Mjk3MywiYXVkIjoiYWNjZXNzX3Rva2VuIiwic3ViIjoiMDM4ZjVhMWEtZWRmMS00M2UyLWFkZTUtZmIwZTc0MWJlMWQxIn0.Z3dmvAtxknp3mB-QPY30GqoRMH0nnn59WPUHCH3F0eo 
+User: {}
+Params: {}
+Query: {
+  code: 'ac_LrpgxnRltrLpImo6oRRVHvCLLi9LXMM8',
+  state: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTQ4NjA5NzMsImV4cCI6MTY1NzQ1Mjk3MywiYXVkIjoiYWNjZXNzX3Rva2VuIiwic3ViIjoiMDM4ZjVhMWEtZWRmMS00M2UyLWFkZTUtZmIwZTc0MWJlMWQxIn0.Z3dmvAtxknp3mB-QPY30GqoRMH0nnn59WPUHCH3F0eo'
+}
+Body: {}
+Error: code or token is not present
+[2022-06-13T05:46:00.460Z][backend][info] Server started - PORT: 3333
+[2022-06-13T05:47:40.773Z][backend][error] GET /stripe/account/?code=ac_LrpnX4vv79lB1fbvzuPs5UmvAfIbEWvt 
+User: {}
+Params: {}
+Query: { code: 'ac_LrpnX4vv79lB1fbvzuPs5UmvAfIbEWvt' }
+Body: {}
+Error: code or token is not present
+[2022-06-13T05:48:24.860Z][backend][info] Server started - PORT: 3333
+[2022-06-13T05:57:39.615Z][backend][info] Server started - PORT: 3333
+[2022-06-13T06:08:30.502Z][backend][info] Server started - PORT: 3333
+[2022-06-13T06:23:14.870Z][backend][info] Server started - PORT: 3333
+[2022-06-13T06:23:17.488Z][backend][info] Server started - PORT: 3333
+[2022-06-13T06:23:38.608Z][backend][info] Server started - PORT: 3333
+[2022-06-13T06:23:43.930Z][backend][info] Server started - PORT: 3333
+[2022-06-13T06:24:58.227Z][backend][info] Server started - PORT: 3333
+[2022-06-13T06:25:04.129Z][backend][info] Server started - PORT: 3333
+[2022-06-13T06:28:30.503Z][backend][info] Server started - PORT: 3333
+[2022-06-13T06:31:29.824Z][backend][info] Server started - PORT: 3333
+[2022-06-13T07:20:11.012Z][backend][info] Server started - PORT: 3333
+[2022-06-13T11:56:27.453Z][backend][info] Server started - PORT: 3333
+[2022-06-13T11:57:15.862Z][backend][info] Server started - PORT: 3333
+[2022-06-13T11:59:41.346Z][backend][info] Server started - PORT: 3333
+[2022-06-13T12:00:59.800Z][backend][info] Server started - PORT: 3333
+[2022-06-13T12:08:26.930Z][backend][info] Server started - PORT: 3333
+[2022-06-13T12:08:32.919Z][backend][error] GET /cart 
+User: {
+  id: 'a6fe9ca6-5447-4435-9736-9881c8a5c26f',
+  email: 'pratik.r@peerbits.com'
+}
+Params: {}
+Query: {}
+Body: {}
+QueryFailedError: ER_BAD_FIELD_ERROR: Unknown column 'vender.stripeAccountId' in 'field list'
+[2022-06-13T12:09:32.489Z][backend][info] Server started - PORT: 3333
+[2022-06-13T12:09:37.795Z][backend][error] GET /cart 
+User: {
+  id: 'a6fe9ca6-5447-4435-9736-9881c8a5c26f',
+  email: 'pratik.r@peerbits.com'
+}
+Params: {}
+Query: {}
+Body: {}
+QueryFailedError: ER_BAD_FIELD_ERROR: Unknown column 'vender.stripe_account_id' in 'field list'
+[2022-06-13T12:09:47.031Z][backend][info] Server started - PORT: 3333
+[2022-06-13T12:11:11.909Z][backend][info] Server started - PORT: 3333
+[2022-06-13T12:11:14.092Z][backend][error] GET /cart 
+User: {
+  id: 'a6fe9ca6-5447-4435-9736-9881c8a5c26f',
+  email: 'pratik.r@peerbits.com'
+}
+Params: {}
+Query: {}
+Body: {}
+QueryFailedError: ER_BAD_FIELD_ERROR: Unknown column 'vender.stripeCustomerId' in 'field list'
+[2022-06-13T12:11:26.332Z][backend][info] Server started - PORT: 3333
+[2022-06-13T12:13:28.590Z][backend][info] Server started - PORT: 3333
+[2022-06-13T12:13:35.660Z][backend][error] GET /cart 
+User: {
+  id: 'a6fe9ca6-5447-4435-9736-9881c8a5c26f',
+  email: 'pratik.r@peerbits.com'
+}
+Params: {}
+Query: {}
+Body: {}
+QueryFailedError: ER_BAD_FIELD_ERROR: Unknown column 'vender.stripeAccountId' in 'field list'
+[2022-06-13T12:21:00.747Z][backend][info] Server started - PORT: 3333
+[2022-06-13T12:22:40.550Z][backend][info] Server started - PORT: 3333
+[2022-06-13T12:22:44.967Z][backend][info] Server started - PORT: 3333
+[2022-06-13T12:23:26.249Z][backend][info] Server started - PORT: 3333
+[2022-06-13T12:23:53.345Z][backend][info] Server started - PORT: 3333

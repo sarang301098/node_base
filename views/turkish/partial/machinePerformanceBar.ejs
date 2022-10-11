@@ -1,0 +1,89 @@
+var bgColors = {
+  on: "rgb(69,129,142,1)",
+  stop: "rgb(255,87,87,1)",
+  off: "rgb(183,185,187)",
+  running: "rgba(69,129,142,1)",
+};
+
+const orderBy = {
+  off: 1,
+  stop: 1,
+  running: 2
+};
+
+var createDataSet = function (productionTime) {
+  delete productionTime.total;
+  var tempDataset = Object.keys(productionTime).reduce(
+    (datasets, time) => {
+      datasets.graphData.push({
+        label: time,
+        backgroundColor: bgColors[time],
+        data: [productionTime[time]],
+        borderRadius: 50,
+      });
+      return datasets;
+    },
+    { graphData: [] }
+  );
+
+  tempDataset.graphData.sort((firstSet, secondSet) => {
+    return orderBy[firstSet.label] - orderBy[secondSet.label]
+  })
+
+  return tempDataset.graphData;
+};
+
+var machineGraphOptions = {
+  responsive: true,
+  spanGaps: false,
+  legend: {
+    display: false,
+  },
+  aspectRatio: 2,
+  maintainAspectRatio: false,
+  layout: {
+    padding: {
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+    },
+  },
+  scales: {
+    xAxes: [
+      {
+        display: false,
+        ticks: {
+          beginAtZero: true,
+        },
+        stacked: true,
+      },
+    ],
+    yAxes: [
+      {
+        barThickness: 20,
+        display: false,
+        stacked: true,
+      },
+    ],
+  },
+  events: [],
+};
+
+function loadMachineBarGraphs() {
+var machineData = res;
+new Chart(
+document.getElementById(id),
+{
+type: "horizontalBar",
+data: {
+  datasets: createDataSet(machineData.performance).map((obj) => ({
+    ...obj,
+    borderColor: "red",
+  })),
+},
+options: machineGraphOptions,
+}
+);
+Chart.plugins.unregister(ChartDataLabels);
+}

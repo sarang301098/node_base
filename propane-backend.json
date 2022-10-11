@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "name": "propanebros-backend",
+      "script": "./dist/server.js",
+      "instances": "max",
+      "exec_mode": "cluster",
+      "wait_ready": true
+    }
+  ]
+}

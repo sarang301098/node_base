@@ -1,0 +1,63 @@
+[2022-05-31T05:45:10.994Z][backend][info] Server started - PORT: 3333
+[2022-05-31T06:04:51.117Z][backend][info] Gracefully shutting down
+[2022-05-31T06:04:51.125Z][backend][info] Gracefully shutting down
+[2022-05-31T06:04:57.042Z][backend][info] Server started - PORT: 3333
+[2022-05-31T06:07:14.061Z][backend][error] POST /cart 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {}
+Body: {
+  orderType: 2,
+  zipcodeId: 1,
+  categoryId: 3,
+  accessoryId: 62,
+  scheduleDate: 2022-05-31T09:17:55.047Z,
+  timeslotId: 5,
+  qty: 5,
+  locationId: 1,
+  vendorId: '038f5a1a-edf1-43e2-ade5-fb0e741be1d1'
+}
+EntityNotFoundError: Could not find any entity of type "TimeSlots" matching: 5
+[2022-05-31T11:37:02.303Z][backend][info] Gracefully shutting down
+[2022-05-31T11:37:02.308Z][backend][info] Gracefully shutting down
+[2022-05-31T11:41:00.627Z][backend][info] Server started - PORT: 3333
+[2022-05-31T11:41:38.835Z][backend][info] Server started - PORT: 3333
+[2022-05-31T11:43:17.085Z][backend][info] Server started - PORT: 3333
+[2022-05-31T11:44:52.315Z][backend][info] Server started - PORT: 3333
+[2022-05-31T11:46:51.152Z][backend][info] Server started - PORT: 3333
+[2022-05-31T11:48:29.913Z][backend][info] Server started - PORT: 3333
+[2022-05-31T11:48:40.351Z][backend][info] Server started - PORT: 3333
+[2022-05-31T11:48:46.374Z][backend][info] Server started - PORT: 3333
+[2022-05-31T11:48:50.763Z][backend][info] Server started - PORT: 3333
+[2022-05-31T11:55:31.519Z][backend][info] Server started - PORT: 3333
+[2022-05-31T11:57:07.305Z][backend][info] Server started - PORT: 3333
+[2022-05-31T12:03:31.728Z][backend][info] Server started - PORT: 3333
+[2022-05-31T12:04:42.727Z][backend][info] Server started - PORT: 3333
+[2022-05-31T12:05:14.305Z][backend][info] Server started - PORT: 3333
+[2022-05-31T12:29:21.177Z][backend][info] Server started - PORT: 3333
+[2022-05-31T12:29:25.882Z][backend][info] Server started - PORT: 3333
+[2022-05-31T12:31:44.562Z][backend][info] Server started - PORT: 3333
+[2022-05-31T12:31:56.685Z][backend][info] Server started - PORT: 3333
+[2022-05-31T12:32:27.967Z][backend][info] Server started - PORT: 3333
+[2022-05-31T12:52:58.050Z][backend][info] Server started - PORT: 3333
+[2022-05-31T12:54:20.227Z][backend][info] Server started - PORT: 3333
+[2022-05-31T13:03:17.734Z][backend][info] Server started - PORT: 3333
+[2022-05-31T13:05:55.530Z][backend][info] Server started - PORT: 3333
+[2022-05-31T13:06:21.715Z][backend][info] Server started - PORT: 3333
+[2022-05-31T13:06:38.533Z][backend][info] Server started - PORT: 3333
+[2022-05-31T13:07:03.871Z][backend][info] Server started - PORT: 3333
+[2022-05-31T13:09:01.819Z][backend][info] Server started - PORT: 3333
+[2022-05-31T13:10:20.180Z][backend][info] Server started - PORT: 3333
+[2022-05-31T13:12:46.672Z][backend][info] Server started - PORT: 3333
+[2022-05-31T13:12:51.186Z][backend][info] Server started - PORT: 3333
+[2022-05-31T13:14:26.272Z][backend][info] Server started - PORT: 3333
+[2022-05-31T13:17:35.709Z][backend][info] Server started - PORT: 3333
+[2022-05-31T13:18:12.496Z][backend][info] Server started - PORT: 3333
+[2022-05-31T13:19:33.284Z][backend][info] Server started - PORT: 3333
+[2022-05-31T13:26:53.472Z][backend][info] Server started - PORT: 3333
+[2022-05-31T13:27:47.424Z][backend][info] Server started - PORT: 3333
+[2022-05-31T13:28:30.077Z][backend][info] Server started - PORT: 3333
+[2022-05-31T13:31:02.455Z][backend][info] Server started - PORT: 3333

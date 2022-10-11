@@ -1,0 +1,496 @@
+[2022-06-28T04:55:06.728Z][backend][info] Server started - PORT: 3333
+[2022-06-28T04:55:09.432Z][backend][info] Gracefully shutting down
+[2022-06-28T04:55:49.447Z][backend][info] Server started - PORT: 3333
+[2022-06-28T09:21:54.339Z][backend][info] Server started - PORT: 3333
+[2022-06-28T09:23:40.016Z][backend][error] GET /cylinderSize/vendors/all?orderType=2&vendorId=1a3db8b3-57d5-4946-bf64-a86ab6a42e39&categoryId=1&productId=7 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  orderType: 2,
+  vendorId: '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+  categoryId: 1,
+  productId: 7
+}
+Body: {}
+TypeError: Cannot read properties of null (reading 'cylinderSize')
+[2022-06-28T09:25:07.321Z][backend][info] Server started - PORT: 3333
+[2022-06-28T09:26:58.355Z][backend][error] GET /cylinderSize/vendors/all?orderType=2&vendorId=1a3db8b3-57d5-4946-bf64-a86ab6a42e39&categoryId=1&productId=7 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  orderType: 2,
+  vendorId: '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+  categoryId: 1,
+  productId: 7
+}
+Body: {}
+TypeError: Cannot read properties of null (reading 'id')
+[2022-06-28T09:27:38.787Z][backend][info] Server started - PORT: 3333
+[2022-06-28T09:27:56.762Z][backend][info] Server started - PORT: 3333
+[2022-06-28T09:41:18.326Z][backend][info] Server started - PORT: 3333
+[2022-06-28T09:41:29.442Z][backend][info] Server started - PORT: 3333
+[2022-06-28T09:43:14.948Z][backend][info] Server started - PORT: 3333
+[2022-06-28T09:50:41.719Z][backend][info] Server started - PORT: 3333
+[2022-06-28T09:53:15.109Z][backend][info] Server started - PORT: 3333
+[2022-06-28T09:55:59.850Z][backend][info] Server started - PORT: 3333
+[2022-06-28T09:56:24.753Z][backend][info] Server started - PORT: 3333
+[2022-06-28T10:11:37.768Z][backend][info] Server started - PORT: 3333
+[2022-06-28T10:12:01.956Z][backend][info] Server started - PORT: 3333
+[2022-06-28T10:14:50.403Z][backend][info] Server started - PORT: 3333
+[2022-06-28T10:59:16.641Z][backend][error] GET /drivers?driverType=freelance&page=1&perPage=10&status=2&sort=ASC&sortBy=fullName 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {
+  driverType: 'freelance',
+  page: 1,
+  perPage: 10,
+  status: 2,
+  sort: 'ASC',
+  sortBy: 'fullName',
+  isActive: null,
+  search: null
+}
+Body: {}
+TypeError: value.map is not a function
+[2022-06-28T11:01:48.031Z][backend][info] Server started - PORT: 3333
+[2022-06-28T11:02:07.736Z][backend][error] GET /drivers?driverType=freelance&page=1&perPage=10&status=2&sort=ASC&sortBy=fullName 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {
+  driverType: 'freelance',
+  page: 1,
+  perPage: 10,
+  status: 2,
+  sort: 'ASC',
+  sortBy: 'fullName',
+  isActive: null,
+  search: null
+}
+Body: {}
+TypeError: value.map is not a function
+[2022-06-28T11:03:05.701Z][backend][error] GET /drivers?driverType=freelance&page=1&perPage=10&status=2&isActive=false&sort=ASC&sortBy=fullName 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {
+  driverType: 'freelance',
+  page: 1,
+  perPage: 10,
+  status: 2,
+  isActive: false,
+  sort: 'ASC',
+  sortBy: 'fullName',
+  search: null
+}
+Body: {}
+TypeError: value.map is not a function
+[2022-06-28T11:04:55.241Z][backend][error] GET /drivers?driverType=freelance&page=1&perPage=10&status=2&isActive=true&sort=ASC&sortBy=fullName 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {
+  driverType: 'freelance',
+  page: 1,
+  perPage: 10,
+  status: 2,
+  isActive: true,
+  sort: 'ASC',
+  sortBy: 'fullName',
+  search: null
+}
+Body: {}
+TypeError: value.map is not a function
+[2022-06-28T11:09:06.999Z][backend][error] GET /drivers?driverType=freelance&page=1&perPage=10&status=2&sort=ASC&sortBy=fullName 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {
+  driverType: 'freelance',
+  page: 1,
+  perPage: 10,
+  status: 2,
+  sort: 'ASC',
+  sortBy: 'fullName',
+  isActive: null,
+  search: null
+}
+Body: {}
+TypeError: value.map is not a function
+[2022-06-28T11:11:25.379Z][backend][error] GET /drivers?driverType=freelance&page=1&perPage=10&status=2&sort=ASC&sortBy=fullName 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {
+  driverType: 'freelance',
+  page: 1,
+  perPage: 10,
+  status: 2,
+  sort: 'ASC',
+  sortBy: 'fullName',
+  isActive: null,
+  search: null
+}
+Body: {}
+TypeError: value.map is not a function
+[2022-06-28T11:11:47.479Z][backend][info] Server started - PORT: 3333
+[2022-06-28T11:11:51.441Z][backend][error] GET /drivers?driverType=freelance&page=1&perPage=10&status=2&sort=ASC&sortBy=fullName 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {
+  driverType: 'freelance',
+  page: 1,
+  perPage: 10,
+  status: 2,
+  sort: 'ASC',
+  sortBy: 'fullName',
+  isActive: null,
+  search: null
+}
+Body: {}
+TypeError: value.map is not a function
+[2022-06-28T11:17:23.793Z][backend][error] GET /drivers?driverType=freelance&page=1&perPage=10&status=2&sort=ASC&sortBy=fullName 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {
+  driverType: 'freelance',
+  page: 1,
+  perPage: 10,
+  status: 2,
+  sort: 'ASC',
+  sortBy: 'fullName',
+  isActive: null,
+  search: null
+}
+Body: {}
+TypeError: value.map is not a function
+[2022-06-28T11:19:12.814Z][backend][error] GET /drivers?driverType=freelance&page=1&perPage=10&status=2&sort=ASC&sortBy=fullName 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {
+  driverType: 'freelance',
+  page: 1,
+  perPage: 10,
+  status: 2,
+  sort: 'ASC',
+  sortBy: 'fullName',
+  isActive: null,
+  search: null
+}
+Body: {}
+TypeError: value.map is not a function
+[2022-06-28T11:20:08.240Z][backend][info] Server started - PORT: 3333
+[2022-06-28T11:20:17.452Z][backend][error] GET /drivers?driverType=freelance&page=1&perPage=10&status=2&sort=ASC&sortBy=fullName 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {
+  driverType: 'freelance',
+  page: 1,
+  perPage: 10,
+  status: 2,
+  sort: 'ASC',
+  sortBy: 'fullName',
+  isActive: null,
+  search: null
+}
+Body: {}
+TypeError: value.map is not a function
+[2022-06-28T11:24:11.320Z][backend][info] Server started - PORT: 3333
+[2022-06-28T11:38:12.766Z][backend][info] Server started - PORT: 3333
+[2022-06-28T11:41:58.280Z][backend][error] POST /membershipPlans/purchase?membershipPlanId=8&membershipPlanPricesId=8&stripeCustomerId=cus_LtK0cThnBsQyLO&stripeCardId=card_1LFFizJegOrZGWtL3anWKu0p 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  membershipPlanId: '8',
+  membershipPlanPricesId: '8',
+  stripeCustomerId: 'cus_LtK0cThnBsQyLO',
+  stripeCardId: 'card_1LFFizJegOrZGWtL3anWKu0p'
+}
+Body: {
+  membershipPlanId: 8,
+  membershipPlanPricesId: 8,
+  stripeCustomerId: 'cus_LtK0cThnBsQyLO',
+  stripeCardId: 'card_1LFFizJegOrZGWtL3anWKu0p'
+}
+Error: Membership plan not found
+[2022-06-28T11:43:09.817Z][backend][error] POST /membershipPlans/purchase?membershipPlanId=8&membershipPlanPricesId=8&stripeCustomerId=cus_LtK0cThnBsQyLO&stripeCardId=card_1LFFizJegOrZGWtL3anWKu0p 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  membershipPlanId: '8',
+  membershipPlanPricesId: '8',
+  stripeCustomerId: 'cus_LtK0cThnBsQyLO',
+  stripeCardId: 'card_1LFFizJegOrZGWtL3anWKu0p'
+}
+Body: {
+  membershipPlanId: 8,
+  membershipPlanPricesId: 8,
+  stripeCustomerId: 'cus_LtK0cThnBsQyLO',
+  stripeCardId: 'card_1LFFizJegOrZGWtL3anWKu0p'
+}
+Error: Membership plan not found
+[2022-06-28T11:43:09.820Z][backend][error] POST /membershipPlans/purchase?membershipPlanId=8&membershipPlanPricesId=8&stripeCustomerId=cus_LtK0cThnBsQyLO&stripeCardId=card_1LFFizJegOrZGWtL3anWKu0p 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  membershipPlanId: '8',
+  membershipPlanPricesId: '8',
+  stripeCustomerId: 'cus_LtK0cThnBsQyLO',
+  stripeCardId: 'card_1LFFizJegOrZGWtL3anWKu0p'
+}
+Body: {
+  membershipPlanId: 8,
+  membershipPlanPricesId: 8,
+  stripeCustomerId: 'cus_LtK0cThnBsQyLO',
+  stripeCardId: 'card_1LFFizJegOrZGWtL3anWKu0p'
+}
+Error: Membership plan not found
+[2022-06-28T11:43:23.044Z][backend][info] Server started - PORT: 3333
+[2022-06-28T11:43:28.782Z][backend][error] POST /membershipPlans/purchase?membershipPlanId=8&membershipPlanPricesId=8&stripeCustomerId=cus_LtK0cThnBsQyLO&stripeCardId=card_1LFFizJegOrZGWtL3anWKu0p 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  membershipPlanId: '8',
+  membershipPlanPricesId: '8',
+  stripeCustomerId: 'cus_LtK0cThnBsQyLO',
+  stripeCardId: 'card_1LFFizJegOrZGWtL3anWKu0p'
+}
+Body: {
+  membershipPlanId: 8,
+  membershipPlanPricesId: 8,
+  stripeCustomerId: 'cus_LtK0cThnBsQyLO',
+  stripeCardId: 'card_1LFFizJegOrZGWtL3anWKu0p'
+}
+Error: Membership plan not found
+[2022-06-28T11:48:10.936Z][backend][info] Server started - PORT: 3333
+[2022-06-28T11:49:30.074Z][backend][info] Server started - PORT: 3333
+[2022-06-28T11:51:42.889Z][backend][info] Server started - PORT: 3333
+[2022-06-28T11:52:03.744Z][backend][info] Server started - PORT: 3333
+[2022-06-28T11:52:37.880Z][backend][info] Server started - PORT: 3333
+[2022-06-28T11:54:43.598Z][backend][info] Server started - PORT: 3333
+[2022-06-28T11:55:19.831Z][backend][info] Server started - PORT: 3333
+[2022-06-28T12:03:10.284Z][backend][info] Server started - PORT: 3333
+[2022-06-28T12:03:23.530Z][backend][info] Server started - PORT: 3333
+[2022-06-28T12:06:57.291Z][backend][info] Server started - PORT: 3333
+[2022-06-28T12:07:01.379Z][backend][info] Server started - PORT: 3333
+[2022-06-28T12:12:27.597Z][backend][info] Server started - PORT: 3333
+[2022-06-28T12:12:38.233Z][backend][error] POST /membershipPlans/purchase?membershipPlanId=11&membershipPlanPricesId=11&stripeCustomerId=cus_LtK0cThnBsQyLO&stripeCardId=card_1LFFizJegOrZGWtL3anWKu0p 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  membershipPlanId: '11',
+  membershipPlanPricesId: '11',
+  stripeCustomerId: 'cus_LtK0cThnBsQyLO',
+  stripeCardId: 'card_1LFFizJegOrZGWtL3anWKu0p'
+}
+Body: {
+  membershipPlanId: 11,
+  membershipPlanPricesId: 11,
+  stripeCustomerId: 'cus_LtK0cThnBsQyLO',
+  stripeCardId: 'card_1LFFizJegOrZGWtL3anWKu0p'
+}
+Error: Membership plan not found
+[2022-06-28T12:12:50.133Z][backend][error] POST /membershipPlans/purchase?membershipPlanId=10&membershipPlanPricesId=10&stripeCustomerId=cus_LtK0cThnBsQyLO&stripeCardId=card_1LFFizJegOrZGWtL3anWKu0p 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  membershipPlanId: '10',
+  membershipPlanPricesId: '10',
+  stripeCustomerId: 'cus_LtK0cThnBsQyLO',
+  stripeCardId: 'card_1LFFizJegOrZGWtL3anWKu0p'
+}
+Body: {
+  membershipPlanId: 10,
+  membershipPlanPricesId: 10,
+  stripeCustomerId: 'cus_LtK0cThnBsQyLO',
+  stripeCardId: 'card_1LFFizJegOrZGWtL3anWKu0p'
+}
+Error: Membership plan not found
+[2022-06-28T12:13:12.265Z][backend][error] POST /membershipPlans/purchase?membershipPlanId=10&membershipPlanPricesId=10&stripeCustomerId=cus_LtK0cThnBsQyLO&stripeCardId=card_1LFFizJegOrZGWtL3anWKu0p 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  membershipPlanId: '10',
+  membershipPlanPricesId: '10',
+  stripeCustomerId: 'cus_LtK0cThnBsQyLO',
+  stripeCardId: 'card_1LFFizJegOrZGWtL3anWKu0p'
+}
+Body: {
+  membershipPlanId: 10,
+  membershipPlanPricesId: 10,
+  stripeCustomerId: 'cus_LtK0cThnBsQyLO',
+  stripeCardId: 'card_1LFFizJegOrZGWtL3anWKu0p'
+}
+Error: Membership plan not found
+[2022-06-28T12:14:04.325Z][backend][error] POST /membershipPlans/purchase?membershipPlanId=4&membershipPlanPricesId=4&stripeCustomerId=cus_LtK0cThnBsQyLO&stripeCardId=card_1LFFizJegOrZGWtL3anWKu0p 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  membershipPlanId: '4',
+  membershipPlanPricesId: '4',
+  stripeCustomerId: 'cus_LtK0cThnBsQyLO',
+  stripeCardId: 'card_1LFFizJegOrZGWtL3anWKu0p'
+}
+Body: {
+  membershipPlanId: 4,
+  membershipPlanPricesId: 4,
+  stripeCustomerId: 'cus_LtK0cThnBsQyLO',
+  stripeCardId: 'card_1LFFizJegOrZGWtL3anWKu0p'
+}
+QueryFailedError: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `readed_by` =  AND `from_id` IS NULL AND `to_user_type` IS NULL AND `deleted' at line 1
+[2022-06-28T12:14:48.416Z][backend][info] Server started - PORT: 3333
+[2022-06-28T12:15:18.078Z][backend][error] POST /membershipPlans/purchase?membershipPlanId=12&membershipPlanPricesId=12&stripeCustomerId=cus_LtK0cThnBsQyLO&stripeCardId=card_1LFFizJegOrZGWtL3anWKu0p 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  membershipPlanId: '12',
+  membershipPlanPricesId: '12',
+  stripeCustomerId: 'cus_LtK0cThnBsQyLO',
+  stripeCardId: 'card_1LFFizJegOrZGWtL3anWKu0p'
+}
+Body: {
+  membershipPlanId: 12,
+  membershipPlanPricesId: 12,
+  stripeCustomerId: 'cus_LtK0cThnBsQyLO',
+  stripeCardId: 'card_1LFFizJegOrZGWtL3anWKu0p'
+}
+Error: Membership plan not found
+[2022-06-28T12:17:04.249Z][backend][error] POST /membershipPlans/purchase?membershipPlanId=12&membershipPlanPricesId=12&stripeCustomerId=cus_LtK0cThnBsQyLO&stripeCardId=card_1LFFizJegOrZGWtL3anWKu0p 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  membershipPlanId: '12',
+  membershipPlanPricesId: '12',
+  stripeCustomerId: 'cus_LtK0cThnBsQyLO',
+  stripeCardId: 'card_1LFFizJegOrZGWtL3anWKu0p'
+}
+Body: {
+  membershipPlanId: 12,
+  membershipPlanPricesId: 12,
+  stripeCustomerId: 'cus_LtK0cThnBsQyLO',
+  stripeCardId: 'card_1LFFizJegOrZGWtL3anWKu0p'
+}
+Error: Membership plan not found
+[2022-06-28T12:17:29.322Z][backend][info] Server started - PORT: 3333
+[2022-06-28T12:17:40.478Z][backend][error] POST /membershipPlans/purchase?membershipPlanId=12&membershipPlanPricesId=12&stripeCustomerId=cus_LtK0cThnBsQyLO&stripeCardId=card_1LFFizJegOrZGWtL3anWKu0p 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  membershipPlanId: '12',
+  membershipPlanPricesId: '12',
+  stripeCustomerId: 'cus_LtK0cThnBsQyLO',
+  stripeCardId: 'card_1LFFizJegOrZGWtL3anWKu0p'
+}
+Body: {
+  membershipPlanId: 12,
+  membershipPlanPricesId: 12,
+  stripeCustomerId: 'cus_LtK0cThnBsQyLO',
+  stripeCardId: 'card_1LFFizJegOrZGWtL3anWKu0p'
+}
+Error: Membership plan not found
+[2022-06-28T12:21:44.830Z][backend][error] POST /membershipPlans/purchase?membershipPlanId=12&membershipPlanPricesId=12&stripeCustomerId=cus_LtK0cThnBsQyLO&stripeCardId=card_1LFFizJegOrZGWtL3anWKu0p 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  membershipPlanId: '12',
+  membershipPlanPricesId: '12',
+  stripeCustomerId: 'cus_LtK0cThnBsQyLO',
+  stripeCardId: 'card_1LFFizJegOrZGWtL3anWKu0p'
+}
+Body: {
+  membershipPlanId: 12,
+  membershipPlanPricesId: 12,
+  stripeCustomerId: 'cus_LtK0cThnBsQyLO',
+  stripeCardId: 'card_1LFFizJegOrZGWtL3anWKu0p'
+}
+Error: Membership plan not found
+[2022-06-28T12:23:35.997Z][backend][error] POST /membershipPlans/purchase?membershipPlanId=12&membershipPlanPricesId=12&stripeCustomerId=cus_LtK0cThnBsQyLO&stripeCardId=card_1LFFizJegOrZGWtL3anWKu0p 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar@gmail.com'
+}
+Params: {}
+Query: {
+  membershipPlanId: '12',
+  membershipPlanPricesId: '12',
+  stripeCustomerId: 'cus_LtK0cThnBsQyLO',
+  stripeCardId: 'card_1LFFizJegOrZGWtL3anWKu0p'
+}
+Body: {
+  membershipPlanId: 12,
+  membershipPlanPricesId: 12,
+  stripeCustomerId: 'cus_LtK0cThnBsQyLO',
+  stripeCardId: 'card_1LFFizJegOrZGWtL3anWKu0p'
+}
+Error: Membership plan not found
+[2022-06-28T12:24:06.973Z][backend][info] Server started - PORT: 3333
+[2022-06-28T12:29:59.293Z][backend][info] Server started - PORT: 3333
+[2022-06-28T12:31:48.216Z][backend][info] Server started - PORT: 3333
+[2022-06-28T13:24:32.121Z][backend][info] Server started - PORT: 3333

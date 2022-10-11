@@ -1,0 +1,241 @@
+<% var defectPerShiftGraphColors = ['#8ECDD6' , '#2E7C85' , '#09262B']; %>
+<% var shiftTypeNames = ['Manhã', 'Tarde', 'Noite']; %>
+
+function loadStopsPerShiftFactoryForMonth() {
+  var res = graphDataFactory.stopsPerShiftData.data;
+  var defectColor = JSON.parse(`<%- JSON.stringify(defectPerShiftGraphColors) %>`);
+  let data = {
+    dataset: [{ label: "Stops per shift", data: [] }],
+    total: 0,
+  };
+  let shiftNames = graphDataFactory.stopsPerShiftData.shiftNames;
+  let defaultShiftCounts = {};
+
+  shiftNames.forEach((shiftName) => {
+    defaultShiftCounts[shiftName] = 0;
+  });
+
+  if (res && res.groups) {
+    Object.entries(res.groups).forEach(([index, obj]) => {
+        Object.entries(obj.data).forEach(([shiftName, count]) => {
+          if (shiftName !== 'weekNumber') {
+            defaultShiftCounts[shiftName] += count;
+          }
+        });
+      });
+    }
+
+    let dataset = Object.values(defaultShiftCounts);
+
+  data.total = res.totalStops;
+
+  var stopsPerShiftFactoryForMonthChart = new Chart(
+    document.getElementById("stopsPerShiftFactoryForMonth"),
+    {
+      plugins:[ChartDataLabels],
+      type: "doughnut",
+      data: {
+        labels: shiftNames,
+        datasets: [
+          {
+            data: dataset,
+            backgroundColor: defectColor,
+            hoverBorderWidth: 2,
+          },
+        ],
+      },
+      options: {
+        plugins: {
+          datalabels: {
+            anchor: 'center',
+            color: function(context) {
+              var index = context.dataIndex;
+              var value = context.dataset.data[index];
+              return value !== 0 ? (index === 0 ? 'black' : 'white') : 'white';
+            },
+            font: {
+              size: '18',
+              weight: 'bold',
+              family: "'Titillium Web', sans-serif",
+            },
+            display: function(context) {
+              var index = context.dataIndex;
+              var value = context.dataset.data[index];
+              return value > 0;
+            }
+          }
+        },
+        responsive: false,
+        maintainAspectRatio: false,
+        cutoutPercentage: 50,
+        legend: {
+          display: false,
+          position: 'right',
+        },
+        tooltips: {
+          backgroundColor: 'rgb(20,90,105)',
+          displayColors: false,
+          cornerRadius: 6,
+          xPadding: 10,
+          yPadding: 8,
+          titleAlign: 'center',
+          position: 'average',
+          mode: 'label',
+        },
+        elements: {
+          arc: {
+            borderWidth: '10px',
+          },
+        },
+      },
+    }
+  );
+}
+
+function loadStopsPerShiftFactory() {
+  var res = graphDataFactory.stopsPerShiftData.data;
+  var defectColor = JSON.parse(`<%- JSON.stringify(defectPerShiftGraphColors) %>`);
+  var shiftName = JSON.parse(`<%- JSON.stringify(shiftTypeNames) %>`);
+  var limit = 0;
+  var stepSize = graphDataFactory.stopsPerShiftData.totalStops;
+  let data = {
+    dataset: [{ label: "Stops per shift", data: [] }],
+    total: 0,
+  };
+  let weeks = [],
+    dataset = [];
+  let completeDefects = {};
+
+  if (res && res.groups) {
+    Object.entries(res.groups).forEach(([date, count]) => {
+      let totalCount = 0;
+      Object.keys(count.data).forEach((ele) => {
+        if (ele !== 'weekNumber') {
+          totalCount += count.data[ele];
+        if (count.data[ele]) {
+          stepSize = Math.min(stepSize, count.data[ele]);
+        }
+        if (Array.isArray(completeDefects[ele])) {
+          completeDefects[ele] = [
+            ...completeDefects[ele],
+            count.data[ele],
+          ];
+        } else {
+          completeDefects[ele] = [
+            completeDefects[ele],
+            count.data[ele],
+          ];
+        }
+        }
+      });
+      limit = Math.max(limit, totalCount);
+      weeks.push(count.data.weekNumber);
+    });
+  }
+  Object.keys(completeDefects).map((defect) => {
+    completeDefects[defect] = completeDefects[defect].slice(
+      1,
+      completeDefects[defect].length
+    );
+  });
+
+  var colorIndex = 0;
+  data.total = graphDataFactory.stopsPerShiftData.totalStops;
+  Object.keys(completeDefects).map((defect) => {
+    dataset.push({
+      label: shiftName[colorIndex],
+      data: completeDefects[defect],
+      backgroundColor: defectColor[colorIndex],
+      datalabels: {
+        color: defectColor[colorIndex],
+        <!-- display: 'auto', -->
+      },
+      hoverBackgroundColor: defectColor[colorIndex++],
+      hoverBorderWidth: 2,
+    });
+  });
+
+  var stopsPerShiftFactoryChart = new Chart(
+    document.getElementById("stopsPerShiftFactory"),
+    {
+      plugins:[ChartDataLabels],
+      type: "bar",
+      data: {
+        labels: weeks,
+        datasets: dataset,
+      },
+      aspectRatio: 2,
+      options: {
+        layout: {
+          padding: {
+            top: 30
+          },
+        },
+        maintainAspectRatio: false,
+        scales: {
+          xAxes: [
+            {
+              scaleLabel: {
+                display: true,
+                labelString: 'Semana',
+                fontColor: '#000000',
+                fontSize: 18,
+              },
+              stacked: false,
+              gridLines: { display: false },
+              display: true,
+              ticks: {
+                fontColor: '#000000',
+                fontSize: 16,
+              },
+            },
+          ],
+          yAxes: [
+            {
+              scaleLabel: {
+                display: true,
+                labelString: '#Paragens',
+                fontColor: '#000000',
+                fontSize: 18,
+              },
+              ticks: {
+                callback: function(value) {
+                    return Math.abs(Math.ceil(value) - value) > 0 ? undefined : value;
+                  },
+                min: 0,
+                fontColor: '#000000',
+                fontSize: 16,
+                maxTicksLimit: 5,
+                // autoSkip: true,
+                // autoSkipPadding: 10,
+              },
+              stacked: false,
+              display: true,
+              gridLines: { display: true }
+            },
+          ],
+        }, // scales
+        legend: {
+          display: true,
+          position: "right",
+          labels: {
+            boxWidth: 10,
+          },
+          align: 'end',
+        },
+        plugins: {
+          datalabels: {
+            anchor: 'end',
+            align: 'top',
+            offset: 4,
+            font: {
+              size: '18',
+              weight: 'bold',
+              family: "'Titillium Web', sans-serif",
+            },
+          }
+        }
+      },
+    }
+  );
+}

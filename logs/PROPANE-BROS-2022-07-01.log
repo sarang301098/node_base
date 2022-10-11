@@ -1,0 +1,111 @@
+[2022-07-01T05:06:15.682Z][backend][info] Server started - PORT: 3333
+[2022-07-01T05:49:18.256Z][backend][info] Server started - PORT: 3333
+[2022-07-01T06:14:20.551Z][backend][info] Server started - PORT: 3333
+[2022-07-01T09:45:19.381Z][backend][info] Server started - PORT: 3333
+[2022-07-01T09:46:22.731Z][backend][info] Server started - PORT: 3333
+[2022-07-01T10:03:11.460Z][backend][info] Server started - PORT: 3333
+[2022-07-01T10:04:01.090Z][backend][info] Server started - PORT: 3333
+[2022-07-01T10:06:19.062Z][backend][info] Server started - PORT: 3333
+[2022-07-01T10:23:56.728Z][backend][info] Server started - PORT: 3333
+[2022-07-01T10:40:59.276Z][backend][info] Server started - PORT: 3333
+[2022-07-01T10:42:03.556Z][backend][info] Server started - PORT: 3333
+[2022-07-01T10:44:13.723Z][backend][info] Server started - PORT: 3333
+[2022-07-01T10:47:42.411Z][backend][error] GET /cart 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {}
+Body: {}
+ReferenceError: Cannot access 'cartDetails' before initialization
+[2022-07-01T10:48:43.665Z][backend][info] Server started - PORT: 3333
+[2022-07-01T10:48:49.062Z][backend][error] GET /cart 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {}
+Body: {}
+ReferenceError: Cannot access 'cartDetails' before initialization
+[2022-07-01T10:49:10.679Z][backend][info] Server started - PORT: 3333
+[2022-07-01T10:52:14.241Z][backend][info] Server started - PORT: 3333
+[2022-07-01T10:53:45.105Z][backend][info] Server started - PORT: 3333
+[2022-07-01T10:54:44.317Z][backend][error] POST /orders 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {}
+Body: { stripeCardId: 'card_1LBdbkJegOrZGWtLohgbrshk' }
+Error: Default address not found
+[2022-07-01T10:55:24.004Z][backend][info] Gracefully shutting down
+[2022-07-01T10:55:24.008Z][backend][info] Gracefully shutting down
+[2022-07-01T10:55:28.740Z][backend][info] Server started - PORT: 3333
+[2022-07-01T10:55:29.653Z][backend][info] Gracefully shutting down
+[2022-07-01T10:55:29.657Z][backend][info] Gracefully shutting down
+[2022-07-01T10:55:41.611Z][backend][info] Server started - PORT: 3333
+[2022-07-01T10:57:12.357Z][backend][error] POST /orders 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar.b@peerbits.com'
+}
+Params: {}
+Query: {}
+Body: { stripeCardId: 'card_1LBdbkJegOrZGWtLohgbrshk' }
+Error: Error in payment
+[2022-07-01T10:58:15.953Z][backend][info] Server started - PORT: 3333
+[2022-07-01T10:58:19.210Z][backend][error] POST /orders 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar.b@peerbits.com'
+}
+Params: {}
+Query: {}
+Body: { stripeCardId: 'card_1LBdbkJegOrZGWtLohgbrshk' }
+Error: Error in payment
+[2022-07-01T11:04:22.925Z][backend][info] Server started - PORT: 3333
+[2022-07-01T11:06:52.133Z][backend][info] Server started - PORT: 3333
+[2022-07-01T11:12:27.303Z][backend][error] POST /auth/signin?userType=user&deviceId=fI2K1GKnTsal3D6gCWHH4v:APA91bHJqwPAhNf8Gy3FlZnk9H-0QrCJFsbIutnoy25H1jlvmmNvUo2PlM6jFUKTkmpLhLkIfkrug3sYP3xMacnJHBqQydipaO0vYdekET6nsN4zQp_DTT0Q_BZaGeVTMYmZRG9XyoyJ&deviceType=A&'******' 
+User: {}
+Params: {}
+Query: {
+  userType: 'user',
+  deviceId: 'fI2K1GKnTsal3D6gCWHH4v:APA91bHJqwPAhNf8Gy3FlZnk9H-0QrCJFsbIutnoy25H1jlvmmNvUo2PlM6jFUKTkmpLhLkIfkrug3sYP3xMacnJHBqQydipaO0vYdekET6nsN4zQp_DTT0Q_BZaGeVTMYmZRG9XyoyJ',
+  deviceType: 'A',
+  '******'
+  countryCode: '+91',
+  mobileNumber: '9974034949'
+}
+Body: {
+  userType: 'user',
+  deviceId: 'fI2K1GKnTsal3D6gCWHH4v:APA91bHJqwPAhNf8Gy3FlZnk9H-0QrCJFsbIutnoy25H1jlvmmNvUo2PlM6jFUKTkmpLhLkIfkrug3sYP3xMacnJHBqQydipaO0vYdekET6nsN4zQp_DTT0Q_BZaGeVTMYmZRG9XyoyJ',
+  deviceType: 'A',
+  '******'
+  countryCode: '+91',
+  mobileNumber: '9974034949'
+}
+Error: Incorrect credentials
+[2022-07-01T11:29:46.857Z][backend][info] Server started - PORT: 3333
+[2022-07-01T11:32:47.698Z][backend][info] Server started - PORT: 3333
+[2022-07-01T11:37:58.852Z][backend][info] Server started - PORT: 3333
+[2022-07-01T11:38:54.668Z][backend][info] Gracefully shutting down
+[2022-07-01T11:38:54.672Z][backend][info] Gracefully shutting down
+[2022-07-01T11:39:09.414Z][backend][info] Server started - PORT: 3333
+[2022-07-01T11:39:39.583Z][backend][info] Gracefully shutting down
+[2022-07-01T11:39:39.586Z][backend][info] Gracefully shutting down
+[2022-07-01T11:40:05.055Z][backend][info] Server started - PORT: 3333
+[2022-07-01T11:53:54.086Z][backend][info] Server started - PORT: 3333
+[2022-07-01T11:54:05.004Z][backend][info] Server started - PORT: 3333
+[2022-07-01T11:54:35.868Z][backend][info] Server started - PORT: 3333
+[2022-07-01T11:59:15.305Z][backend][info] Server started - PORT: 3333
+[2022-07-01T12:04:36.934Z][backend][info] Server started - PORT: 3333
+[2022-07-01T12:10:42.691Z][backend][info] Server started - PORT: 3333
+[2022-07-01T12:19:42.704Z][backend][info] Server started - PORT: 3333
+[2022-07-01T13:33:04.919Z][backend][info] Server started - PORT: 3333
+[2022-07-01T13:34:18.652Z][backend][info] Server started - PORT: 3333
+[2022-07-01T13:35:32.516Z][backend][info] Server started - PORT: 3333
+[2022-07-01T13:35:37.011Z][backend][info] Server started - PORT: 3333
+[2022-07-01T13:41:25.793Z][backend][info] Server started - PORT: 3333

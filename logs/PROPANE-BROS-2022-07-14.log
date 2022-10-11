@@ -1,0 +1,168 @@
+[2022-07-14T12:43:59.772Z][backend][info] Server started - PORT: 3333
+[2022-07-14T12:58:05.876Z][backend][info] Server started - PORT: 3333
+[2022-07-14T12:58:27.440Z][backend][info] Server started - PORT: 3333
+[2022-07-14T13:06:22.317Z][backend][info] Server started - PORT: 3333
+[2022-07-14T13:07:18.966Z][backend][info] Server started - PORT: 3333
+[2022-07-14T13:09:56.693Z][backend][info] Server started - PORT: 3333
+[2022-07-14T13:10:48.609Z][backend][info] Server started - PORT: 3333
+[2022-07-14T13:11:39.290Z][backend][info] Server started - PORT: 3333
+[2022-07-14T13:13:32.587Z][backend][error] GET /drivers/todays-order 
+User: {
+  id: 'a5739632-5371-4273-93f4-1d24d296902a',
+  email: 'pratik.r@peerbits.com'
+}
+Params: {}
+Query: {}
+Body: {}
+Error: Lat and Long must be present for driver.
+[2022-07-14T13:14:47.762Z][backend][info] Server started - PORT: 3333
+[2022-07-14T13:18:43.292Z][backend][info] Server started - PORT: 3333
+[2022-07-14T13:18:49.306Z][backend][error] GET /drivers/todays-order?lat=21.5209831&long=70.2451939 
+User: {
+  id: '42c58c9f-b8e3-4eba-a6e3-d0a19ad3038f',
+  email: 'asgar@yopmail.com'
+}
+Params: {}
+Query: { lat: '21.5209831', long: '70.2451939' }
+Body: {}
+Error: Lat and Long must be present for driver.
+[2022-07-14T13:18:49.347Z][backend][error] GET /drivers/todays-order?lat=21.5209831&long=70.2451939 
+User: {
+  id: '42c58c9f-b8e3-4eba-a6e3-d0a19ad3038f',
+  email: 'asgar@yopmail.com'
+}
+Params: {}
+Query: { lat: '21.5209831', long: '70.2451939' }
+Body: {}
+Error: Lat and Long must be present for driver.
+[2022-07-14T13:19:41.093Z][backend][info] Server started - PORT: 3333
+[2022-07-14T13:19:47.299Z][backend][error] GET /drivers/todays-order?lat=21.5209831&long=70.2451939 
+User: {
+  id: '42c58c9f-b8e3-4eba-a6e3-d0a19ad3038f',
+  email: 'asgar@yopmail.com'
+}
+Params: {}
+Query: { lat: '21.5209831', long: '70.2451939' }
+Body: {}
+Error: Lat and Long must be present for driver.
+[2022-07-14T13:19:49.256Z][backend][error] GET /drivers/todays-order?lat=21.5209831&long=70.2451939 
+User: {
+  id: '42c58c9f-b8e3-4eba-a6e3-d0a19ad3038f',
+  email: 'asgar@yopmail.com'
+}
+Params: {}
+Query: { lat: '21.5209831', long: '70.2451939' }
+Body: {}
+Error: Lat and Long must be present for driver.
+[2022-07-14T13:20:05.963Z][backend][error] GET /drivers/todays-order?lat=21.5209831&long=70.2451939 
+User: {
+  id: '42c58c9f-b8e3-4eba-a6e3-d0a19ad3038f',
+  email: 'asgar@yopmail.com'
+}
+Params: {}
+Query: { lat: '21.5209831', long: '70.2451939' }
+Body: {}
+Error: Lat and Long must be present for driver.
+[2022-07-14T13:20:05.999Z][backend][error] GET /drivers/todays-order?lat=21.5209831&long=70.2451939 
+User: {
+  id: '42c58c9f-b8e3-4eba-a6e3-d0a19ad3038f',
+  email: 'asgar@yopmail.com'
+}
+Params: {}
+Query: { lat: '21.5209831', long: '70.2451939' }
+Body: {}
+Error: Lat and Long must be present for driver.
+[2022-07-14T13:20:07.739Z][backend][error] GET /drivers/todays-order?lat=21.5209831&long=70.2451939 
+User: {
+  id: 'a5739632-5371-4273-93f4-1d24d296902a',
+  email: 'pratik.r@peerbits.com'
+}
+Params: {}
+Query: { lat: '21.5209831', long: '70.2451939' }
+Body: {}
+Error: Lat and Long must be present for driver.
+[2022-07-14T13:20:18.556Z][backend][error] GET /drivers/todays-order?lat=22.9937022&long=72.5014691 
+User: {
+  id: '42c58c9f-b8e3-4eba-a6e3-d0a19ad3038f',
+  email: 'asgar@yopmail.com'
+}
+Params: {}
+Query: { lat: '22.9937022', long: '72.5014691' }
+Body: {}
+Error: Lat and Long must be present for driver.
+[2022-07-14T13:22:20.935Z][backend][info] Server started - PORT: 3333
+[2022-07-14T13:22:24.603Z][backend][error] GET /drivers/todays-order?lat=21.5209831&long=70.2451939 
+User: {
+  id: 'a5739632-5371-4273-93f4-1d24d296902a',
+  email: 'pratik.r@peerbits.com'
+}
+Params: {}
+Query: { lat: '21.5209831', long: '70.2451939' }
+Body: {}
+Error: Lat and Long must be present for driver.
+[2022-07-14T13:22:56.682Z][backend][info] Server started - PORT: 3333
+[2022-07-14T13:22:58.601Z][backend][error] GET /drivers/todays-order?lat=21.5209831&long=70.2451939 
+User: {
+  id: 'a5739632-5371-4273-93f4-1d24d296902a',
+  email: 'pratik.r@peerbits.com'
+}
+Params: {}
+Query: { lat: '21.5209831', long: '70.2451939' }
+Body: {}
+Error: Lat and Long must be present for driver.
+[2022-07-14T13:23:16.334Z][backend][info] Server started - PORT: 3333
+[2022-07-14T13:23:31.229Z][backend][info] Server started - PORT: 3333
+[2022-07-14T13:23:39.931Z][backend][info] Server started - PORT: 3333
+[2022-07-14T13:23:44.107Z][backend][error] GET /drivers/todays-order?lat=21.5209831&long=70.2451939 
+User: {
+  id: 'a5739632-5371-4273-93f4-1d24d296902a',
+  email: 'pratik.r@peerbits.com'
+}
+Params: {}
+Query: { lat: '21.5209831', long: '70.2451939' }
+Body: {}
+Error: Lat and Long must be present for driver.
+[2022-07-14T13:24:29.552Z][backend][info] Server started - PORT: 3333
+[2022-07-14T13:25:04.656Z][backend][info] Server started - PORT: 3333
+[2022-07-14T13:25:07.871Z][backend][error] GET /drivers/todays-order?lat=21.5209831&long=70.2451939 
+User: {
+  id: 'a5739632-5371-4273-93f4-1d24d296902a',
+  email: 'pratik.r@peerbits.com'
+}
+Params: {}
+Query: { lat: '21.5209831', long: '70.2451939' }
+Body: {}
+Error: Lat and Long must be present for driver.
+[2022-07-14T13:25:22.787Z][backend][info] Server started - PORT: 3333
+[2022-07-14T13:25:24.279Z][backend][error] GET /drivers/todays-order?lat=21.5209831&long=70.2451939 
+User: {
+  id: 'a5739632-5371-4273-93f4-1d24d296902a',
+  email: 'pratik.r@peerbits.com'
+}
+Params: {}
+Query: { lat: '21.5209831', long: '70.2451939' }
+Body: {}
+Error: Lat and Long must be present for driver.
+[2022-07-14T13:28:23.789Z][backend][info] Server started - PORT: 3333
+[2022-07-14T13:28:32.053Z][backend][error] GET /drivers/todays-order?lat=21.5209831&long=70.2451939 
+User: {
+  id: 'a5739632-5371-4273-93f4-1d24d296902a',
+  email: 'pratik.r@peerbits.com'
+}
+Params: {}
+Query: { lat: '21.5209831', long: '70.2451939' }
+Body: {}
+Error: Lat and Long must be present for driver.
+[2022-07-14T13:29:26.205Z][backend][info] Server started - PORT: 3333
+[2022-07-14T13:30:06.455Z][backend][info] Server started - PORT: 3333
+[2022-07-14T13:31:44.106Z][backend][info] Server started - PORT: 3333
+[2022-07-14T13:32:22.603Z][backend][info] Server started - PORT: 3333
+[2022-07-14T13:44:39.324Z][backend][error] GET /drivers/todays-order?lat=0&long=0 
+User: {
+  id: '42c58c9f-b8e3-4eba-a6e3-d0a19ad3038f',
+  email: 'asgar@yopmail.com'
+}
+Params: {}
+Query: { lat: '0', long: '0' }
+Body: {}
+Error: Lat and Long must be present for driver.

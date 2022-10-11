@@ -1,0 +1,19 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 7
+    },
+    "auditLog": "logs/log_audit.json",
+    "files": [
+        {
+            "date": 1665083852418,
+            "name": "logs/PROPANE-BROS-2022-10-06.log",
+            "hash": "8d6e6e37a09d7ff3a47526a4ad17dd64"
+        },
+        {
+            "date": 1665525088999,
+            "name": "logs/PROPANE-BROS-2022-10-11.log",
+            "hash": "6cc7c8a64fdb9d7aac0d3750ef6655d8"
+        }
+    ]
+}

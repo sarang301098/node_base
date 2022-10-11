@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Hello</title>
+  </head>
+  <body>
+    <h1>Drivers Report</h1>
+    <ul>
+      <% drivers.forEach(function(item,index){ %>
+        <li>Name: <%= item.driver_full_name %> </li>
+        <li>Email: <%= item.driver_email %> </li>
+        <li>Mobile Number : <%= item.driver_country_code %> <%= item.driver_mobile_number %></li>
+        <li>Order Status  : <%= item.orderDetails_status %> </li>
+        <br />
+      <% }) %>
+    </ul>
+  </body>
+</html>

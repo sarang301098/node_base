@@ -1,0 +1,206 @@
+[2022-05-30T05:59:26.114Z][backend][error] Unable to connect to database.  ER_BAD_DB_ERROR: Unknown database 'propane_bros' 
+ Error: ER_BAD_DB_ERROR: Unknown database 'propane_bros'
+    at Handshake.Sequence._packetToError (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/node_modules/mysql/lib/protocol/sequences/Sequence.js:47:14)
+    at Handshake.ErrorPacket (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/node_modules/mysql/lib/protocol/sequences/Handshake.js:123:18)
+    at Protocol._parsePacket (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/node_modules/mysql/lib/protocol/Protocol.js:291:23)
+    at Parser._parsePacket (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/node_modules/mysql/lib/protocol/Parser.js:433:10)
+    at Parser.write (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/node_modules/mysql/lib/protocol/Parser.js:43:10)
+    at Protocol.write (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/node_modules/mysql/lib/protocol/Protocol.js:38:16)
+    at Socket.<anonymous> (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/node_modules/mysql/lib/Connection.js:88:28)
+    at Socket.<anonymous> (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/node_modules/mysql/lib/Connection.js:526:10)
+    at Socket.emit (node:events:390:28)
+    at Socket.emit (node:domain:475:12)
+    --------------------
+    at Protocol._enqueue (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/node_modules/mysql/lib/protocol/Protocol.js:144:48)
+    at Protocol.handshake (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/node_modules/mysql/lib/protocol/Protocol.js:51:23)
+    at PoolConnection.connect (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/node_modules/mysql/lib/Connection.js:116:18)
+    at Pool.getConnection (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/node_modules/mysql/lib/Pool.js:48:16)
+    at /Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/src/driver/mysql/MysqlDriver.ts:963:18
+    at new Promise (<anonymous>)
+    at MysqlDriver.createPool (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/src/driver/mysql/MysqlDriver.ts:960:16)
+    at MysqlDriver.<anonymous> (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/src/driver/mysql/MysqlDriver.ts:348:36)
+    at step (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/node_modules/tslib/tslib.js:143:27)
+    at Object.next (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/node_modules/tslib/tslib.js:124:57)
+[2022-05-30T05:59:55.501Z][backend][info] Server started - PORT: 3333
+[2022-05-30T06:00:47.790Z][backend][info] Server started - PORT: 3333
+[2022-05-30T06:01:08.185Z][backend][info] Server started - PORT: 3333
+[2022-05-30T06:01:10.710Z][backend][info] Server started - PORT: 3333
+[2022-05-30T06:02:24.664Z][backend][info] Gracefully shutting down
+[2022-05-30T06:02:24.668Z][backend][info] Gracefully shutting down
+[2022-05-30T06:02:34.235Z][backend][info] Server started - PORT: 3333
+[2022-05-30T06:11:00.542Z][backend][info] Gracefully shutting down
+[2022-05-30T06:11:00.547Z][backend][info] Gracefully shutting down
+[2022-05-30T06:11:20.469Z][backend][info] Server started - PORT: 3333
+[2022-05-30T06:15:15.899Z][backend][info] Server started - PORT: 3333
+[2022-05-30T06:15:58.539Z][backend][info] Server started - PORT: 3333
+[2022-05-30T06:16:31.140Z][backend][info] Server started - PORT: 3333
+[2022-05-30T06:17:06.535Z][backend][info] Server started - PORT: 3333
+[2022-05-30T06:19:21.669Z][backend][info] Server started - PORT: 3333
+[2022-05-30T07:17:05.145Z][backend][info] Server started - PORT: 3333
+[2022-05-30T07:17:13.245Z][backend][error] POST /auth/signup 
+User: {}
+Params: {}
+Query: {}
+Body: {
+  email: 'pratik.r@peerbits.com',
+  fullName: 'Pratik',
+  '******'
+  userType: 'user',
+  countryCode: '+91',
+  mobileNumber: '9106687389',
+  zipcodeIds: null
+}
+Error: Mobile number already registered
+[2022-05-30T07:42:49.133Z][backend][error] POST /orders 
+User: {
+  id: 'a6fe9ca6-5447-4435-9736-9881c8a5c26f',
+  email: 'pratik.r@peerbits.com'
+}
+Params: {}
+Query: {}
+Body: {
+  stripeCardId: 'card_1KuytPSBJPMsjmROxQq7u6c4',
+  promocodeAppliedCartId: 1,
+  promocodeId: 3
+}
+Error: Cart is empty
+[2022-05-30T07:45:42.264Z][backend][error] User does not have access to API : [/drivers]
+[2022-05-30T08:46:13.869Z][backend][error] User does not have access to API : [/vendors]
+[2022-05-30T09:17:55.586Z][backend][info] Server started - PORT: 3333
+[2022-05-30T09:38:50.332Z][backend][error] POST /cart 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {}
+Body: {
+  orderType: 2,
+  zipcodeId: 4,
+  categoryId: 3,
+  accessoryId: 62,
+  scheduleDate: 2022-05-31T09:17:55.047Z,
+  timeslotId: 5,
+  qty: 5,
+  locationId: 3,
+  vendorId: '038f5a1a-edf1-43e2-ade5-fb0e741be1d1'
+}
+EntityNotFoundError: Could not find any entity of type "ZipCodes" matching: 4
+[2022-05-30T09:39:10.629Z][backend][error] POST /cart 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {}
+Body: {
+  orderType: 2,
+  zipcodeId: 4,
+  categoryId: 3,
+  accessoryId: 62,
+  scheduleDate: 2022-05-31T09:17:55.047Z,
+  timeslotId: 5,
+  qty: 5,
+  locationId: 1,
+  vendorId: '038f5a1a-edf1-43e2-ade5-fb0e741be1d1'
+}
+EntityNotFoundError: Could not find any entity of type "ZipCodes" matching: 4
+[2022-05-30T12:31:57.459Z][backend][error] POST /cart 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {}
+Body: {
+  orderType: 2,
+  zipcodeId: 4,
+  categoryId: 3,
+  accessoryId: 62,
+  scheduleDate: 2022-05-31T09:17:55.047Z,
+  timeslotId: 5,
+  qty: 5,
+  locationId: 1,
+  vendorId: '038f5a1a-edf1-43e2-ade5-fb0e741be1d1'
+}
+EntityNotFoundError: Could not find any entity of type "ZipCodes" matching: 4
+[2022-05-30T12:37:01.630Z][backend][error] POST /cart 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {}
+Body: {
+  orderType: 2,
+  zipcodeId: 1,
+  categoryId: 3,
+  accessoryId: 62,
+  scheduleDate: 2022-05-31T09:17:55.047Z,
+  timeslotId: 5,
+  qty: 5,
+  locationId: 1,
+  vendorId: '038f5a1a-edf1-43e2-ade5-fb0e741be1d1'
+}
+EntityNotFoundError: Could not find any entity of type "ZipCodes" matching: 1
+[2022-05-30T12:38:43.793Z][backend][error] POST /zipcodes 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {}
+Body: { areaName: 'test', countyId: 5, zipcode: 1, status: 1 }
+Error: County Not available
+[2022-05-30T12:39:14.029Z][backend][error] POST /zipcodes 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {}
+Body: { areaName: 'test', countyId: 5, zipcode: 1, status: 1 }
+Error: County Not available
+[2022-05-30T12:39:24.571Z][backend][error] POST /zipcodes 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {}
+Body: { areaName: 'test', countyId: 1, zipcode: 1, status: 1 }
+Error: County Not available
+[2022-05-30T12:39:41.792Z][backend][error] POST /counties 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {}
+Body: {
+  name: 'County 2',
+  salesTaxOne: 30,
+  salesTaxTwo: 40,
+  status: 1,
+  stateId: 119
+}
+Error: State Not Found
+[2022-05-30T12:41:06.480Z][backend][error] POST /cart 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {}
+Body: {
+  orderType: 2,
+  zipcodeId: 1,
+  categoryId: 3,
+  accessoryId: 62,
+  scheduleDate: 2022-05-31T09:17:55.047Z,
+  timeslotId: 5,
+  qty: 5,
+  locationId: 1,
+  vendorId: '038f5a1a-edf1-43e2-ade5-fb0e741be1d1'
+}
+EntityNotFoundError: Could not find any entity of type "TimeSlots" matching: 5

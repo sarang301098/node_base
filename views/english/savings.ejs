@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"
+    integrity="sha512-LGXaggshOkD/at6PFNcp2V2unf9LzFq6LE+sChH7ceMTDP0g2kn6Vxwgg7wkPP7AAtX+lmPqPdxB47A0Nz0cMQ=="
+    crossorigin="anonymous"></script>
+
+    <%
+      var roundedPercentages = (function ( percentages ) {
+        let convertedInt = [], convertedDecimal = [], convertedPercentage = [], max1Deci = 0, max2Deci = -1, sum = 0;
+        percentages.forEach((data, index) => {
+          const intNum = Math.floor(data);
+          const decimalNum = data - intNum;
+          convertedInt.push(intNum);
+          convertedDecimal.push(decimalNum);
+          convertedPercentage.push(intNum);
+          if (convertedDecimal[max1Deci] < decimalNum) {
+             max1Deci = index;
+          }
+          sum = sum + intNum;
+        });
+
+        convertedDecimal?.forEach((deci, index) => {
+          if (max1Deci !== index) {
+            if (max2Deci === -1) {
+              max2Deci = index;
+            } else if (convertedDecimal[max2Deci] < deci) {
+              max2Deci = index;
+            }
+          }
+        });
+
+        if (100 - sum === 2) {
+          convertedPercentage[max1Deci] = convertedPercentage[max1Deci] + 1;
+          convertedPercentage[max2Deci] = convertedPercentage[max2Deci] + 1;
+        } else if (100 - sum === 1) {
+          convertedPercentage[max1Deci] = convertedPercentage[max1Deci] + 1;
+        }
+
+        return convertedPercentage;
+      })
+    %>
+
+    <%
+     var convertTZ =  (function (date, tzString) {
+    return new Date((typeof date === "string" ? new Date(date) : date).toLocaleString("en-US", {timeZone: tzString}));
+    })
+    %>
+
+    <%
+      var formattedTime = (function (time) {
+        const period = time.split(' ')[1];
+        if (period === 'pm' || period === 'PM') {
+          let hour = parseInt(time.split(' ')[0].split(':')[0], 10);
+          hour += hour !== 0 ? 12 : 0;
+          let dividedTime = time.split(' ')[0].split(':');
+          dividedTime[0] = `${hour}`;
+          return dividedTime[0]+':' + dividedTime[1]+ ':' + dividedTime[2];
+        }
+        return time.split(' ')[0];
+      })
+    %>
+
+    <%
+    var offPercentageBorderRadius = (function (percentages) {
+      if (percentages[0] === 100) {
+        return "20px";
+      }
+      return "20px 0px 0px 20px";
+    })
+
+    %>
+
+    <%
+      var stopPercentageBorderRadius = (function(percentages) {
+        if (percentages[1] === 100) {
+          return "20px";
+        } else if (percentages[0] === 0) {
+          return "20px 0px 0px 20px";
+        } else if (percentages[2] === 0) {
+          return "0px 20px 20px 0px";
+        }
+        return "0px";
+      })
+    %>
+
+    <%
+    var runPercentageBorderRadius = (function(percentages) {
+      if (percentages[2] === 100) {
+        return "20px";
+      }
+      return "0px 20px 20px 0px";
+    })
+    %>
+      <%
+        var getDefectTypeString =(function (stopData) {
+          const stopOccurrences = stopData.stopOccurrences;
+          const stopOcurrenceLimit = stopData.stopOcurrenceLimit;
+          const stopParameter = stopData.stopParameter;
+          const defectType = stopData.defectType;
+
+          let defectString = stopOccurrences.toString() + ' ';
+
+          if (defectType !== '') {
+            defectString += defectType;
+          } else {
+            defectString += 'occurrence';
+          }
+          defectString += ' in'
+
+          if (stopParameter === 'roll') {
+            defectString += ' current roll';
+          } else {
+            defectString += ' ' + stopOcurrenceLimit.toString() + 'cm';
+          }
+
+          return defectString;
+        })
+      %>
+
+      <%
+      var getFactoryLogoStyle = (function(factoryId) {
+        switch (factoryId) {
+          case 2:
+            return 'width: 233px; position: relative; bottom: 53px';
+          case 4:
+            return "width: 286px; position: relative; top: 30px;"
+          case 10:
+            return "position: relative; bottom: 20px";
+          case 35:
+            return "width: 286px; position: relative; right: 33px";
+          case 37:
+            return "position: relative;top: 55px;";
+          case 38:
+            return "width: 286px;position: relative;bottom: 25px;";
+          case 40:
+            return "width: 286px;position: relative;right: 30px;";
+          case 42:
+            return "width: 286px;position: relative;top: 42px;";
+          case 43:
+            return "position: relative;top: 40px;";
+          case 48:
+            return "position: relative;top: 35px;";
+          default:
+            return 'width: 286px';
+        }
+      })
+      %>
+
+          <%- include('./partial/graphsForSavings.ejs') %>
+          <style>
+            body {
+              font-family: 'Titillium Web', sans-serif;
+            }
+
+            p {
+              font-size: 20px;
+            }
+
+            .calcolare {
+              display: flex;
+              align-items: center;
+            }
+
+            .stops_circle {
+              border-radius: 50%;
+              background-color: #45818e;
+              padding: 15px;
+              height: 210px;
+              width: 210px;
+              position: absolute;
+              right: 100px;
+              top: -20px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              text-align: center;
+              color: #fff;
+            }
+
+            .machine {
+              background: #eeeeee;
+              padding: 20px;
+              border-right: 2px solid #fff;
+              width: 100%;
+            }
+
+            .machine:nth-child(4) {
+              position: relative;
+              border-right: 0;
+            }
+
+            .circle_stops-count {
+              border-radius: 50%;
+              background-color: #45818e;
+              padding: 15px;
+              height: 100px;
+              width: 100px;
+              position: absolute;
+              right: 5px;
+              top: 17px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              text-align: center;
+              color: #fff;
+              font-size: 1.8vw;
+              font-weight: bold;
+            }
+
+            .footer {
+              position: relative;
+              right: 50px;
+              display: flex;
+            }
+
+            .pageNumber {
+              font-size: 1.5vw;
+              position: relative;
+              top: 8px;
+              left: 14px;
+            }
+
+            table, thead, tbody, tr, th, td {
+              border: 2px solid black;
+            }
+
+            .machinefield {
+              align-items: center;
+            }
+
+            .machinefield img {
+              width: 80px;
+              margin: 15px 5px;
+            }
+
+            .icon-text {
+              font-weight: 500;
+              flex: 1;
+              font-size: 1.5vw;
+              display: flex;
+            }
+
+            .machineStatusStyle {
+              height: 20px;
+              width: 500px;
+              margin-bottom: 10px;
+              position: relative;
+              top: 7%;
+              border: 2px solid #F4F4F4;
+              border-radius: 20px;
+              display: flex;
+            }
+
+            .machineStatusStyleBorder {
+              border: 1px solid rgba(0, 0, 0, 0.12);
+              border-radius: 16px;
+              margin-bottom: 8px;
+            }
+
+            .ckmGraphTitle {
+              margin-top: 1%;
+            }
+
+            .pageContainer {
+              position: relative;
+              height: 1600px;
+            }
+
+            .stopsPageTitle {
+              position: relative;
+              left: 100px;
+              top: 30px;
+            }
+
+            .status {
+              font-size: 17px;
+              display:flex;
+            }
+
+            .def-dots {
+              display: inline-block;
+              width: 10px;
+              height: 10px;
+              background: #ffd968;
+              border-radius: 50%;
+              margin-left: -10px;
+            }
+
+            .def-commands {
+              min-width: 80px;
+            }
+
+            .off {
+              background: #b7b9bb;
+            }
+
+            .stop {
+              background: #ff5357;
+            }
+
+            .running {
+              background: #45818e;
+             }
+
+             .highLights {
+               font-size: 16px;
+             }
+
+             .metersDivStyle {
+              position: relative;
+              top: 20px;
+              left: 54px;
+              text-align: center;
+              font-size: 13px;
+              font-weight: 700;
+             }
+
+             .metersBoxStyle {
+              border: 1px solid #0d383f;
+              border-radius: 20px;
+              height: 15px;
+              width: 50%;
+              position: relative;
+              left: 47px;
+              top: 6px;
+              background-color: #0d383f;
+             }
+
+             .metersTextStyle {
+              position: relative;
+              bottom: 3px;
+              color: white;
+             }
+
+             .coverPageImage {
+               background-image: url("https://i.ibb.co/k481Pxg/Cover-Saving-Reports.png");
+               background-position: center;
+               background-repeat: no-repeat;
+               background-size: cover;
+             }
+
+             .highLightHeading {
+               font-size: 19px;
+             }
+          </style>
+</head>
+
+
+<body>
+
+  <% var formattedDate=function(date) { var options={ year: 'numeric' , month: 'long' }; var unformattedDate=new
+    Date(date); return unformattedDate.toLocaleDateString("en-US", options) } %>
+
+      <% var pageNumber=1 %>
+      <% const stopsData = JSON.parse(stopsTable) %>
+      <% const graphDataForFactory = JSON.parse(graphDataFactory) %>
+      <% const tz = JSON.parse(timezone) %>
+      <% const totalStops = stopsData.length %>
+      <% const highlightsData = JSON.parse(highlightData) %>
+      <% const machine=JSON.parse(machines) %>
+      <% const ckmCount = machine.length %>
+      <% const meterAndRotationData = JSON.parse(metersAndRotationsData) %>
+      <% const factoryDetails=JSON.parse(factory); %>
+
+      <div class="pageContainer coverPageImage" style="page-break-after: always;">
+        <div style="position: relative; top: 600px; text-align: center;">
+          <div style="font-size: 40px;">
+            Factory Performance Report
+          </div>
+          <div style="font-size: 25px;">
+            <%=formattedDate(start)%>
+          </div>
+          <br>
+          <% if (factoryDetails && factoryDetails.logoUrl) {%>
+            <img src=<%= factoryDetails.logoUrl %> alt=<%= factoryDetails.name %> style="<%= getFactoryLogoStyle(factoryDetails.id) %>">
+         <% } %>
+        </div>
+        <div style="text-align: center;position: relative;top: 1100px;">
+          <img src="https://i.ibb.co/GvVVYDr/smartex-logo-black2.png" alt="smartex" width="393.07086614" height="43.086614173" style=" margin-right: 15px;">
+        </div>
+      </div>
+
+        <div class="pageContainer">
+        <section class="py-5 px-5" style="page-break-before: always;">
+          <div class="d-flex justify-content-between" style="position: relative;">
+            <div>
+              <h1><b>Statistics</b> <span style="color: #45818e; font-weight: bold;">
+                  <%=formattedDate(start)%>
+                </span></h1>
+              <h2>Plant View - all machines</h2>
+            </div>
+            <div>
+              <div class="stops_circle" style="margin-top: -1%;">
+                <h1>
+                  <%= totalStops %><br>Stops
+                </h1>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section style="background: #eeeeee; padding: 55px 55px 55px 55px;" class="mb-5">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-7">
+                <div style="background: #fff; padding: 15px;">
+                  <h2 class="text-center">Number of stops per week</h2>
+                  <div class="col-md-7">
+                    <canvas id="stopsFactory" style="display: block; height: 300px; max-height: 300px"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <% var monthName = formattedDate(start).split(' ')[0] %>
+                <h3 style="font-weight: 600; font-size: 23px">Highlights of <%=monthName%>
+                </h3>
+                <br>
+                <h4 class="highLightHeading">Machines with most stops are:</h4>
+                <% const ckmsData = highlightsData.ckmData %>
+                <ul class="highLights">
+                  <% Object.keys(ckmsData).forEach((key) => { %>
+                    <% if (key) {%>
+                    <li> <%= key %> - <%= ckmsData[key] %> stops </li>
+                    <% } %>
+                  <% }) %>
+                </ul>
+                <% const pOData = highlightsData.prodOrderData %>
+                <h4 class="highLightHeading">Production Order with most stops are:</h4>
+                <ul class="highLights">
+                  <% Object.keys(pOData).forEach((key) => { %>
+                    <% if (key) {%>
+                      <li><%= key %> - <%= pOData[key] %> stops </li>
+                    <% } %>
+                  <% }) %>
+                </ul>
+                <h4 class="highLightHeading">Machine with most time running is:</h4>
+                <% const machinePerformanceData = highlightsData.maxRunningCkm;
+                   const totalTime = machinePerformanceData.machine.performance.total;
+                   const runningTime = machinePerformanceData.machine.performance.running;
+                   const runningPercentage = totalTime ? (runningTime/totalTime)*100 : 0;
+                   const machineName = machinePerformanceData.machine.name;
+                %>
+                <ul class="highLights">
+                  <li>
+                    <%= machineName %> - <%= runningPercentage.toFixed(0) %>%
+                  </li>
+                </ul>
+                <% const productionData = highlightsData.maxProductionCkm;%>
+                <% if (productionData){%>
+                <h4 class="highLightHeading">Machine with most production is:</h4>
+                  <ul class="highLights">
+                    <li><%= productionData.nameCkm %> - <%= (productionData.totalRotations/1000).toFixed(3) %> rotations /
+                       <%= (productionData.totalLength/100000).toFixed(3) %> meters</li>
+                    </ul>
+                  <%}%>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mb-5" style="position: relative; bottom: 35px;">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6" style="position: relative; left: 8px;">
+                <div style="border: 5px solid #eeeeee; padding-bottom: 3%;">
+                  <div style="background: #eeeeee;padding-top: 3%;padding-bottom: 2.5%;" class="text-center">
+                    <div style="font-size: 2vw;">
+                      Distribution of types of defects per week
+                    </div>
+                  </div>
+                  <div style="padding-top: 11px; font-size: 2vw; padding-left: 2%;">
+                    Stops per type of defects <div style="font-size: 1.5vw;">Number per week</div>
+                  </div>
+                  <div style="display: flex;">
+                    <div class="col-md-7">
+                      <canvas id="stopsPerDefectTypeFactory"
+                        style="display: block; height: 300px; max-height: 300px"></canvas>
+                    </div>
+                    <div class="col-md-5" style="margin-top: -10%; margin-left: 2%;">
+                      <canvas id="stopsPerDefectTypeFactoryForMonth"
+                        style="display: block; height: 125px; max-height: 125px;"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6" style="position: relative; right: 8px;">
+                <div style="border: 5px solid #eeeeee; padding-bottom: 3%;">
+                  <div style="background: #eeeeee;padding-top: 3%;padding-bottom: 2.5%;" class="text-center">
+                    <div style="font-size: 2vw;">
+                      Distribution of stops per working shift
+                    </div>
+                  </div>
+                  <div style="padding-top: 11px; font-size: 2vw; padding-left: 2%;">
+                    Stops per shift <div style="font-size: 1.5vw;">Number per week</div>
+                  </div>
+                  <div style="display: flex;">
+                    <div class="col-md-7">
+                      <canvas id="stopsPerShiftFactory"
+                        style="display: block; height: 300px; max-height: 300px"></canvas>
+                    </div>
+                    <div class="col-md-5" style="margin-top: -10%; margin-left: 2%;">
+                      <canvas id="stopsPerShiftFactoryForMonth"
+                        style="display: block; height: 125px; max-height: 125px;"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <section class="mb-3">
+            <div class="container-fluid">
+              <div class="calcolare mb-5" style="margin-top: 1%;">
+
+                  <img src="https://i.ibb.co/L6X3BVp/cal.png" alt="cal" border="0" class="img-fluid"
+                    style="max-width: 50px;">
+                <h4 class="mb-0 ml-3"><b>To calculate your Factory Savings: </b></h4>
+              </div>
+              <div class="row mb-3" style="margin-top: -2%;">
+                <div class="col-md-6">
+                  <div class="d-flex justify-content-center" style="background: #eeeeee; padding: 8px; position: relative; left: 8px">
+                    <p class="mb-0 mr-1">Estimation of</p>
+                    <p class="mb-0" style="color: #4d8691;"> kilograms saved</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex justify-content-center" style="background: #eeeeee; padding: 8px; position: relative; right: 8px;">
+                    <p class="mb-0 mr-1">Estimation of</p>
+                    <p class="mb-0" style="color: #4d8691;"> money saved</p>
+                  </div>
+                </div>
+              </div>
+              <div class="row" style="font-size: 20px;">
+                <div class="col-md-6" style="display: flex;">
+                  <img src="https://i.ibb.co/MG9SDH1/kg.png" alt="kg"
+                      border="0" class="img-fluid" style="max-width: 50px">
+                  <div style="position: relative; left: 8px; top: 9px; width: 100%; font-size: 20px;"><span
+                      style="font-style: italic;">= number of stops</span> <span
+                      style="font-weight: bold; margin: 1%;">x</span> <span style="font-style: italic;">kilograms saved
+                      each stop</span></div>
+                </div>
+                <div class="col-md-6" style="display: flex;">
+                  <img src="https://i.ibb.co/Cst8kmM/money-bank.png"
+                      alt="money-bank" border="0" class="img-fluid" style="max-width: 50px">
+                  <div style="position: relative; left: 8px; top: 9px; width: 100%; font-size: 20px;"><span
+                      style="font-style: italic;">= kilograms saved each stop</span> <span
+                      style="font-weight: bold; margin: 1%;">x</span> <span style="font-style: italic;">price/kg of
+                      fabric</span></div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+
+
+        <section>
+          <div class="container-fluid" style="background: #45818e; width: 96%; position: relative; bottom: 50px;">
+              <div style="color: #fff; text-align: center; padding: 5px; font-size: 30px;">Currently, <strong>
+                  <%= ckmCount %>
+                </strong> knitting <%= ckmCount > 1 ? "machines" : "machine" %> at <%= factoryDetails.name %> <%= ckmCount > 1 ? "have" : "has" %> inspection with SMARTEX.</div>
+          </div>
+        </section>
+        <div class="footer float-right" style="position: absolute; bottom: 0px;">
+          <img src="https://i.ibb.co/GvVVYDr/smartex-logo-black2.png" alt="smartex" width="120" height="13.65" style=" margin-right: 15px;">
+          <b style=" position: relative; top: -7px; margin-right: 20px; ">PATENTED TECHNOLOGY <br>
+             <div style="float: right;">MADE IN EU</div>
+          </b>
+          <img src="https://i.ibb.co/sjZ21Rq/European-Comission.png" alt="smartex" width="120" height = "80.4" style = "margin-top: -4%">
+          <div class="pageNumber">
+            <%= pageNumber %>
+              <% pageNumber++ %>
+          </div>
+        </div>
+        </div>
+
+            <% const graphDataByCkm=JSON.parse(graphDataCkms) %>
+            <% let ckmCountOnPage = 0; %>
+              <% for (let i=0; i< ckmCount; i++) {%>
+                  <% if (i%3===0) {%>
+                    <% ckmCountOnPage++; %>
+                    <div class="pageContainer">
+                    <div class="container-fluid p-0" style="page-break-before: always;">
+                      <section class="py-3 px-5">
+                        <div class="d-flex justify-content-between">
+                          <div style="display: flex; width: 100%">
+                            <h1 style="font-weight: bold;">Statistics <span style="color: #4d8691;">
+                                <%=formattedDate(start)%>
+                              </span></h1>
+                            <h2 style="position: relative; left: 50%; font-weight: 550; ">Machine View</h2>
+                          </div>
+                        </div>
+                      </section>
+                    <% } %>
+                      <section>
+                        <div class="container-fluid" style="border-bottom: <%= ckmCountOnPage === 1 ? '15px' : ckmCountOnPage === 2 ? '40px' : '95px' %>;">
+                          <div class="row" style="margin: 0.3%;">
+                            <div class="col-md-12" style="border: 2px solid #b3b0b0; padding: 0%;">
+                              <div class="row" style="margin-left: 0px; height: 130px; margin-right: 0px;">
+                                <div class="col-md-3 machinefield">
+                                  <div> <b style="font-size: 1.5vw;"> <%= machine[i].name %> </b> </div>
+                                  <div style="
+                                  display: flex; position: relative; top: 10px;
+                              ">
+                                  <svg width="25%" height="27%" viewBox="0 0 57 73" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <!-- Generator: Sketch 60 (88103) - https://sketch.com -->
+                    <title>Machine - Icon</title>
+                    <desc>Created with Sketch.</desc>
+                    <g id="Update" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g id="Smartex-Dashboard_factory-selection" transform="translate(-270.000000, -899.000000)">
+                        <g id="Group-2" transform="translate(252.000000, 869.000000)">
+                          <g id="Group-35-Copy-4">
+                            <g id="Machine---Icon" transform="translate(18.000000, 25.000000)">
+                              <g id="machine-bilkul-bilkul-simple" transform="translate(1.000000, 6.000000)">
+                                <path
+                                  d="M48.8905429,61.82685 C47.2468747,68.3706834 40.253217,71.6425999 27.9095695,71.6425999 C15.5659221,71.6425999 8.45150694,68.3706834 6.56632414,61.82685 C6.56632414,55.7834272 6.56632414,46.8785044 6.56632414,41.3729516 C6.56632414,37.3108367 7.71043907,31.8107039 10.9592308,27.3464116 C11.0834074,27.1757756 11.276651,26.923382 11.5389617,26.5892308 C16.7644382,27.1510999 22.1813203,27.534698 27.789608,27.7400251 C32.3033924,27.9052808 37.7414015,27.3666649 44.1036354,26.1241773 C43.480373,26.7022705 43.2254562,27.0672252 43.3388853,27.2190417 C45.5205226,30.1390025 48.2304501,33.5119458 48.8905429,38.193394 C49.3306047,41.3143595 49.3306047,49.1921782 48.8905429,61.82685 Z M47.265625,57.6100889 L47.265625,36.9312167 C46.64797,32.9602606 45.3248265,29.7296913 43.2961945,27.2395088 C43.142647,27.0510264 42.9032318,26.7778467 42.577949,26.4199696 C36.5710928,28.3881942 31.4734952,29.3028038 27.2851563,29.1637985 C22.180034,28.9943663 17.2028591,28.1441474 12.3536315,26.6131416 C12.0050574,26.9948604 11.7497472,27.2840899 11.5877008,27.48083 C8.41663724,31.3308115 7.3046875,36.1251646 7.3046875,39.6525848 C7.3046875,44.364761 7.3046875,52.4375521 7.3046875,57.6100889 C9.08460627,63.2109243 15.8017698,66.0113422 27.456178,66.0113422 C39.1105863,66.0113422 45.7137351,63.2109243 47.265625,57.6100889 Z"
+                                  id="Combined-Shape" stroke="#FFFFFF" stroke-width="0.518867925" fill="#165B6A"
+                                  fill-rule="nonzero"></path>
+                                <polygon id="Rectangle" fill="#165B6A" fill-rule="nonzero"
+                                  points="6.875 39.9956792 11.171875 40.2627027 11.171875 65.7456117 6.875 60.5814855">
+                                </polygon>
+                                <polygon id="Path-4" stroke="#FFFFFF" stroke-width="0.518867925" fill="#2D2D2D"
+                                  fill-rule="nonzero"
+                                  points="20.2516079 36.925789 14.7517858 39.5681484 14.7517858 54.8515023 20.3377233 52.8161547">
+                                </polygon>
+                                <polygon id="Path-3" fill="#165B6A"
+                                  points="15.7983237 46.8428258 10.242086 47.5306896 10.242086 63.6586551 18.4765625 67.2492808 37.508414 68.3662616 47.265625 62.0342949 48.0822267 57.9819371 48.0822267 37.4049668 46.6172057 32.7852144 45.995812 31.3289591 45.1126255 30.6447175 44.5294256 33.1299234 45.546875 35.3966802 45.9765625 36.925789 45.9765625 39.0263816 45.1126255 41.7770854 41.8393049 44.6816008 38.0207031 46.8428258 33.2060239 48.3188061 28.8638921 48.97193 22.9889989 48.97193">
+                                </polygon>
+                                <path
+                                  d="M16.7003154,29.9432892 L5.14673891,30.9923107 C4.0607347,31.7045766 3.5177326,32.5356771 3.5177326,33.4856121 C3.5177326,34.4355471 3.5177326,37.6919236 3.5177326,43.2547414 C5.85347791,47.3821039 7.45944955,49.4457851 8.3356475,49.4457851 C9.21184541,49.4457851 13.1542882,49.0738659 20.1629757,48.330028 L20.1629757,36.4850363 L16.7003154,29.9432892 Z"
+                                  id="Path-8" stroke="#FFFFFF" stroke-width="0.518867925" fill="#165B6A"
+                                  fill-rule="nonzero"></path>
+                                <path
+                                  d="M30.3352039,48.1231434 C30.8098236,48.1231434 31.1945789,48.5061741 31.1945789,48.9786659 C31.1945789,49.4511578 30.8098236,49.8341885 30.3352039,49.8341885 C22.7790119,49.8341885 15.8895898,47.169862 12.6038045,43.0008459 C11.3386189,41.3955737 10.6770008,39.6414616 10.6770008,37.8568728 C10.6770008,31.2521421 19.5753907,25.8795571 30.3352039,25.8795571 C36.9685209,25.8795571 43.1247629,27.9272672 46.777856,31.3224433 C47.1247861,31.6448793 47.1434655,32.186247 46.8195778,32.5316218 C46.4956897,32.8769967 45.9518845,32.8955923 45.6049544,32.5731563 C42.2841398,29.4867993 36.5389899,27.5906022 30.3352039,27.5906022 C20.5354787,27.5906022 12.3957508,32.3493565 12.3957508,37.8568728 C12.3957508,39.2480848 12.9248537,40.6363044 13.9560137,41.9446438 C16.8952922,45.6740112 23.3012325,48.1231434 30.3352039,48.1231434 Z"
+                                  id="Path" stroke="#FFFFFF" stroke-width="0.518867925" fill="#165B6A"
+                                  fill-rule="nonzero"
+                                  transform="translate(28.863892, 37.856873) rotate(180.000000) translate(-28.863892, -37.856873) ">
+                                </path>
+                                <g id="Group-29" transform="translate(9.453125, 17.324332)" fill-rule="nonzero"
+                                  stroke="#FFFFFF" stroke-width="0.518867925">
+                                  <path
+                                    d="M18.2617187,25.2379152 C28.2688716,25.2379152 36.5234375,19.4936783 36.5234375,11.9773157 C36.5234375,10.9128492 36.3578823,9.8839249 36.0452399,8.90182485 C35.9142851,8.49045791 35.7575242,8.08730618 35.5763143,7.69319877 C35.2586908,7.00240973 26.8545738,11.2595399 18.8582528,11.2595399 C11.0620494,11.2595399 1.2890625,7.00240973 1.13867197,7.2977365 C0.945659031,7.6767623 0.775576539,8.06463012 0.629645894,8.46065375 C0.219264852,9.57433751 0,10.7522902 0,11.9773157 C0,19.4936783 8.25456595,25.2379152 18.2617187,25.2379152 Z"
+                                    id="Path" fill="#165B6A"></path>
+                                  <ellipse id="Oval-Copy-3" fill="#FFFFFF" cx="18.2617188" cy="5.1331353"
+                                    rx="9.23828125" ry="5.1331353"></ellipse>
+                                </g>
+                                <path
+                                  d="M27.3925781,31.868215 C42.3949558,31.868215 54.7851562,24.7913584 54.7851562,15.3994059 C54.7851562,6.00745342 42.3949558,0.213880637 27.3925781,0.213880637 C12.3902005,0.213880637 0,6.00745342 0,15.3994059 C0,24.7913584 12.3902005,31.868215 27.3925781,31.868215 Z M27.3925781,25.8795571 C14.0364283,25.8795571 3.4375,20.9458044 3.4375,15.3994059 C3.4375,9.85300734 14.0364283,4.49149338 27.3925781,4.49149338 C40.748728,4.49149338 51.3476563,9.85300734 51.3476563,15.3994059 C51.3476563,20.9458044 40.748728,25.8795571 27.3925781,25.8795571 Z"
+                                  id="Oval-Copy" stroke="#FFFFFF" stroke-width="0.518867925" fill="#165B6A"
+                                  fill-rule="nonzero"></path>
+                                <path
+                                  d="M27.0703125,24.3823927 C36.0178844,24.3823927 43.3984375,20.5837844 43.3984375,15.6132865 C43.3984375,10.6427887 36.0178844,6.84418039 27.0703125,6.84418039 C18.1227406,6.84418039 10.7421875,10.6427887 10.7421875,15.6132865 C10.7421875,20.5837844 18.1227406,24.3823927 27.0703125,24.3823927 Z M27.0703125,21.815825 C19.1699933,21.815825 12.890625,18.9267154 12.890625,15.6132865 C12.890625,12.2998576 19.1699933,9.41074804 27.0703125,9.41074804 C34.9706317,9.41074804 41.25,12.2998576 41.25,15.6132865 C41.25,18.9267154 34.9706317,21.815825 27.0703125,21.815825 Z"
+                                  id="Oval" stroke="#FFFFFF" stroke-width="0.518867925" fill="#165B6A"
+                                  fill-rule="nonzero"></path>
+                                            </g>
+                                          </g>
+                                        </g>
+                                      </g>
+                                    </g>
+                                  </g>
+                                </svg>
+                                <div style="
+                                    position: relative;
+                                    left: 8%;
+                                    margin-top: 1%;
+                                    width: 59%;">
+                                  <%
+                                  var brand = machine[i].brand ? machine[i].brand : '---';
+                                  var diameter= machine[i].diameter ? machine[i].diameter : '---';
+                                  var gauge = machine[i].gauge ? machine[i].gauge : '---';
+                                  var machinePerformance = JSON.parse(machinePerformances);
+                                  var total = machinePerformance[i].machine.performance.total;
+                                  var offPercentage = total === 0 ? total : (machinePerformance[i].machine.performance.off/total)*100;
+                                  var stopPercentage = total === 0 ? total : (machinePerformance[i].machine.performance.stop/total)*100;
+                                  var runPercentage = total === 0 ? total : (machinePerformance[i].machine.performance.running/total)*100;
+                                  const percentages = roundedPercentages([offPercentage, stopPercentage, runPercentage]);
+                                  %>
+                                  <div class="icon-text">
+                                    <img src="https://i.ibb.co/XtCdFWy/brand.png" alt="brand" style="width: auto;height: 25px; margin: 0;"><div style="position: relative; left: 5%;"> <%= brand %> </div>
+                                  </div>
+                                  <div class="icon-text">
+                                  <img src="https://i.ibb.co/BcwKqtV/guage.png" alt="guage" style="width: auto;height: 25px; margin: 0;"> <div style="position: relative; left: 5%;" ><%= gauge %></div>
+                                  </div>
+                                  <div class="icon-text">
+                                    <img src="https://i.ibb.co/y4j8nSD/diametro-1.png" alt="diameter" style="width: auto;height: 25px; margin: 0;"><div style="position: relative; left: 5%;"><%= diameter %></div>
+                                  </div>
+                                  </div>
+                              </div>
+                            </div>
+                                <div class="col-md-5" style="position: relative; top: 40px; display: flex; right: 49px;">
+                                  <div>
+                                    <div class="status">
+                                      <div class="def-commands">
+                                        <span class="def-dots off"> </span> off: </div>
+                                       <div style="flex: 1"> <%= percentages[0] %>%</div>
+                                    </div>
+                                    <div class="status">
+                                      <div class="def-commands">
+                                        <span class="def-dots stop"> </span> stop: </div>
+                                       <div style="flex: 1"> <%= percentages[1] %>%</div>
+                                    </div>
+                                    <div class="status">
+                                      <div class="def-commands">
+                                        <span class="def-dots running"> </span> running: </div>
+                                       <div style="flex: 1"> <%= percentages[2] %>%</div>
+                                    </div>
+                                  </div>
+                                  <div style="position: relative; left: 20px; bottom: 16px;">
+                                    <h4 style="color: #45818e; font-weight: 700;font-size: 22px;">  <%= machine[i].name %> PERFORMANCE </h4>
+                                    <div class="machineStatusStyle">
+                                      <div style="width: <%=percentages[0]%>%; border-radius: <%= offPercentageBorderRadius(percentages) %>; background-color: #b7b9bb;"></div>
+                                      <div style="width: <%=percentages[1]%>%; background-color: #e04f39; border-radius: <%= stopPercentageBorderRadius(percentages) %>" ></div>
+                                      <div style="width: <%=percentages[2]%>%; border-radius: <%= runPercentageBorderRadius(percentages) %>; background-color: #45818e"></div>
+                                        </div>
+                                        </div>
+                                </div>
+                                  <div class="col-md-2" style="position: relative; left: 40px;">
+                                    <div class="metersDivStyle">
+                                      Meters Produced:
+                                      <div class="metersBoxStyle">
+                                        <div class="metersTextStyle">
+                                          <%= meterAndRotationData[i]?.totalLength ? (meterAndRotationData[i].totalLength / 100000).toFixed(3) : '---' %>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="metersDivStyle" style="top: 35px;">
+                                      Total Rotations:
+                                      <div class="metersBoxStyle">
+                                        <div class="metersTextStyle">
+                                          <%= meterAndRotationData[i]?.totalRotations ? (meterAndRotationData[i].totalRotations/1000).toFixed(3) : '---' %>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                <div class="col-md-2 circle_stops-count"> <%= graphDataByCkm[i].stopsData.totalStops %> <br>Stops </div>
+                              </div>
+                              <div class="row" style="margin-bottom: 15px;">
+                                <div class="col-md-4 ckmGraphTitle">
+                                  <h4 style="color: #45818e; position: relative; left: 50px; font-weight: 600;font-size: 21px;">STOPS PER WEEK</h4>
+                                  <div class="col-md-8">
+                                    <canvas id=<%="ckmStops" + i %> style="display: block; height: 275px; max-height:
+                                      275px;"></canvas>
+                                  </div>
+                                </div>
+                                <div class="col-md-4 ckmGraphTitle" style="position: relative; right: 40px;">
+                                  <h4 style="padding-left: 12%; color: #45818e; font-weight: 600;font-size: 21px;">
+                                    STOPS PER TYPE
+                                  </h4>
+                                  <div style="display: flex;">
+                                    <div class="col-md-8">
+                                      <canvas id=<%="ckmStopsPerDefectType" + i %> style="display: block; height: 275px;
+                                        max-height: 275px;"></canvas>
+                                    </div>
+                                    <div class="col-md-4" style="margin-top: -6%;">
+                                      <canvas id=<%="ckmStopsPerDefectTypeMonth" + i %> style="display: block; height:
+                                        110px; max-height: 110px; position: relative; top: -2px; right: 20px"></canvas>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-4 ckmGraphTitle" style="position: relative; right: 40px;">
+                                  <h4 style="padding-left: 6%; color: #45818e; font-weight: 600;font-size: 21px;">
+                                    STOPS PER WEEK PER SHIFT
+                                  </h4>
+                                  <div style="display: flex;">
+                                    <div class="col-md-8">
+                                      <canvas id=<%="ckmStopsPerShift" + i %> style="display: block; height: 275px;
+                                        max-height: 275px; position: relative; top: -2px;"></canvas>
+                                    </div>
+                                    <div class="col-md-4" style="margin-top: -6%; margin-left: -8%;">
+                                      <canvas id=<%="ckmStopsPerShiftMonth" + i %> style="display: block; height: 110px;
+                                        max-height: 110px;"></canvas>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                      <% ckmCountOnPage++; %>
+                        <% if ((i+1)%3===0 || i===ckmCount-1) {%>
+                        </div>
+                        <div class="footer float-right" style="position: absolute; bottom: 0px;">
+                            <img src="https://i.ibb.co/GvVVYDr/smartex-logo-black2.png" alt="smartex" width="120" height="13.65" style=" margin-right: 15px;">
+                            <b style=" position: relative; top: -7px; margin-right: 20px; ">PATENTED TECHNOLOGY <br>
+                              <div style=" float: right;">MADE IN EU</div>
+                            </b>
+                            <img src="https://i.ibb.co/sjZ21Rq/European-Comission.png" alt="smartex" width="120" height = "80.4" style = "margin-top: -4%">
+                            <div class="pageNumber">
+                              <%= pageNumber %>
+                                <% pageNumber++ %>
+                            </div>
+                          </div>
+                          <% ckmCountOnPage = 0; %>
+                      </div>
+                          <% } %>
+                <% } %>
+
+        <% for (let i = 0; i < stopsData.length; i++) {%>
+      <% if (i%33===0) {%>
+                  <div class="pageContainer">
+                    <div class="container-fluid p-0" style="page-break-before: always;">
+                      <section>
+                        <div class="d-flex justify-content-between">
+                          <div class="stopsPageTitle">
+                            <h1 style="color: #b6b5b5;font-size: 4vw;margin-top: 9%; font-weight: 550;">Stops Overview</h1>
+                          </div>
+                          <% if (i===0) {%>
+                          <div class="stops_circle" style="margin-top: 3.5%; margin-right: -3%;">
+                            <h1>
+                              <%= totalStops %> <br> Stops
+                            </h1>
+                          </div>
+                          <% } %>
+                        </div>
+                      </section>
+                    <section  style="position: absolute; top: <%= i===0 ? '260px' : '200px'%>; left: 60px; text-align: center; width: 90%">
+                      <table class="table table-sm">
+                        <thead>
+                          <tr>
+                            <th scope="col" style="border-bottom: 2px solid;">Machine Number</th>
+                            <th scope="col" style="border-bottom: 2px solid;">Date</th>
+                            <th scope="col" style="border-bottom: 2px solid; ">Time</th>
+                            <th scope="col" style="border-bottom: 2px solid;">Defect Type</th>
+                            <th scope="col" style="border-bottom: 2px solid;">Meters</th>
+                            <th scope="col" style="border-bottom: 2px solid;">Roll Position</th>
+                            <th scope="col" style="border-bottom: 2px solid; ">P.O</th>
+                            <th scope="col" style="border-bottom: 2px solid; ">Dashboard Link</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                    <% } %>
+
+          <tr>
+            <% const dateTime = stopsData[i].timestamp %>
+            <% const convertedDateTime = convertTZ(new Date(dateTime), tz) %>
+            <% const bgColorForRow = i%2 === 0 ? '#ffffff' : '#eeeeee'  %>
+            <td style= "background-color: <%= bgColorForRow %> !important;"><%= stopsData[i].machineNumber %></td>
+            <td style= "background-color: <%= bgColorForRow %> !important;"><%= convertedDateTime.toLocaleDateString() %></td>
+            <td style= "background-color: <%= bgColorForRow %> !important;"><%= convertedDateTime.toTimeString().split(' ')[0] %></td>
+            <td style= "background-color: <%= bgColorForRow %> !important;"><%= getDefectTypeString(stopsData[i]) %></td>
+            <td style= "background-color: <%= bgColorForRow %> !important;"><%= stopsData[i].defectLength ? (stopsData[i].defectLength / 100).toFixed(2) : '---' %></td>
+            <td style= "background-color: <%= bgColorForRow %> !important;"><%= stopsData[i].rollMeters ? (stopsData[i].rollMeters / 100).toFixed(2) : '---' %></td>
+            <td style= "background-color: <%= bgColorForRow %> !important;"><%= stopsData[i].productionOrder ? stopsData[i].productionOrder : '---' %></td>
+            <td style= "background-color: <%= bgColorForRow %> !important;"><a style= "color: #45818e;" href=<%= stopsData[i].dashboardLink %>>Link</a></td>
+          </tr>
+
+
+        <% if((i+1)%33 === 0 || i === stopsData.length -1) {%>
+        </tbody>
+          </table>
+        </section>
+      </div>
+      <div class="footer float-right" style="position: absolute; bottom: 0px;">
+          <img src="https://i.ibb.co/GvVVYDr/smartex-logo-black2.png" alt="smartex" width="120" height="13.65" style=" margin-right: 15px;">
+          <b style=" position: relative; top: -7px; margin-right: 20px; ">PATENTED TECHNOLOGY <br>
+             <div style=" float: right;">MADE IN EU</div>
+          </b>
+          <img src="https://i.ibb.co/sjZ21Rq/European-Comission.png" alt="smartex" width="120" height = "80.4" style = "margin-top: -4%">
+          <div class="pageNumber">
+            <%= pageNumber %>
+              <% pageNumber++ %>
+          </div>
+        </div>
+    </div>
+       <% }%>
+        <% } %>
+
+
+
+                  <style src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css"></style>
+                  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+                  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                    crossorigin="anonymous"></script>
+                  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                    crossorigin="anonymous"></script>
+                  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                    crossorigin="anonymous"></script>
+                  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
+
+</body>
+
+</html>

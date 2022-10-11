@@ -1,0 +1,1795 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href= "https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js"
+    integrity="sha512-LGXaggshOkD/at6PFNcp2V2unf9LzFq6LE+sChH7ceMTDP0g2kn6Vxwgg7wkPP7AAtX+lmPqPdxB47A0Nz0cMQ=="
+    crossorigin="anonymous"></script>
+  <%
+         var getRandomColor = function () {
+           var letters = "0123456789ABCDEF";
+           var color = "#";
+           for (var i = 0; i < 6; i++) {
+             color += letters[Math.floor(Math.random() * 16)];
+           }
+           return color;
+         };
+         %>
+  <%
+          var defectiveRollColor = 'rgba(19,79,92,1)';
+          var defectColor = 'rgba(255,217,104,1)';
+          var morningShiftColor = 'rgba(138,227,229,1)';
+          var afternoonShiftColor = 'rgba(62,181,184,1)';
+          var nightShiftColor = 'rgba(19,79,92,1)';
+       %>
+
+  <%
+         var shiftTotal = (function() {
+         var res = JSON.parse(defectsPerShift);
+       var shift = { morning: 0, afternoon: 0, night: 0 };
+       if (res.defects && res.defects.groups) {
+       Object.entries(res.defects.groups).forEach(([date, count]) => {
+       limit = count.data.morning + count.data.afternoon + count.data.night;
+       shift.morning += count.data.morning;
+       shift.afternoon += count.data.afternoon;
+       shift.night += count.data.night;
+       });
+       }
+       return shift;
+       })();
+
+       %>
+
+  <%
+       var { labels, defectsByTypeBgColor, defectsLabel }  = (function() {
+         var res = JSON.parse(defectsByType);
+         var defectsLabel = {};
+         if (res.defects && res.defects.groups) {
+           Object.entries(res.defects.groups).forEach(([date, count]) => {
+             Object.keys(count.data).forEach((label) => {
+                 defectsLabel[label] = (defectsLabel[label] || 0) + count.data[label];
+             });
+           });
+         }
+
+         var labels = Object.keys(defectsLabel);
+         labels.sort((label, anotherLabel) => defectsLabel[anotherLabel] - defectsLabel[label])
+
+         var defectsByTypeBgColor = {};
+
+         Object.keys(defectsLabel).forEach(label => {
+           defectsByTypeBgColor[label] = getRandomColor();
+         });
+
+         return {
+           labels: JSON.stringify(labels),
+           defectsByTypeBgColor: JSON.stringify(defectsByTypeBgColor),
+           defectsLabel: JSON.stringify(defectsLabel)
+         }
+       })()
+       %>
+  <script>
+    var getRandomColor = function () {
+      var letters = "0123456789ABCDEF";
+      var color = "#";
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    };
+
+    var numberWithCommas = function (x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    };
+
+    window.onload = function () {
+      function loadMachineRPMS() {
+        var res = JSON.parse('<%- productionVolumes %>')
+
+        const getTimeUnit = (backendUnit) => {
+          if (backendUnit === 'week') return 'day';
+          return backendUnit;
+        }
+
+        const TIME_FORMAT = null;
+        const TooltipTimeFormat = TIME_FORMAT === null || TIME_FORMAT === '24'
+          ? 'DD MM YYYY HH:mm:ss '
+          : 'DD MM YYYY hh:mm:ss A';
+
+        const getRpmGraphConfig = (timeUnit) => ({
+          // chartType: 'bar',
+          filters: [
+            {
+              label: new Date().getFullYear() - 2,
+              value: 'LAST_BUT_TWO_YEAR',
+            },
+            {
+              label: new Date().getFullYear() - 1,
+              value: 'LAST_BUT_ONE_YEAR',
+            },
+            {
+              label: new Date().getFullYear(),
+              value: 'LAST_YEAR',
+            },
+          ],
+
+          options: {
+            spanGaps: false,
+            legend: {
+              display: false,
+            },
+            hover: {
+              mode: 'nearest',
+              intersect: true,
+            },
+
+            tooltips: {
+              backgroundColor: 'rgb(20,90,105)',
+              displayColors: false,
+              cornerRadius: 6,
+              xPadding: 20,
+              yPadding: 8,
+              titleAlign: 'center',
+              // position: 'average',
+              mode: 'index',
+              intersect: false,
+              yAlign: 'bottom',
+              callbacks: {
+                label: function (tooltipItem, data) {
+                  const time = moment(tooltipItem.xLabel).format(TooltipTimeFormat);
+                  return `RPM: ${tooltipItem.value}, Time: ${time}`;
+                },
+                title: function () {
+                  return;
+                },
+              },
+            },
+            maintainAspectRatio: false,
+            layout: {
+              padding: {
+                top: 35,
+                left: 12,
+                right: 40,
+              },
+            },
+            elements: {
+              point: {
+                pointerRadius: 0,
+                radius: 0,
+                // borderWidth: 1,
+                // hoverRadius: 0,
+                // hoverBorderWidth: 1,
+              },
+              line: {
+                tension: 0,
+              },
+            },
+            scales: {
+              xAxes: [
+                {
+                  type: 'time',
+                  time: {
+                    unit: timeUnit,
+                    displayFormats: {
+                      hour:
+                        TIME_FORMAT === null || TIME_FORMAT === '24'
+                          ? 'HH'
+                          : 'ha',
+                    },
+                  },
+                  gridLines: {
+                    display: false,
+                    drawBorder: false,
+                    // tickMarkLength: 18,
+                  },
+                },
+              ],
+              yAxes: [
+                {
+                  display: true,
+                  gridLines: {
+                    color: 'rgba(0, 0, 0, 0)',
+                  },
+                  ticks: {
+                    suggestedMin: 0,
+                    suggestedMax: 30,
+                    // max: 5,
+                    min: 0,
+                    stepSize: 1,
+                    maxTicksLimit: 5,
+                  },
+                },
+              ],
+            },
+            plugins: {
+              filler: {
+                propagate: false,
+              },
+            },
+          },
+        });
+
+        const parseGraphResponseData = (response) => {
+          return response.data.reduce((acc, cur) => {
+            cur?.data?.map((RPMObj) => {
+              acc.push({ x: RPMObj.start, y: RPMObj.rpm });
+            });
+            return acc;
+          }, []);
+        };
+
+        const getChartConfig = (configOptions) => {
+          configOptions.scales.yAxes[0].ticks.stepSize =
+            res.data.length === 0
+              ? 0.25
+              : res.data.length < 4
+                ? res.data.length / 4
+                : Math.ceil(res.data.length / 4);
+          return configOptions;
+        };
+
+        const setGradient = (canvas) => {
+          var chart = canvas.getContext('2d');
+          var gradient = chart.createLinearGradient(0, 0, 0, 95);
+
+          gradient.addColorStop(0, 'rgba(119,207,209,1)');
+          gradient.addColorStop(0.5, 'rgba(119,207,209,0.35)');
+          gradient.addColorStop(1, 'rgba(119,207,209,0)');
+          return gradient;
+        };
+        const getChartData = (canvas) => {
+          const graphDataPoints = parseGraphResponseData(res);
+          let data = {
+            // labels: [],
+            datasets: [
+              {
+                data: graphDataPoints,
+                label: 'Rotations',
+                fill: 'start',
+                steppedLine: true,
+                borderColor: 'rgba(119,207,209,1)',
+                borderWidth: 1,
+                backgroundColor: '',
+                pointBackgroundColor: 'rgba(20, 79, 93, 0.7)',
+                pointHoverBackgroundColor: 'rgba(113, 169, 170, 1)',
+                pointBorderColor: 'rgb(255,255,255,1)',
+                pointHoverBorderColor: 'rgba(0,0,0,0)',
+              },
+            ],
+          };
+          data.datasets[0].backgroundColor = setGradient(canvas);
+          return data;
+        };
+
+        var machineRotationsChart = new Chart(
+          document.getElementById("machineRotations"),
+          {
+            type: "line",
+            data: getChartData(document.getElementById("machineRotations")),
+            options: getChartConfig(getRpmGraphConfig(getTimeUnit(res.label)).options),
+          }
+        );
+      }
+
+      function loadDefects() {
+        var res = JSON.parse('<%- defects %>');
+        let options = {};
+        let datesData = [];
+        let data = {
+          dataset: [{ label: "Detected", data: [] }],
+          total: 0,
+        };
+        let limit = 0;
+        if (res.defects && res.defects.groups) {
+          Object.entries(res.defects.groups).forEach(([date, count]) => {
+            if (date !== "total") {
+              limit = Math.max(limit, count.data);
+              datesData.push(
+                `${count.start.split("T")[0]}:${count.end.split("T")[0]}`
+              );
+              data.dataset[0].data.push(count.data);
+            }
+          });
+        }
+
+        data.total = res.total;
+        data.labels = datesData;
+
+        var defectColor = `<%= defectColor %>`;
+        var dataSet = {
+          labels: data.labels,
+          datasets: data.dataset.map((obj) => ({
+            ...obj,
+            backgroundColor: defectColor,
+          })),
+        };
+
+        var defectsChart = new Chart(document.getElementById("defects"), {
+          type: "bar",
+          data: dataSet,
+          options: {
+            spanGaps: false,
+            legend: {
+              display: false,
+              position: "bottom",
+            },
+            aspectRatio: 2,
+            maintainAspectRatio: false,
+            scales: {
+              xAxes: [
+                {
+                  display: false,
+                  gridLines: { display: false },
+                  ticks: {
+                    callback: function (label) {
+                      return label.split(":");
+                    },
+                  },
+                },
+              ],
+              yAxes: [
+                {
+                  display: true,
+                  ticks: {
+                    min: 0,
+                    stepSize: Math.ceil(limit / 2),
+                  },
+                },
+              ],
+            },
+          },
+        });
+      }
+
+      function loadDefectRolls() {
+        var res = JSON.parse('<%- defectiveRolls %>');
+        let options = {};
+        let datesData = [];
+        let data = {
+          dataset: [{ label: "Detected", data: [] }],
+          total: 0,
+        };
+        let limit = 0;
+        if (res.data && res.data.groups) {
+          Object.entries(res.data.groups).forEach(([date, count]) => {
+            if (date !== "total") {
+              limit = Math.max(limit, count.data);
+              datesData.push(
+                `${count.start.split("T")[0]}:${count.end.split("T")[0]}`
+              );
+              data.dataset[0].data.push(count.data);
+            }
+          });
+        }
+        data.total = res.total;
+        data.labels = datesData;
+
+        var defectiveRollColor = `<%= defectiveRollColor %>`
+
+        var dataSet = {
+          labels: data.labels,
+          datasets: data.dataset.map((obj) => ({
+            ...obj,
+            backgroundColor: defectiveRollColor,
+          })),
+        };
+
+        var defectRollsChart = new Chart(
+          document.getElementById("defectRolls"),
+          {
+            type: "bar",
+            data: dataSet,
+            options: {
+              spanGaps: false,
+              legend: {
+                display: false,
+                position: "bottom",
+              },
+              aspectRatio: 2,
+              maintainAspectRatio: false,
+              scales: {
+                xAxes: [
+                  {
+                    display: false,
+                    gridLines: { display: false },
+                    ticks: {
+                      callback: function (label) {
+                        return label.split(":");
+                      },
+                    },
+                  },
+                ],
+                yAxes: [
+                  {
+                    display: true,
+                    ticks: {
+                      min: 0,
+                      stepSize: Math.ceil(limit / 2),
+                    },
+                  },
+                ],
+              },
+            },
+          }
+        );
+      }
+
+      function loadDefectsPerShifts() {
+        var res = JSON.parse('<%- defectsPerShift %>');
+        let data = {
+          dataset: [{ label: "Defects per shift", data: [] }],
+          total: 0,
+        };
+        let morningShift = 0,
+          afternoonShift = 0,
+          nightShift = 0;
+        let limit = 0;
+        if (res.defects && res.defects.groups) {
+          Object.entries(res.defects.groups).forEach(([date, count]) => {
+            limit = count.data.morning + count.data.afternoon + count.data.night;
+            morningShift += count.data.morning;
+            afternoonShift += count.data.afternoon;
+            nightShift += count.data.night;
+          });
+        }
+        data.total = res.total;
+
+        var morningShiftColor = `<%= morningShiftColor %>`;
+        var afternoonShiftColor = `<%= afternoonShiftColor %>`;
+        var nightShiftColor = `<%= nightShiftColor %>`;
+
+        var defectsPerShiftChart = new Chart(
+          document.getElementById("defectsPerShift"),
+          {
+            type: "doughnut",
+            data: {
+              labels: ['Morning', 'Afternoon', 'Night'],
+              datasets: [
+                {
+                  data: [morningShift, afternoonShift, nightShift],
+                  backgroundColor: [
+                    morningShiftColor,
+                    afternoonShiftColor,
+                    nightShiftColor
+                  ],
+                  hoverBorderWidth: 2,
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              cutoutPercentage: 90,
+              legend: {
+                display: false,
+                position: 'right',
+              },
+              tooltips: {
+                backgroundColor: 'rgb(20,90,105)',
+                displayColors: false,
+                cornerRadius: 6,
+                xPadding: 10,
+                yPadding: 8,
+                titleAlign: 'center',
+                position: 'average',
+                mode: 'label',
+              },
+              elements: {
+                arc: {
+                  borderWidth: 0,
+                },
+                center: {
+                  text: numberWithCommas(
+                    morningShift + afternoonShift + nightShift
+                  ),
+                  color: '#212529', // Default is #000000
+                  fontStyle: 'Muli,Roboto,"Helvetica",Arial,sans-serif', // Default is Arial
+                  sidePadding: 20, // Default is 20 (as a percentage)
+                  minFontSize: 20, // Default is 20 (in px), set to false and text will not wrap.
+                  lineHeight: 25 // Default is 25 (in px), used for when text wraps
+                },
+              },
+            },
+          }
+        );
+
+        Chart.pluginService.register({
+          beforeDraw: function (chart) {
+            if (chart.config.options.elements.center) {
+              // Get ctx from string
+              var ctx = chart.chart.ctx;
+
+              // Get options from the center object in options
+              var centerConfig = chart.config.options.elements.center;
+              var fontStyle = centerConfig.fontStyle || 'Arial';
+              var txt = centerConfig.text;
+              var color = centerConfig.color || '#000';
+              var maxFontSize = centerConfig.maxFontSize || 75;
+              var sidePadding = centerConfig.sidePadding || 20;
+              var sidePaddingCalculated = (sidePadding / 100) * (chart.innerRadius * 2)
+              // Start with a base font of 30px
+              ctx.font = "30px " + fontStyle;
+
+              // Get the width of the string and also the width of the element minus 10 to give it 5px side padding
+              var stringWidth = ctx.measureText(txt).width;
+              var elementWidth = (chart.innerRadius * 2) - sidePaddingCalculated;
+
+              // Find out how much the font can grow in width.
+              var widthRatio = elementWidth / stringWidth;
+              var newFontSize = Math.floor(30 * widthRatio);
+              var elementHeight = (chart.innerRadius * 2);
+
+              // Pick a new font size so it will not be larger than the height of label.
+              var fontSizeToUse = Math.min(newFontSize, elementHeight, maxFontSize);
+              var minFontSize = centerConfig.minFontSize;
+              var lineHeight = centerConfig.lineHeight || 25;
+              var wrapText = false;
+
+              if (minFontSize === undefined) {
+                minFontSize = 20;
+              }
+
+              if (minFontSize && fontSizeToUse < minFontSize) {
+                fontSizeToUse = minFontSize;
+                wrapText = true;
+              }
+
+              // Set font settings to draw it correctly.
+              ctx.textAlign = 'center';
+              ctx.textBaseline = 'middle';
+              var centerX = ((chart.chartArea.left + chart.chartArea.right) / 2);
+              var centerY = ((chart.chartArea.top + chart.chartArea.bottom) / 2);
+              ctx.font = fontSizeToUse + "px " + fontStyle;
+              ctx.fillStyle = color;
+
+              if (!wrapText) {
+                ctx.fillText(txt, centerX, centerY);
+                return;
+              }
+
+              var words = txt.split(' ');
+              var line = '';
+              var lines = [];
+
+              // Break words up into multiple lines if necessary
+              for (var n = 0; n < words.length; n++) {
+                var testLine = line + words[n] + ' ';
+                var metrics = ctx.measureText(testLine);
+                var testWidth = metrics.width;
+                if (testWidth > elementWidth && n > 0) {
+                  lines.push(line);
+                  line = words[n] + ' ';
+                } else {
+                  line = testLine;
+                }
+              }
+
+              // Move the center up depending on line height and number of lines
+              centerY -= (lines.length / 2) * lineHeight;
+
+              for (var n = 0; n < lines.length; n++) {
+                ctx.fillText(lines[n], centerX, centerY);
+                centerY += lineHeight;
+              }
+              //Draw text in center
+              ctx.fillText(line, centerX, centerY);
+            }
+          }
+        });
+      }
+
+      function loadDefectsByType() {
+        var bgColors = JSON.parse(`<%- defectsByTypeBgColor %>`);
+        var res = JSON.parse('<%- defectsByType %>');
+        var limit = 0;
+        let data = {
+          dataset: [{ label: "Defects by type", data: [] }],
+          total: 0,
+        };
+        let dates = [],
+          dataset = [];
+        let completeDefects = {};
+        if (res.defects && res.defects.groups) {
+          Object.entries(res.defects.groups).forEach(([date, count]) => {
+            let totalCount = 0;
+            Object.keys(count.data).forEach((ele) => {
+              totalCount += count.data[ele];
+              if (Array.isArray(completeDefects[ele])) {
+                completeDefects[ele] = [
+                  ...completeDefects[ele],
+                  count.data[ele],
+                ];
+              } else {
+                completeDefects[ele] = [
+                  completeDefects[ele],
+                  count.data[ele],
+                ];
+              }
+            });
+            limit = Math.max(limit, totalCount);
+            dates.push(
+              `${count.start.split("T")[0]}:${count.end.split("T")[0]}`
+            );
+          });
+        }
+        Object.keys(completeDefects).map((defect) => {
+          completeDefects[defect] = completeDefects[defect].slice(
+            1,
+            completeDefects[defect].length
+          );
+        });
+
+        data.total = res.total;
+        Object.keys(completeDefects).map((defect) => {
+          dataset.push({
+            label: defect,
+            data: completeDefects[defect],
+            backgroundColor: bgColors[defect],
+            hoverBackgroundColor: bgColors[defect],
+            hoverBorderWidth: 2,
+          });
+        });
+
+        var defectsByTypeChart = new Chart(
+          document.getElementById("defectsByType"),
+          {
+            type: "bar",
+            data: {
+              labels: dates,
+              datasets: dataset,
+            },
+            aspectRatio: 2,
+            options: {
+              tooltips: {
+                mode: "label",
+                callbacks: {
+                  label: function (tooltipItem, data) {
+                    return (
+                      data.datasets[tooltipItem.datasetIndex].label +
+                      ": " +
+                      numberWithCommas(tooltipItem.yLabel)
+                    );
+                  },
+                },
+              },
+              maintainAspectRatio: false,
+              scales: {
+                xAxes: [
+                  {
+                    stacked: true,
+                    gridLines: { display: false },
+                    display: false,
+                    ticks: {
+                      callback: function (label) {
+                        return label.split(":");
+                      },
+                    },
+                  },
+                ],
+                yAxes: [
+                  {
+                    stacked: true,
+                    ticks: {
+                      stepSize: Math.ceil(limit),
+                    },
+                    display: true,
+                  },
+                ],
+              }, // scales
+              legend: {
+                display: false,
+                position: "bottom",
+              },
+            },
+          }
+        );
+      }
+
+      function loadMachineData() {
+        var res = JSON.parse('<%- machine %>');
+        var bgColors = {
+          on: "rgb(69,129,142,1)",
+          stop: "rgb(255,87,87,1)",
+          off: "rgb(183,185,187)",
+          running: "rgba(69,129,142,1)",
+        };
+
+        const orderBy = {
+          on: 1,
+          running: 2,
+          off: 3,
+          stop: 3
+        };
+
+        var createDataSet = function (productionTime) {
+          delete productionTime.total;
+          var tempDataset = Object.keys(productionTime).reduce(
+            (datasets, time) => {
+              datasets.graphData.push({
+                label: time,
+                backgroundColor: bgColors[time],
+                data: [productionTime[time]],
+              });
+              return datasets;
+            },
+            { graphData: [] }
+          );
+
+          tempDataset.graphData.sort((firstSet, secondSet) => {
+            return orderBy[firstSet.label] - orderBy[secondSet.label]
+          })
+
+          return tempDataset.graphData;
+        };
+
+        var machineGraphOptions = {
+          responsive: true,
+          spanGaps: false,
+          legend: {
+            display: false,
+          },
+          aspectRatio: 2,
+          maintainAspectRatio: false,
+          layout: {
+            padding: {
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+            },
+          },
+          scales: {
+            xAxes: [
+              {
+                display: false,
+                ticks: {
+                  beginAtZero: true,
+                },
+                stacked: true,
+              },
+            ],
+            yAxes: [
+              {
+                barThickness: 20,
+                display: false,
+                stacked: true,
+              },
+            ],
+          },
+          events: [],
+        };
+
+        function loadMachineBarGraphs() {
+          var machineData = res;
+          new Chart(
+            document.getElementById(`machineStatusBar`),
+            {
+              type: "horizontalBar",
+              data: {
+                datasets: createDataSet(machineData.productionTime).map((obj) => ({
+                  ...obj,
+                  borderColor: "red",
+                })),
+              },
+              options: machineGraphOptions,
+            }
+          );
+        }
+        loadMachineBarGraphs();
+      }
+
+      loadMachineRPMS();
+      loadDefects();
+      loadDefectsByType();
+      loadDefectRolls();
+      loadDefectsPerShifts();
+      loadMachineData();
+    };
+  </script>
+  <!-- <link rel="stylesheet" type="text/css" href="/css/factory.css"  /> -->
+  <style>
+    .each-roll {
+      display: table;
+      page-break-inside: avoid;
+      height: 250px;
+      padding: 0px;
+    }
+
+    .img-thumbnail {
+      background-color: #fff;
+      border: 1px solid #dee2e6;
+      border-radius: .25rem;
+      max-width: 100%;
+    }
+
+    .img-thumbnail-on {
+      padding: .25rem;
+      background-color: #fff;
+      border-radius: .25rem;
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 25px;
+    }
+
+    .img-thumbnail-off {
+      padding: .25rem;
+      background-color: #fff;
+      border: 1px solid #dee2e6;
+      border-radius: .25rem;
+      max-width: 100%;
+      height: auto
+    }
+
+    .img-thumbnail-stop {
+      padding: .25rem;
+      background-color: #fff;
+      border: 1px solid #dee2e6;
+      border-radius: .25rem;
+      max-width: 100%;
+      height: auto
+    }
+
+    .img-thumbnail-running {
+      padding: .25rem;
+      background-color: #fff;
+      border: 1px solid #dee2e6;
+      border-radius: .25rem;
+      max-width: 100%;
+      height: auto
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Titillium Web', sans-serif;
+      background: #f1f3f6;
+      overflow-x: hidden;
+    }
+
+    .widgetContainer h4 {
+      color: rgba(0, 0, 0, 0.54);
+      font-size: 16px;
+      font-weight: 300;
+    }
+
+    .widgetContainer h1 {
+      font-weight: 300;
+      font-size: 55px;
+    }
+
+    .inlineWidget {
+      height: 370px;
+      width: 25%;
+    }
+
+    .fullWidget {
+      height: 170px;
+      width: 100%;
+    }
+
+    .widgetContainer {
+      height: 300px;
+      margin-top: 1%;
+      font-size: x-small;
+    }
+
+    .widgetContainer .img-thumbnail canvas {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .widgetContainer:last-child .img-thumbnail {
+      margin: 0;
+    }
+
+    .rotationsBackground {
+      background: #fff;
+      height: 100%;
+      padding: 10px 0;
+      box-sizing: content-box;
+      width: 100%;
+      margin: 0;
+      position: relative;
+      display: inline-block;
+      box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    }
+
+    .machineStatusStyle {
+      height: 20px;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .machineStatusStyleBorder {
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      border-radius: 16px;
+    }
+
+    .machineStatusStyle canvas {
+      border-radius: 16px 16px 16px 16px;
+    }
+
+    .main-heading {
+      font-size: 1.3rem;
+      margin: 0 15px 30px 15px;
+      color: #145a69;
+      font-weight: bold;
+    }
+
+    .icon-text {
+      font-weight: 500;
+      flex: 1;
+      font-size: 13px;
+    }
+
+    .onfield {
+      font-size: 12px;
+      padding: 2px 6px;
+      right: 15px;
+      background: #ddd;
+      border-radius: 10px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+
+    .muifab-label {
+      position: absolute;
+      font-size: 12px;
+      width: 32px;
+      height: 32px;
+      right: 15px;
+      background: #45818e;
+      border-radius: 100px;
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 5%);
+    }
+
+    .MuiSvgIcon {
+      width: 22px;
+      height: 22px;
+      fill: #fff;
+      margin-top: 4px;
+    }
+
+    .singleMachine .img-thumbnail-on {
+      padding: 15px;
+      border-width: 3px;
+      border-radius: 4px;
+      position: relative;
+      font-weight: bold;
+      color: #000;
+      box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 5%);
+    }
+
+    .singleMachine .img-thumbnail-off {
+      padding: 15px;
+      border-color: grey !important;
+      border-width: 3px;
+      border-radius: 13px;
+    }
+
+    .singleMachine .img-thumbnail-stop {
+      padding: 15px;
+      border-color: red !important;
+      border-width: 3px;
+      border-radius: 13px;
+    }
+
+    .singleMachine .img-thumbnail-running {
+      padding: 15px;
+      border-color: rgba(74, 209, 142, 0.9) !important;
+      border-width: 3px;
+      border-radius: 13px;
+    }
+
+    .stopfield {
+      font-size: 12px;
+      padding: 2px 6px;
+      right: 15px;
+      background: #ddd;
+      border-radius: 10px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .offfield {
+      font-size: 12px;
+      padding: 2px 6px;
+      right: 15px;
+      background: #ddd;
+      border-radius: 10px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .runningfield {
+      font-size: 12px;
+      padding: 2px 6px;
+      right: 15px;
+      background: #ddd;
+      border-radius: 10px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .row {
+      margin: 0;
+    }
+
+    .machinefield {
+      display: flex;
+      align-items: center;
+    }
+
+    .machinefield img {
+      width: 80px;
+      margin: 15px 5px;
+    }
+
+    .rightblock h1 {
+      font-weight: 600;
+      font-size: 25px;
+      color: #000000 !important;
+    }
+
+    .rightblock {
+      padding-left: 27px;
+      flex-grow: 1;
+    }
+
+    .rightblock h4 {
+      font-size: 15px;
+      font-weight: 300;
+      margin: 0;
+    }
+
+    .svgfield {
+      display: flex;
+      padding-bottom: 4px;
+      align-items: center;
+    }
+
+    .svgfield svg {
+      font-size: 2rem;
+      width: 20px;
+      padding-right: 3px;
+    }
+
+    .rotationsBackground h2 {
+      color: #000;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    .rotationsBackground h4 {
+      font-size: 13px;
+      color: #000;
+      font-weight: 300;
+    }
+
+    .reportHeader {
+      background-color: #387CA3;
+    }
+
+    .custom-header {
+      color: #fff;
+      background-color: #165b6a;
+    }
+
+    .rounded {
+      border-radius: .4rem;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .px-8 {
+      padding-left: 0.8rem;
+      padding-right: 0.8rem;
+    }
+
+    .py-4 {
+      padding-top: 0.4rem;
+      padding-bottom: 0.4rem;
+    }
+
+    .items-center {
+      align-items: center;
+    }
+
+    .logo-wrapper {
+      padding: 10px;
+      width: 140px;
+      height: 45px;
+      background-color: #FFFFFF;
+      border-radius: 5px;
+      margin-left: auto;
+      margin-top: 35px;
+    }
+
+    .machinesingleOn {
+      border-color: rgba(76, 175, 80, .9) !important;
+      border-width: 3px;
+      border-radius: 13px;
+    }
+
+    .machinesingleOff {
+      border-color: grey !important;
+      border-width: 3px;
+      border-radius: 13px;
+    }
+
+    .machinesingleStop {
+      border-color: #f00 !important;
+      border-width: 3px;
+      border-radius: 13px;
+    }
+
+    .each-machine {
+      display: table;
+      page-break-inside: avoid;
+      height: 250px;
+      padding: 0px;
+    }
+
+    .custom-container {
+      padding: 30px 10px;
+      width: 100%;
+    }
+
+    .number-defects {
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      background: #fff;
+      padding: 15px;
+      border-radius: .8rem;
+      margin-bottom: 25px;
+    }
+
+    .defects {
+      color: #145a69;
+    }
+
+    .def-dots {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: #ffd968;
+      border-radius: 50%;
+      margin-left: -10px
+    }
+
+    .def-commands {
+      display: inline-block;
+      min-width: 45px;
+      flex: 1;
+    }
+
+    .status {
+      font-size: 17px;
+      display:flex;
+      align-items: flex-start;
+      font-weight: normal;
+      align-content: flex-start;
+    }
+
+    .defects-text {
+      color: #0000008a;
+    }
+
+    .on {
+      background: #45818e;
+    }
+
+    .off {
+      background: #b7b9bb;
+    }
+
+    .stop {
+      background: #ff5357;
+    }
+
+    .running {
+      background: #45818e;
+    }
+
+    .MuiTypography {
+      background: #ffd968;
+      width: 100%;
+      padding: 2px;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 11px;
+      color: #000;
+      margin: 10px 0;
+    }
+
+    .clen {
+      clear: both;
+      display: table;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .time {
+      color: #45818e;
+    }
+
+    .general-status-wrapper {
+      margin-bottom: 10px;
+    }
+
+    .genral-status {
+      display: inline-block;
+      background-color: #ff5357 !important;
+      color: #fff !important;
+      font-size: 12px;
+      padding: 2px 6px;
+      border-radius: 16px !important;
+      font-weight: bold;
+      width: 100%;
+    }
+
+    .prodOrder-label {
+      font-size: 15px;
+      word-break: break-all;
+      height: 45px;
+      color: rgb(20, 90, 105);
+    }
+
+    /* CSS for roll status bar */
+
+    .pt-8 {
+      padding-top: 0.8rem;
+    }
+
+    .progressbar {
+      height: 15px;
+      display: flex;
+      overflow: hidden;
+      border-radius: 16px;
+      background-color: #fff;
+      border: 1px solid;
+      position: relative;
+    }
+
+    .progressBarPoint {
+      top: 0;
+      width: 1px;
+      bottom: 0;
+      position: absolute;
+      transition: width 1s;
+    }
+
+    /* CSS for roll status bar */
+  </style>
+</head>
+
+<body>
+  <% var formattedDate = function(date) {
+    var options = { year: 'numeric', month: 'long', day: 'numeric' };
+    var unformattedDate = new Date(date);
+    return unformattedDate.toLocaleDateString("en-US", options)
+    }
+  %>
+  <% var convertMinsToHrsMins = function (minutes) {
+		minutes = typeof minutes === 'number' ? minutes : parseInt(minutes);
+		let h = Math.floor(minutes / 60);
+		let m = minutes % 60;
+		const hours = h < 10 ? '0' + h : h;
+		const min = m < 10 ? '0' + m : m;
+		return hours + ':' + min;
+	}
+	%>
+  <% var prettyDate = function(time) {
+		var date = new Date(time);
+		return date.toLocaleTimeString('en-US', {
+			hour: '2-digit',
+			minute: '2-digit',
+		});
+	};
+  %>
+  <div class="container-fluid p-0">
+    <div class="custom-header">
+      <div class="row pb-2 pt-2">
+        <div class="col-6">
+          <div class="pl-2">
+            <h2><b>Machine Report</b></h2>
+            <p><%= JSON.parse(factory).name %></p>
+            <span><%=formattedDate(start)%></span> - <span><%=formattedDate(end)%></span>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="logo-wrapper">
+            <img class="react-logo" src="https://i.ibb.co/GvVVYDr/smartex-logo-black2.png"
+              alt="smartex" width="120"><span class="react-text text-12 mx-4"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="rotationsBackground col-12">
+        <div class="row">
+          <div class="col-12">
+            <div class="pl-2">
+              <h2 class="mb-0"> Machine RPM </h2>
+              <h4>Total Rotations</h4>
+            </div>
+          </div>
+          <div class="col-12 mt-2">
+            <div class="p-2">
+              <canvas id="machineRotations"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="custom-container">
+        <% var machineData = JSON.parse(machine) %>
+        <div class="allMachines">
+          <h2 class="main-heading">Machine general status</h2>
+          <div class="row justify-content-center">
+            <div class="singleMachine col-md-3">
+              <div class="img-thumbnail-on">
+                <div style="position: absolute;right: 17px;display: flex;flex-direction: column;align-items: flex-end;">
+                  <% if (machineData.state === 'on') { %>
+                    <p class="onfield on" style="margin-bottom:4px"> RPM : <%= machineData.rpm.toFixed() || 0 %> </p>
+                    <p class="onfield on">Live</p>
+                    <% } %>
+                    <% if (machineData.state === 'off') { %>
+                    <p class="offfield off"> RPM : <%= 0 %> </p>
+                    <% } %>
+                    <% if (machineData.state === 'stop') { %>
+                    <p class="stopfield stop"> RPM : <%= 0 %> </p>
+                    <% } %>
+                    <% if (machineData.state === 'running') { %>
+                    <p class="runningfield running" style="margin-bottom:4px"> RPM : <%= machineData.rpm.toFixed() || 0 %> </p>
+                    <p class="runningfield running">Live</p>
+                    <% } %>
+                </div>
+                <div style="width: 45%;">
+                  <div class="general-status-wrapper" style="margin-bottom: 2px;">
+                    <b class="genral-status"
+                      style="background-color: <%= machineData.defects > 0 ? '#ff5357' : '#45818e' %> !important;">Nᵒ
+                      Occurrences: <%= machineData.defects %></b>
+                  </div>
+                  <div class="general-status-wrapper">
+                    <b class="genral-status"
+                      style="background-color: <%= machineData.defectiveRolls > 0 ? '#ff5357' : '#45818e' %> !important;">Rolls with
+                      Occurrence: <%= machineData.defectiveRolls %></b>
+                  </div>
+                </div>
+                <div class="machinefield">
+                  <svg width="57px" height="73px" viewBox="0 0 57 73" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <!-- Generator: Sketch 60 (88103) - https://sketch.com -->
+                    <title>Machine - Icon</title>
+                    <desc>Created with Sketch.</desc>
+                    <g id="Update" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g id="Smartex-Dashboard_factory-selection" transform="translate(-270.000000, -899.000000)">
+                        <g id="Group-2" transform="translate(252.000000, 869.000000)">
+                          <g id="Group-35-Copy-4">
+                            <g id="Machine---Icon" transform="translate(18.000000, 25.000000)">
+                              <g id="machine-bilkul-bilkul-simple" transform="translate(1.000000, 6.000000)">
+                                <path
+                                  d="M48.8905429,61.82685 C47.2468747,68.3706834 40.253217,71.6425999 27.9095695,71.6425999 C15.5659221,71.6425999 8.45150694,68.3706834 6.56632414,61.82685 C6.56632414,55.7834272 6.56632414,46.8785044 6.56632414,41.3729516 C6.56632414,37.3108367 7.71043907,31.8107039 10.9592308,27.3464116 C11.0834074,27.1757756 11.276651,26.923382 11.5389617,26.5892308 C16.7644382,27.1510999 22.1813203,27.534698 27.789608,27.7400251 C32.3033924,27.9052808 37.7414015,27.3666649 44.1036354,26.1241773 C43.480373,26.7022705 43.2254562,27.0672252 43.3388853,27.2190417 C45.5205226,30.1390025 48.2304501,33.5119458 48.8905429,38.193394 C49.3306047,41.3143595 49.3306047,49.1921782 48.8905429,61.82685 Z M47.265625,57.6100889 L47.265625,36.9312167 C46.64797,32.9602606 45.3248265,29.7296913 43.2961945,27.2395088 C43.142647,27.0510264 42.9032318,26.7778467 42.577949,26.4199696 C36.5710928,28.3881942 31.4734952,29.3028038 27.2851563,29.1637985 C22.180034,28.9943663 17.2028591,28.1441474 12.3536315,26.6131416 C12.0050574,26.9948604 11.7497472,27.2840899 11.5877008,27.48083 C8.41663724,31.3308115 7.3046875,36.1251646 7.3046875,39.6525848 C7.3046875,44.364761 7.3046875,52.4375521 7.3046875,57.6100889 C9.08460627,63.2109243 15.8017698,66.0113422 27.456178,66.0113422 C39.1105863,66.0113422 45.7137351,63.2109243 47.265625,57.6100889 Z"
+                                  id="Combined-Shape" stroke="#FFFFFF" stroke-width="0.518867925" fill="#165B6A"
+                                  fill-rule="nonzero"></path>
+                                <polygon id="Rectangle" fill="#165B6A" fill-rule="nonzero"
+                                  points="6.875 39.9956792 11.171875 40.2627027 11.171875 65.7456117 6.875 60.5814855">
+                                </polygon>
+                                <polygon id="Path-4" stroke="#FFFFFF" stroke-width="0.518867925" fill="#2D2D2D"
+                                  fill-rule="nonzero"
+                                  points="20.2516079 36.925789 14.7517858 39.5681484 14.7517858 54.8515023 20.3377233 52.8161547">
+                                </polygon>
+                                <polygon id="Path-3" fill="#165B6A"
+                                  points="15.7983237 46.8428258 10.242086 47.5306896 10.242086 63.6586551 18.4765625 67.2492808 37.508414 68.3662616 47.265625 62.0342949 48.0822267 57.9819371 48.0822267 37.4049668 46.6172057 32.7852144 45.995812 31.3289591 45.1126255 30.6447175 44.5294256 33.1299234 45.546875 35.3966802 45.9765625 36.925789 45.9765625 39.0263816 45.1126255 41.7770854 41.8393049 44.6816008 38.0207031 46.8428258 33.2060239 48.3188061 28.8638921 48.97193 22.9889989 48.97193">
+                                </polygon>
+                                <path
+                                  d="M16.7003154,29.9432892 L5.14673891,30.9923107 C4.0607347,31.7045766 3.5177326,32.5356771 3.5177326,33.4856121 C3.5177326,34.4355471 3.5177326,37.6919236 3.5177326,43.2547414 C5.85347791,47.3821039 7.45944955,49.4457851 8.3356475,49.4457851 C9.21184541,49.4457851 13.1542882,49.0738659 20.1629757,48.330028 L20.1629757,36.4850363 L16.7003154,29.9432892 Z"
+                                  id="Path-8" stroke="#FFFFFF" stroke-width="0.518867925" fill="#165B6A"
+                                  fill-rule="nonzero"></path>
+                                <path
+                                  d="M30.3352039,48.1231434 C30.8098236,48.1231434 31.1945789,48.5061741 31.1945789,48.9786659 C31.1945789,49.4511578 30.8098236,49.8341885 30.3352039,49.8341885 C22.7790119,49.8341885 15.8895898,47.169862 12.6038045,43.0008459 C11.3386189,41.3955737 10.6770008,39.6414616 10.6770008,37.8568728 C10.6770008,31.2521421 19.5753907,25.8795571 30.3352039,25.8795571 C36.9685209,25.8795571 43.1247629,27.9272672 46.777856,31.3224433 C47.1247861,31.6448793 47.1434655,32.186247 46.8195778,32.5316218 C46.4956897,32.8769967 45.9518845,32.8955923 45.6049544,32.5731563 C42.2841398,29.4867993 36.5389899,27.5906022 30.3352039,27.5906022 C20.5354787,27.5906022 12.3957508,32.3493565 12.3957508,37.8568728 C12.3957508,39.2480848 12.9248537,40.6363044 13.9560137,41.9446438 C16.8952922,45.6740112 23.3012325,48.1231434 30.3352039,48.1231434 Z"
+                                  id="Path" stroke="#FFFFFF" stroke-width="0.518867925" fill="#165B6A"
+                                  fill-rule="nonzero"
+                                  transform="translate(28.863892, 37.856873) rotate(180.000000) translate(-28.863892, -37.856873) ">
+                                </path>
+                                <g id="Group-29" transform="translate(9.453125, 17.324332)" fill-rule="nonzero"
+                                  stroke="#FFFFFF" stroke-width="0.518867925">
+                                  <path
+                                    d="M18.2617187,25.2379152 C28.2688716,25.2379152 36.5234375,19.4936783 36.5234375,11.9773157 C36.5234375,10.9128492 36.3578823,9.8839249 36.0452399,8.90182485 C35.9142851,8.49045791 35.7575242,8.08730618 35.5763143,7.69319877 C35.2586908,7.00240973 26.8545738,11.2595399 18.8582528,11.2595399 C11.0620494,11.2595399 1.2890625,7.00240973 1.13867197,7.2977365 C0.945659031,7.6767623 0.775576539,8.06463012 0.629645894,8.46065375 C0.219264852,9.57433751 0,10.7522902 0,11.9773157 C0,19.4936783 8.25456595,25.2379152 18.2617187,25.2379152 Z"
+                                    id="Path" fill="#165B6A"></path>
+                                  <ellipse id="Oval-Copy-3" fill="#FFFFFF" cx="18.2617188" cy="5.1331353"
+                                    rx="9.23828125" ry="5.1331353"></ellipse>
+                                </g>
+                                <path
+                                  d="M27.3925781,31.868215 C42.3949558,31.868215 54.7851562,24.7913584 54.7851562,15.3994059 C54.7851562,6.00745342 42.3949558,0.213880637 27.3925781,0.213880637 C12.3902005,0.213880637 0,6.00745342 0,15.3994059 C0,24.7913584 12.3902005,31.868215 27.3925781,31.868215 Z M27.3925781,25.8795571 C14.0364283,25.8795571 3.4375,20.9458044 3.4375,15.3994059 C3.4375,9.85300734 14.0364283,4.49149338 27.3925781,4.49149338 C40.748728,4.49149338 51.3476563,9.85300734 51.3476563,15.3994059 C51.3476563,20.9458044 40.748728,25.8795571 27.3925781,25.8795571 Z"
+                                  id="Oval-Copy" stroke="#FFFFFF" stroke-width="0.518867925" fill="#165B6A"
+                                  fill-rule="nonzero"></path>
+                                <path
+                                  d="M27.0703125,24.3823927 C36.0178844,24.3823927 43.3984375,20.5837844 43.3984375,15.6132865 C43.3984375,10.6427887 36.0178844,6.84418039 27.0703125,6.84418039 C18.1227406,6.84418039 10.7421875,10.6427887 10.7421875,15.6132865 C10.7421875,20.5837844 18.1227406,24.3823927 27.0703125,24.3823927 Z M27.0703125,21.815825 C19.1699933,21.815825 12.890625,18.9267154 12.890625,15.6132865 C12.890625,12.2998576 19.1699933,9.41074804 27.0703125,9.41074804 C34.9706317,9.41074804 41.25,12.2998576 41.25,15.6132865 C41.25,18.9267154 34.9706317,21.815825 27.0703125,21.815825 Z"
+                                  id="Oval" stroke="#FFFFFF" stroke-width="0.518867925" fill="#165B6A"
+                                  fill-rule="nonzero"></path>
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </svg>
+                  <div class="rightblock">
+                    <h5><b><%= machineData.name %></b></h5>
+                    <% var total = machineData.productionTime.total;
+                       var offPercentage = total === 0 ? total : (machineData.productionTime.off/total)*100;
+                       var stopPercentage = total === 0 ? total : (machineData.productionTime.stop/total)*100;
+                       var runPercentage = total === 0 ? total : (machineData.productionTime.running/total)*100;
+                       var brand = machineData.brand ? machineData.brand : '---';
+                       var diameter= machineData.diameter ? machineData.diameter : '---';
+                       var gauge = machineData.gauge ? machineData.gauge : '---';
+                       %>
+                    <div class="status">
+                      <div class="def-commands">
+                        <span class="def-dots off"> </span>  off</div>
+                        <div style="flex: 1"> <%= offPercentage.toFixed() %> %</div>
+                      <div class="icon-text">
+                        <a href="https://ibb.co/XtCdFWy"><img src="https://i.ibb.co/XtCdFWy/brand.png" alt="brand" style="width: auto;height: 22px; margin: 0;"></a> <%= brand %>
+                    </div>
+                  </div>
+                    <div class="status"> <div class="def-commands"> <span class="def-dots stop"> </span>  stop</div> <div style="flex: 1"> <%= stopPercentage.toFixed() %> %</div>
+                      <div class="icon-text">
+                        <a href="https://ibb.co/BcwKqtV"><img src="https://i.ibb.co/BcwKqtV/guage.png" alt="guage" style="width: auto;height: 22px; margin: 0;"></a> <%= gauge %>
+                    </div>
+                  </div>
+                    <div class="status"> <div class="def-commands">  <span class="def-dots running"> </span> running</div> <div style="flex: 1"><%= runPercentage.toFixed() %> % </div>
+                      <div class="icon-text">
+                        <a href="https://ibb.co/3054Vzc"><img src="https://i.ibb.co/3054Vzc/diameter.png" alt="diameter" style="width: auto;height: 22px; margin: 0;"></a> <%= diameter %>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+                <div> <small> Machine Performance </small> </div>
+                <div class="machineStatusStyle <%= total === 0 ? 'machineStatusStyleBorder' : '' %>">
+                  <canvas id='machineStatusBar'></canvas>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="row custom-container  pt-0">
+        <h2 class="main-heading">Machine general status</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="number-defects">
+              <h6> Number of Occurrences </h6>
+              <div class="row pt-4">
+                <div class="col-md-4">
+                  <canvas id="defects" style="display: block; height: 180px; max-height: 180px;"></canvas>
+                </div>
+                <div class="col-md-8">
+                  <div class="pl-2">
+                    <h6 class="defects"> <span class="def-dots" style="background-color: <%= defectColor %>;"> </span>
+                      Occurrences </h6>
+                    <% var defects = JSON.parse(defects) %>
+                    <h5><b> <%= defects.total %> </b></h5>
+                    <% if(defects.isIncreased) {  %>
+                    <span style="color: #e53e3e;">
+                      <span>⬆</span>
+                      <% } else { %>
+                      <span style="color: #38a169">
+                        <span>⬇</span>
+                        <% } %>
+                        <span><%= defects.percentageChange %>%</span>
+                      </span>
+                  </div>
+                  <p class="defects-text"> This percentile comparison is coming from the previous Occurrence Shift
+                    <%=formattedDate(start)%> - <%=formattedDate(end)%> </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="number-defects">
+              <h6> Occurrences Per Shifts </h6>
+              <div class="row pt-4">
+                <div class="col-md-4">
+                  <canvas id="defectsPerShift" style="display: block; height: 180px; max-height: 180px"></canvas>
+                </div>
+                <div class="col-md-8">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="pl-2">
+                        <h6 class="defects"> <span class="def-dots" style="background-color: <%= morningShiftColor %>;">
+                          </span> Morning </h6>
+                        <h5><b> <%= shiftTotal.morning %> </b></h5>
+                        <% var percentageInfo = JSON.parse(defectsPerShift).percentageInfo %>
+                        <% if(percentageInfo.morning.isIncreased) {  %>
+                        <span style="color: #e53e3e;">
+                          <span>⬆</span>
+                          <% } else { %>
+                          <span style="color: #38a169">
+                            <span>⬇</span>
+                            <% } %>
+                            <span><%= percentageInfo.morning.percentageChange %>%</span>
+                          </span>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="pl-2">
+                        <h6 class="defects"> <span class="def-dots"
+                            style="background-color: <%= afternoonShiftColor %>;"> </span> Afternoon </h6>
+                        <h5><b> <%= shiftTotal.afternoon %> </b></h5>
+                        <% if(percentageInfo.afternoon.isIncreased) {  %>
+                        <span style="color: #e53e3e;">
+                          <span>⬆</span>
+                          <% } else { %>
+                          <span style="color: #38a169">
+                            <span>⬇</span>
+                            <% } %>
+                            <span><%= percentageInfo.afternoon.percentageChange %>%</span>
+                          </span>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="pl-2">
+                        <h6 class="defects"> <span class="def-dots" style="background-color: <%= nightShiftColor %>;">
+                          </span> Night </h6>
+                        <h5><b> <%= shiftTotal.night %> </b></h5>
+                        <% if(percentageInfo.night.isIncreased) {  %>
+                        <span style="color: #e53e3e;">
+                          <span>⬆</span>
+                          <% } else { %>
+                          <span style="color: #38a169">
+                            <span>⬇</span>
+                            <% } %>
+                            <span><%= percentageInfo.night.percentageChange %>%</span>
+                          </span>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="defects-text"> This percentile comparison is coming from the previous Occurrence Shift
+                    <%=formattedDate(start)%> - <%=formattedDate(end)%> </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="number-defects">
+              <h6> Rolls with Occurrence </h6>
+              <div class="row pt-4">
+                <div class="col-md-4">
+                  <canvas id="defectRolls" style="display: block; height: 180px; max-height: 180px"></canvas>
+                </div>
+                <div class="col-md-8">
+                  <div class="pl-2">
+                    <h6 class="defects"> <span class="def-dots" style="background-color: <%= defectiveRollColor %>;">
+                      </span> Rolls </h6>
+                    <%var defectiveRolls = JSON.parse(defectiveRolls) %>
+                    <h5><b> <%= defectiveRolls.total %> </b></h5>
+                    <% if(defectiveRolls.isIncreased) {  %>
+                    <span style="color: #e53e3e;">
+                      <span>⬆</span>
+                      <% } else { %>
+                      <span style="color: #38a169">
+                        <span>⬇</span>
+                        <% } %>
+                        <span><%= defectiveRolls.percentageChange %>%</span>
+                      </span>
+                  </div>
+                  <p class="defects-text"> This percentile comparison is coming from the previous Occurrence Shift
+                    <%=formattedDate(start)%> - <%=formattedDate(end)%> </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="number-defects">
+              <h6> Occurrences By Type </h6>
+              <div class="row pt-4">
+                <div class="col-md-4">
+                  <canvas id="defectsByType" style="display: block; height: 180px; max-height: 180px"></canvas>
+                </div>
+                <div class="col-md-8">
+                  <%
+                  var defectsByTypeLabels =  JSON.parse(labels);
+                  var defectsByTypeBgColor = JSON.parse(defectsByTypeBgColor);
+                  var defectsCountByLabel = JSON.parse(defectsLabel);
+                  var defectsByTypeData = JSON.parse(defectsByType);
+									var percentageInformation = defectsByTypeData.percentageInfo;
+                  %>
+                  <div class="row justify-content-center">
+                    <% for(let index=0; index<defectsByTypeLabels.length && index<3; index++) { %>
+                    <% const label = defectsByTypeLabels[index]; %>
+                    <% const color = defectsByTypeBgColor[label] %>
+                    <% const defectsCount = defectsCountByLabel[label] %>
+                    <% const percentageInfo = percentageInformation[label] %>
+                    <div class="col-md-4">
+                      <div class="pl-2">
+                        <h6 class="defects"> <span class="def-dots" style="background-color: <%= color %>;"> </span>
+                          <%= label %> </h6>
+                        <h5><b> <%= defectsCount %> </b></h5>
+                        <% if(percentageInfo.isIncreased) {  %>
+                        <span style="color: #e53e3e;">
+                          <span>⬆</span>
+                          <% } else { %>
+                          <span style="color: #38a169">
+                            <span>⬇</span>
+                            <% } %>
+                            <span><%= percentageInfo.percentageChange %>%</span>
+                          </span>
+                      </div>
+                    </div>
+                    <% } %>
+                  </div>
+                  <p class="defects-text"> This percentile comparison is coming from the previous Occurrence Shift
+                    <%=formattedDate(start)%> - <%=formattedDate(end)%> </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="custom-container pt-0">
+      <% rollsData = JSON.parse(rolls) %>
+      <div class="allMachines">
+        <h2 class="main-heading">Rolls Produced</h2>
+        <% for (var index = 0; index < rollsData.length; index++) { %>
+        <% if(rollsData.length > 0 && index%4===0) { %>
+        <div class="col-12 each-roll">
+          <div class="row justify-content-center">
+            <% } %>
+            <% const roll = rollsData[index]; %>
+            <div class="singleMachine col-md-3">
+              <div class="img-thumbnail-on">
+                <div class="prodOrder-label">
+                  <% if(roll.productionOrder) { %>
+                  <b>PO: <%= roll.productionOrder %></b>
+                  <% } %>
+                </div>
+                <!-- <span class="muifab-label"> <svg class="MuiSvgIcon" focusable="false" viewBox="0 0 24 24"
+                    aria-hidden="true">
+                    <path
+                      d="M8 16h8v2H8zm0-4h8v2H8zm6-10H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z">
+                    </path>
+                  </svg> </span> -->
+                <div class="machinefield">
+                  <?xml version="1.0" encoding="UTF-8"?>
+                  <svg width="68px" height="49px" viewBox="0 0 68 49" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <!-- Generator: Sketch 60 (88103) - https://sketch.com -->
+                    <title>Rolls icons</title>
+                    <desc>Created with Sketch.</desc>
+                    <g id="Update" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <g id="Smartex-Rolls" transform="translate(-271.000000, -901.000000)" stroke="#FFFFFF">
+                        <g id="Group-23" transform="translate(252.000000, 872.000000)">
+                          <g id="Group-14-Copy">
+                            <g id="Rolls-icons" transform="translate(18.000000, 18.000000)">
+                              <g id="roll-simple-A" transform="translate(2.000000, 12.000000)">
+                                <polygon id="Path-27" stroke-width="0.5" fill="#2D2D2D" fill-rule="nonzero"
+                                  points="8.20662812 27.8180555 22.4498456 27.8180555 22.1877709 0 8.46254881 0">
+                                </polygon>
+                                <path
+                                  d="M59.4966727,14.587011 C57.9080919,22.0527023 57.9080919,28.1713944 59.4966727,32.9430871 C61.0852538,37.7147798 60.8217961,42.3223224 58.7063,46.7657143 L3.20571429,46.7657143 C5.04934324,43.3567671 4.77639484,38.3896924 2.386869,31.864489 C-0.00265681878,25.3392859 -0.509084159,19.239109 0.867586979,13.5639582 L59.4966727,14.587011 Z"
+                                  id="Path-25" stroke-width="0.5" fill="#165B6A" fill-rule="nonzero"></path>
+                                <path
+                                  d="M58.3666282,27.8180555 C62.4824433,27.8180555 65.8189707,21.5907717 65.8189707,13.9090277 C65.8189707,6.22728382 62.4824433,2.27373675e-13 58.3666282,2.27373675e-13 C55.6227514,2.27373675e-13 39.0870356,2.27373675e-13 8.75948074,2.27373675e-13 L8.75948074,27.8180555 C40.6486499,27.8180555 57.1843657,27.8180555 58.3666282,27.8180555 Z"
+                                  id="Oval" stroke-width="0.5" fill="#165B6A" fill-rule="nonzero"></path>
+                                <ellipse id="Oval" stroke-width="0.5" fill="#165B6A" fill-rule="nonzero" cx="8.20662812"
+                                  cy="13.9090277" rx="7.4523424" ry="13.9090277"></ellipse>
+                                <ellipse id="Oval" stroke-width="0.5" fill="#165B6A" fill-rule="nonzero" cx="8.20662812"
+                                  cy="13.9090277" rx="3.59039979" ry="6.6678853"></ellipse>
+                                <ellipse id="Oval" stroke-width="0.5" fill="#FFFFFF" fill-rule="nonzero" cx="8.20662812"
+                                  cy="13.9090277" rx="1.96114274" ry="3.59039979"></ellipse>
+                              </g>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </svg>
+                  <div class="rightblock">
+                    <h5> <b> <%= roll.poRollIndex ? roll.poRollIndex : '---' %> </b> </h5>
+                  </div>
+                </div>
+                <div class="row my-2 justify-content-center">
+                  <div class="col-md-4 text-center px-2">
+                    <small> Nᵒ Defects</small>
+                    <div class="MuiTypography" style="<%= roll.defects > 0 ? 'background-color: #ff5357;' : '' %>"">
+                      <%= roll.defects %> </div>
+                  </div>
+                  <div class=" col-md-4 text-center px-2">
+                      <small> Meters w/def </small>
+                      <div class="MuiTypography"> <%= roll.metersWithDefect %> </div>
+                    </div>
+                    <div class="col-md-4 text-center px-2">
+                      <small> Percentage </small>
+                      <div class="MuiTypography"> <%= roll.metersWithDefectPercentage.toFixed(2) %> </div>
+                    </div>
+                  </div>
+
+                  <div> <small class="float-left"> Duration </small> <small class="float-right time">
+                      <%= convertMinsToHrsMins(roll.duration) %> </small>
+                  </div>
+                  <div class="pt-8" style="clear: both; cursor: default;">
+                    <div class="progressbar">
+                      <%
+                        const rollProgressBarData = [];
+                        const totalTime = new Date(roll.end || new Date()).getTime() - new Date(roll.start).getTime();
+
+                        if(roll.timeline.length) {
+                          roll.timeline.forEach(function(timelineData) {
+                            if(timelineData.status === 'defect') {
+                              const bPer = ((new Date(timelineData.start).getTime() - new Date(roll.start).getTime()) * 100) / totalTime;
+                              rollProgressBarData.push({
+                                percentage: `${bPer}%`,
+                                color: 'rgb(255, 87, 87)', // red
+                              })
+                            }
+                          });
+                        }
+
+                        if(roll.defectsTimeline.length) {
+                          roll.defectsTimeline.forEach(function(defectTime) {
+                            const bPer = ((new Date(defectTime).getTime() - new Date(roll.start).getTime()) * 100) / totalTime;
+                            rollProgressBarData.push({
+                              percentage: `${bPer}%`,
+                              color: 'rgb(255,217,104,1)', // yellow
+                            })
+                          });
+                        }
+
+                        if(!rollProgressBarData.length) {
+                          rollProgressBarData.push({ percentage: '100%', color: '#FFFFFF' });
+                        }
+                      %>
+                      <% for(const progressBarDataPoint of rollProgressBarData) { %>
+                      <div class="progressBarPoint"
+                        style="background-color: <%= progressBarDataPoint.color %>; left: <%= progressBarDataPoint.percentage %>; cursor: pointer;">
+                      </div>
+                      <% } %>
+                    </div>
+                  </div>
+                  <div class="clen"> <small class="float-left time"> <%= prettyDate(roll.start) %> </small>
+                    <small class="float-right time"> <%= prettyDate(roll.end) %>
+                    </small> </div>
+                </div>
+              </div>
+              <% if((index % 4 !== 3 && rollsData.length - 1 === index ) || index % 4 === 3) { %>
+            </div>
+          </div>
+          <% } %>
+          <% } %>
+        </div>
+      </div>
+      <style src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css"></style>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

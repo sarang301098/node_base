@@ -1,0 +1,61 @@
+[2022-06-06T09:10:28.402Z][backend][info] Server started - PORT: 3333
+[2022-06-06T09:36:11.920Z][backend][info] Server started - PORT: 3333
+[2022-06-06T09:40:19.935Z][backend][error] POST /testPayment/ 
+User: {}
+Params: {}
+Query: {}
+Body: {
+  userId: '212121212121',
+  stripeCustomerId: 'cus_LoBl3ErwBjSPFK',
+  stripeCardId: 'card_1L6ZOuJegOrZGWtLTVM1TWEX',
+  confirm: 'true',
+  orderId: '1111',
+  amount: '10000',
+  currency: 'usd'
+}
+Error: Request aborted due to timeout being reached (80000ms)
+[2022-06-06T09:41:49.940Z][backend][info] Server started - PORT: 3333
+[2022-06-06T09:41:59.048Z][backend][info] Server started - PORT: 3333
+[2022-06-06T09:56:30.436Z][backend][info] Server started - PORT: 3333
+[2022-06-06T09:57:10.445Z][backend][error] POST /testPayment/ 
+User: {}
+Params: {}
+Query: {}
+Body: {
+  userId: '212121212121',
+  stripeCustomerId: 'cus_LoBl3ErwBjSPFK',
+  stripeCardId: 'card_1L6ZOuJegOrZGWtLTVM1TWEX',
+  confirm: 'true',
+  orderId: '1111',
+  amount: '10000',
+  currency: 'usd'
+}
+Error: You have insufficient funds in your Stripe account for this transfer. Your card balance is too low.  You can use the /v1/balance endpoint to view your Stripe balance (for more details, see stripe.com/docs/api#balance).
+[2022-06-06T10:01:25.749Z][backend][error] POST /testPayment/ 
+User: {}
+Params: {}
+Query: {}
+Body: {
+  userId: '212121212121',
+  stripeCustomerId: 'cus_LoBl3ErwBjSPFK',
+  stripeCardId: 'card_1L6ZOuJegOrZGWtLTVM1TWEX',
+  confirm: 'true',
+  orderId: '1111',
+  amount: '10000',
+  currency: 'usd'
+}
+Error: You have insufficient funds in your Stripe account for this transfer. Your card balance is too low.  You can use the /v1/balance endpoint to view your Stripe balance (for more details, see stripe.com/docs/api#balance).
+[2022-06-06T10:01:30.555Z][backend][error] POST /testPayment/ 
+User: {}
+Params: {}
+Query: {}
+Body: {
+  userId: '212121212121',
+  stripeCustomerId: 'cus_LoBl3ErwBjSPFK',
+  stripeCardId: 'card_1L6ZOuJegOrZGWtLTVM1TWEX',
+  confirm: 'true',
+  orderId: '1111',
+  amount: '10000',
+  currency: 'usd'
+}
+Error: You have insufficient funds in your Stripe account for this transfer. Your card balance is too low.  You can use the /v1/balance endpoint to view your Stripe balance (for more details, see stripe.com/docs/api#balance).

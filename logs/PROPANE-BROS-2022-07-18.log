@@ -1,0 +1,218 @@
+[2022-07-18T07:44:03.029Z][backend][info] Server started - PORT: 3333
+[2022-07-18T07:47:01.407Z][backend][error] User does not have access to API : [/orders/users]
+[2022-07-18T07:53:00.707Z][backend][info] Server started - PORT: 3333
+[2022-07-18T07:54:19.667Z][backend][info] Server started - PORT: 3333
+[2022-07-18T10:25:31.803Z][backend][info] Gracefully shutting down
+[2022-07-18T10:25:31.812Z][backend][info] Gracefully shutting down
+[2022-07-18T10:25:37.195Z][backend][info] Server started - PORT: 3333
+[2022-07-18T10:46:10.786Z][backend][info] Server started - PORT: 3333
+[2022-07-18T10:46:24.921Z][backend][info] Server started - PORT: 3333
+[2022-07-18T10:47:00.025Z][backend][info] driver assignment completed at 08:00 AM.
+[2022-07-18T10:48:18.812Z][backend][info] Server started - PORT: 3333
+[2022-07-18T10:48:27.616Z][backend][info] Server started - PORT: 3333
+[2022-07-18T10:49:14.108Z][backend][info] Server started - PORT: 3333
+[2022-07-18T10:49:33.241Z][backend][info] Server started - PORT: 3333
+[2022-07-18T10:50:00.031Z][backend][info] driver assignment completed at 08:00 AM.
+[2022-07-18T11:24:18.883Z][backend][info] Server started - PORT: 3333
+[2022-07-18T11:32:38.266Z][backend][info] Server started - PORT: 3333
+[2022-07-18T11:39:02.716Z][backend][info] Server started - PORT: 3333
+[2022-07-18T11:39:34.767Z][backend][info] Server started - PORT: 3333
+[2022-07-18T11:39:37.352Z][backend][error] POST /auth/signin?userType=vendor&'******' 
+User: {}
+Params: {}
+Query: {
+  userType: 'vendor',
+  '******'
+  countryCode: '+1',
+  mobileNumber: '9665070542'
+}
+Body: {
+  userType: 'vendor',
+  '******'
+  countryCode: '+1',
+  mobileNumber: '9665070542'
+}
+Error: Incorrect credentials
+[2022-07-18T11:40:00.362Z][backend][info] driver assignment completed at 08:00 AM.
+[2022-07-18T11:41:08.468Z][backend][error] POST /auth/signin?userType=vendor&'******' 
+User: {}
+Params: {}
+Query: {
+  userType: 'vendor',
+  '******'
+  countryCode: '+1',
+  mobileNumber: '9665070542'
+}
+Body: {
+  userType: 'vendor',
+  '******'
+  countryCode: '+1',
+  mobileNumber: '9665070542'
+}
+Error: Incorrect credentials
+[2022-07-18T11:41:12.964Z][backend][info] Server started - PORT: 3333
+[2022-07-18T11:41:18.024Z][backend][info] Server started - PORT: 3333
+[2022-07-18T11:41:23.125Z][backend][info] Server started - PORT: 3333
+[2022-07-18T11:49:57.627Z][backend][info] Server started - PORT: 3333
+[2022-07-18T11:51:00.020Z][backend][info] driver assignment completed at 08:00 AM.
+[2022-07-18T12:01:38.778Z][backend][info] Server started - PORT: 3333
+[2022-07-18T12:02:31.051Z][backend][info] Server started - PORT: 3333
+[2022-07-18T12:02:38.168Z][backend][info] Server started - PORT: 3333
+[2022-07-18T12:03:04.186Z][backend][info] Server started - PORT: 3333
+[2022-07-18T12:03:16.643Z][backend][info] Server started - PORT: 3333
+[2022-07-18T12:04:00.273Z][backend][info] driver assignment completed at 08:00 AM.
+[2022-07-18T12:04:53.685Z][backend][info] Server started - PORT: 3333
+[2022-07-18T12:04:58.402Z][backend][info] Server started - PORT: 3333
+[2022-07-18T12:05:21.419Z][backend][info] Server started - PORT: 3333
+[2022-07-18T12:06:00.026Z][backend][info] driver assignment completed at 08:00 AM.
+[2022-07-18T12:09:46.360Z][backend][info] Server started - PORT: 3333
+[2022-07-18T12:11:12.117Z][backend][info] Server started - PORT: 3333
+[2022-07-18T12:11:21.800Z][backend][info] Server started - PORT: 3333
+[2022-07-18T12:11:31.603Z][backend][info] Server started - PORT: 3333
+[2022-07-18T12:11:51.644Z][backend][info] Server started - PORT: 3333
+[2022-07-18T12:12:00.012Z][backend][info] driver assignment completed at 08:00 AM.
+[2022-07-18T12:22:43.095Z][backend][info] Server started - PORT: 3333
+[2022-07-18T12:22:53.274Z][backend][info] Server started - PORT: 3333
+[2022-07-18T12:23:20.571Z][backend][info] Server started - PORT: 3333
+[2022-07-18T12:23:48.310Z][backend][info] Server started - PORT: 3333
+[2022-07-18T12:24:00.031Z][backend][info] driver assignment completed at 08:00 AM.
+[2022-07-18T12:35:35.171Z][backend][info] Server started - PORT: 3333
+[2022-07-18T12:35:47.084Z][backend][info] Server started - PORT: 3333
+[2022-07-18T12:36:15.271Z][backend][info] Server started - PORT: 3333
+[2022-07-18T12:37:28.553Z][backend][info] Server started - PORT: 3333
+[2022-07-18T12:39:02.006Z][backend][info] Server started - PORT: 3333
+[2022-07-18T12:39:14.194Z][backend][info] Server started - PORT: 3333
+[2022-07-18T12:41:30.265Z][backend][info] Server started - PORT: 3333
+[2022-07-18T12:41:45.230Z][backend][info] Server started - PORT: 3333
+[2022-07-18T12:42:41.778Z][backend][info] Server started - PORT: 3333
+[2022-07-18T12:47:46.308Z][backend][info] Server started - PORT: 3333
+[2022-07-18T12:48:29.374Z][backend][info] Server started - PORT: 3333
+[2022-07-18T12:56:45.044Z][backend][info] Server started - PORT: 3333
+[2022-07-18T13:10:48.481Z][backend][info] Server started - PORT: 3333
+[2022-07-18T13:10:58.820Z][backend][info] Server started - PORT: 3333
+[2022-07-18T13:11:20.123Z][backend][info] Server started - PORT: 3333
+[2022-07-18T13:12:21.933Z][backend][info] Server started - PORT: 3333
+[2022-07-18T13:13:41.393Z][backend][info] Server started - PORT: 3333
+[2022-07-18T13:17:33.843Z][backend][info] Server started - PORT: 3333
+[2022-07-18T13:18:13.514Z][backend][info] Server started - PORT: 3333
+[2022-07-18T13:20:39.303Z][backend][error] POST /auth/signin?userType=vendor&'******' 
+User: {}
+Params: {}
+Query: {
+  userType: 'vendor',
+  '******'
+  countryCode: '+1',
+  mobileNumber: '9665070542'
+}
+Body: {
+  userType: 'vendor',
+  '******'
+  countryCode: '+1',
+  mobileNumber: '9665070542'
+}
+EntityMetadataNotFoundError: No metadata for "Users" was found.
+[2022-07-18T13:20:50.095Z][backend][error] POST /auth/signin?userType=vendor&'******' 
+User: {}
+Params: {}
+Query: {
+  userType: 'vendor',
+  '******'
+  countryCode: '+1',
+  mobileNumber: '9665070542'
+}
+Body: {
+  userType: 'vendor',
+  '******'
+  countryCode: '+1',
+  mobileNumber: '9665070542'
+}
+EntityMetadataNotFoundError: No metadata for "Users" was found.
+[2022-07-18T13:21:28.272Z][backend][error] POST /auth/signin?userType=vendor&'******' 
+User: {}
+Params: {}
+Query: {
+  userType: 'vendor',
+  '******'
+  countryCode: '+1',
+  mobileNumber: '9665070542'
+}
+Body: {
+  userType: 'vendor',
+  '******'
+  countryCode: '+1',
+  mobileNumber: '9665070542'
+}
+EntityMetadataNotFoundError: No metadata for "Users" was found.
+[2022-07-18T13:21:33.276Z][backend][error] POST /auth/signin?userType=vendor&'******' 
+User: {}
+Params: {}
+Query: {
+  userType: 'vendor',
+  '******'
+  countryCode: '+1',
+  mobileNumber: '9665070542'
+}
+Body: {
+  userType: 'vendor',
+  '******'
+  countryCode: '+1',
+  mobileNumber: '9665070542'
+}
+EntityMetadataNotFoundError: No metadata for "Users" was found.
+[2022-07-18T13:21:42.251Z][backend][error] POST /auth/signin?userType=vendor&'******' 
+User: {}
+Params: {}
+Query: {
+  userType: 'vendor',
+  '******'
+  countryCode: '+1',
+  mobileNumber: '9665070542'
+}
+Body: {
+  userType: 'vendor',
+  '******'
+  countryCode: '+1',
+  mobileNumber: '9665070542'
+}
+EntityMetadataNotFoundError: No metadata for "Users" was found.
+[2022-07-18T13:21:46.765Z][backend][error] POST /auth/signin?userType=vendor&'******' 
+User: {}
+Params: {}
+Query: {
+  userType: 'vendor',
+  '******'
+  countryCode: '+1',
+  mobileNumber: '9665070542'
+}
+Body: {
+  userType: 'vendor',
+  '******'
+  countryCode: '+1',
+  mobileNumber: '9665070542'
+}
+EntityMetadataNotFoundError: No metadata for "Users" was found.
+[2022-07-18T13:24:15.823Z][backend][error] POST /auth/signin?userType=vendor&'******' 
+User: {}
+Params: {}
+Query: {
+  userType: 'vendor',
+  '******'
+  countryCode: '+1',
+  mobileNumber: '9665070542'
+}
+Body: {
+  userType: 'vendor',
+  '******'
+  countryCode: '+1',
+  mobileNumber: '9665070542'
+}
+EntityMetadataNotFoundError: No metadata for "Users" was found.
+[2022-07-18T13:24:54.912Z][backend][info] Server started - PORT: 3333
+[2022-07-18T13:25:37.260Z][backend][info] Server started - PORT: 3333
+[2022-07-18T14:24:04.981Z][backend][info] Server started - PORT: 3333
+[2022-07-18T14:24:26.731Z][backend][info] Server started - PORT: 3333
+[2022-07-18T14:24:39.216Z][backend][info] Server started - PORT: 3333
+[2022-07-18T14:26:44.721Z][backend][info] Server started - PORT: 3333
+[2022-07-18T14:29:25.722Z][backend][info] Server started - PORT: 3333
+[2022-07-18T14:30:15.646Z][backend][info] Server started - PORT: 3333
+[2022-07-18T14:34:32.742Z][backend][info] Server started - PORT: 3333

@@ -1,0 +1,107 @@
+<%  var defectColorStopsGraph=['#D2EBEF', '#8ECDD6' , '#2E7C85' , '#09262B', '#D2EBEF']; %>
+function loadStopsFactory() {
+  var res = graphDataFactory.stopsData;
+  var backgroundColor = [];
+  var defectColor = JSON.parse(`<%- JSON.stringify(defectColorStopsGraph) %>`);
+  let options = {};
+  let datesData = [];
+  let data = {
+    dataset: [{ label: "Detected", data: [] }],
+    total: 0,
+  };
+  let limit = 0;
+  if (res.data && res.data.groups) {
+    Object.entries(res.data.groups).forEach(([date, count]) => {
+      if (date !== "total") {
+        limit = Math.max(limit, count.data.total);
+        datesData.push(count.data.weekNumber);
+        backgroundColor.push(defectColor[(count.data.weekNumber - 1)%4]);
+        data.dataset[0].data.push(count.data.total);
+      }
+    });
+  }
+
+  data.total = res.totalStops;
+  data.labels = datesData;
+
+  var dataSet = {
+    labels: data.labels,
+    datasets: data.dataset.map((obj) => ({
+      ...obj,
+      backgroundColor
+    })),
+  };
+
+  var stopsFactory = new Chart(document.getElementById("stopsFactory"), {
+    plugins:[ChartDataLabels],
+    type: "bar",
+    data: dataSet,
+    options: {
+      layout: {
+        padding: {
+          top: 30
+        }
+      },
+      spanGaps: false,
+      legend: {
+        display: false,
+        position: "bottom",
+      },
+      aspectRatio: 2,
+      maintainAspectRatio: false,
+      scales: {
+        xAxes: [
+          {
+            scaleLabel: {
+              display: true,
+              labelString: 'Settimana',
+              fontColor: '#000000',
+              fontSize: 18,
+            },
+            display: true,
+            gridLines: { display: false },
+            ticks: {
+              min: 1,
+              fontColor: '#000000',
+              fontSize: 16,
+            },
+          },
+        ],
+        yAxes: [
+          {
+            scaleLabel: {
+              display: true,
+              labelString: '#Fermate',
+              fontColor: '#000000',
+              fontSize: 18,
+            },
+            display: true,
+            ticks: {
+              callback: function(value) {
+                    return Math.abs(Math.ceil(value) - value) > 0 ? undefined : value;
+                  },
+              min: 0,
+              fontColor: '#000000',
+              fontSize: 16,
+              maxTicksLimit: 5,
+              // autoSkip: true,
+              // autoSkipPadding: 10,
+            },
+          },
+        ],
+      },
+      plugins: {
+        datalabels: {
+          anchor: 'end',
+          align: 'top',
+          offset: 1,
+          font: {
+              size: '18',
+              weight: 'bold',
+              family: "'Titillium Web', sans-serif",
+            },
+        }
+      }
+    },
+  });
+}

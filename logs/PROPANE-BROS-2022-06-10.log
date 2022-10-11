@@ -1,0 +1,67 @@
+[2022-06-10T04:25:50.662Z][backend][info] Server started - PORT: 3333
+[2022-06-10T06:12:09.680Z][backend][info] Server started - PORT: 3333
+[2022-06-10T06:44:05.718Z][backend][info] Server started - PORT: 3333
+[2022-06-10T06:44:10.083Z][backend][error] POST /testPayment/ 
+User: {}
+Params: {}
+Query: {}
+Body: {
+  userId: '212121212121',
+  stripeCustomerId: 'cus_LoBl3ErwBjSPFK',
+  stripeCardId: 'card_1L6ZOuJegOrZGWtLTVM1TWEX',
+  confirm: 'true',
+  orderId: '1111',
+  amount: '10000',
+  currency: 'usd'
+}
+Error: No such destination: 'cus_LoBl3ErwBjSPFK'
+[2022-06-10T07:20:08.355Z][backend][info] Server started - PORT: 3333
+[2022-06-10T07:22:19.101Z][backend][info] Server started - PORT: 3333
+[2022-06-10T07:30:14.839Z][backend][info] Server started - PORT: 3333
+[2022-06-10T07:37:40.622Z][backend][info] Server started - PORT: 3333
+[2022-06-10T10:01:12.952Z][backend][info] Server started - PORT: 3333
+[2022-06-10T10:05:09.804Z][backend][info] Server started - PORT: 3333
+[2022-06-10T10:08:27.176Z][backend][info] Server started - PORT: 3333
+[2022-06-10T10:15:58.898Z][backend][info] Server started - PORT: 3333
+[2022-06-10T10:29:29.971Z][backend][info] Server started - PORT: 3333
+[2022-06-10T10:29:30.076Z][backend][info] Gracefully shutting down
+[2022-06-10T10:29:30.078Z][backend][info] Gracefully shutting down
+[2022-06-10T10:29:33.508Z][backend][info] Server started - PORT: 3333
+[2022-06-10T10:52:41.919Z][backend][info] Server started - PORT: 3333
+[2022-06-10T10:53:57.260Z][backend][info] Server started - PORT: 3333
+[2022-06-10T11:00:50.901Z][backend][info] Server started - PORT: 3333
+[2022-06-10T11:01:24.951Z][backend][info] Gracefully shutting down
+[2022-06-10T11:01:24.953Z][backend][info] Gracefully shutting down
+[2022-06-10T11:01:29.067Z][backend][info] Server started - PORT: 3333
+[2022-06-10T11:02:28.054Z][backend][info] Server started - PORT: 3333
+[2022-06-10T11:12:24.192Z][backend][info] Server started - PORT: 3333
+[2022-06-10T11:20:20.060Z][backend][info] Server started - PORT: 3333
+[2022-06-10T11:20:46.012Z][backend][info] Server started - PORT: 3333
+[2022-06-10T11:23:00.498Z][backend][info] Server started - PORT: 3333
+[2022-06-10T11:36:43.715Z][backend][info] Server started - PORT: 3333
+[2022-06-10T11:41:18.384Z][backend][info] Server started - PORT: 3333
+[2022-06-10T11:42:53.446Z][backend][info] Server started - PORT: 3333
+[2022-06-10T11:43:59.597Z][backend][info] Server started - PORT: 3333
+[2022-06-10T11:46:11.629Z][backend][info] Server started - PORT: 3333
+[2022-06-10T11:46:43.381Z][backend][info] Server started - PORT: 3333
+[2022-06-10T11:46:44.989Z][backend][error] GET /stripe/account?code=ac_LqnH8XBW3JEd1GjenqFNZJoErGBt6gvk 
+User: {}
+Params: {}
+Query: { code: 'ac_LqnH8XBW3JEd1GjenqFNZJoErGBt6gvk' }
+Body: {}
+Error: code is not present
+[2022-06-10T11:48:10.329Z][backend][error] GET /stripe/account/?code=ac_LqnvdzaYfgxNlWTYC4L9SslXmf4zqcfL 
+User: {}
+Params: {}
+Query: { code: 'ac_LqnvdzaYfgxNlWTYC4L9SslXmf4zqcfL' }
+Body: {}
+Error: code is not present
+[2022-06-10T11:51:32.200Z][backend][info] Server started - PORT: 3333
+[2022-06-10T11:56:33.722Z][backend][error] GET /stripe/account/?code=ac_Lqo4EZrRYrDk6kKpn64R57VbGXdhBopz 
+User: {}
+Params: {}
+Query: { code: 'ac_Lqo4EZrRYrDk6kKpn64R57VbGXdhBopz' }
+Body: {}
+Error: code is not present
+[2022-06-10T11:57:48.551Z][backend][info] Server started - PORT: 3333
+[2022-06-10T12:16:30.786Z][backend][info] Server started - PORT: 3333

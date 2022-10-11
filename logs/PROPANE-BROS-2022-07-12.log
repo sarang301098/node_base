@@ -1,0 +1,85 @@
+[2022-07-12T05:54:36.083Z][backend][error] POST /users/forget-'******' 
+User: {}
+Params: {}
+Query: { userType: 'vendor', countryCode: '+1', mobileNumber: '9944444444' }
+Body: { userType: 'vendor', countryCode: '+1', mobileNumber: '9944444444' }
+Error: The 'To' number +19944444444 is not a valid phone number.
+[2022-07-12T05:54:36.421Z][backend][error] POST /users/forget-'******' 
+User: {}
+Params: {}
+Query: { userType: 'vendor', countryCode: '+1', mobileNumber: '9944444444' }
+Body: { userType: 'vendor', countryCode: '+1', mobileNumber: '9944444444' }
+Error: The 'To' number +19944444444 is not a valid phone number.
+[2022-07-12T05:54:37.016Z][backend][error] POST /users/forget-'******' 
+User: {}
+Params: {}
+Query: { userType: 'vendor', countryCode: '+1', mobileNumber: '9944444444' }
+Body: { userType: 'vendor', countryCode: '+1', mobileNumber: '9944444444' }
+Error: The 'To' number +19944444444 is not a valid phone number.
+[2022-07-12T05:54:37.701Z][backend][error] POST /users/forget-'******' 
+User: {}
+Params: {}
+Query: { userType: 'vendor', countryCode: '+1', mobileNumber: '9944444444' }
+Body: { userType: 'vendor', countryCode: '+1', mobileNumber: '9944444444' }
+Error: The 'To' number +19944444444 is not a valid phone number.
+[2022-07-12T05:54:38.051Z][backend][error] POST /users/forget-'******' 
+User: {}
+Params: {}
+Query: { userType: 'vendor', countryCode: '+1', mobileNumber: '9944444444' }
+Body: { userType: 'vendor', countryCode: '+1', mobileNumber: '9944444444' }
+Error: The 'To' number +19944444444 is not a valid phone number.
+[2022-07-12T05:54:38.295Z][backend][error] POST /users/forget-'******' 
+User: {}
+Params: {}
+Query: { userType: 'vendor', countryCode: '+1', mobileNumber: '9944444444' }
+Body: { userType: 'vendor', countryCode: '+1', mobileNumber: '9944444444' }
+Error: The 'To' number +19944444444 is not a valid phone number.
+[2022-07-12T05:54:38.646Z][backend][error] POST /users/forget-'******' 
+User: {}
+Params: {}
+Query: { userType: 'vendor', countryCode: '+1', mobileNumber: '9944444444' }
+Body: { userType: 'vendor', countryCode: '+1', mobileNumber: '9944444444' }
+Error: The 'To' number +19944444444 is not a valid phone number.
+[2022-07-12T05:54:44.885Z][backend][error] POST /users/forget-'******' 
+User: {}
+Params: {}
+Query: { userType: 'vendor', countryCode: '+1', mobileNumber: '9944444444' }
+Body: { userType: 'vendor', countryCode: '+1', mobileNumber: '9944444444' }
+Error: The 'To' number +19944444444 is not a valid phone number.
+[2022-07-12T05:54:46.041Z][backend][error] POST /users/forget-'******' 
+User: {}
+Params: {}
+Query: { userType: 'vendor', countryCode: '+1', mobileNumber: '9944444444' }
+Body: { userType: 'vendor', countryCode: '+1', mobileNumber: '9944444444' }
+Error: The 'To' number +19944444444 is not a valid phone number.
+[2022-07-12T05:54:46.927Z][backend][error] POST /users/forget-'******' 
+User: {}
+Params: {}
+Query: { userType: 'vendor', countryCode: '+1', mobileNumber: '9944444444' }
+Body: { userType: 'vendor', countryCode: '+1', mobileNumber: '9944444444' }
+Error: The 'To' number +19944444444 is not a valid phone number.
+[2022-07-12T06:17:40.738Z][backend][error] Error while sending push
+[2022-07-12T07:45:51.085Z][backend][error] POST /vendorMangeStock?categoryId=0&productId=0&cylinderSizeId=0&addedStockQty=0&addedAtDate=2022-07-12T07:45:49.976Z 
+User: {
+  id: '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+  email: 'sarang.p+101@peerbits.com'
+}
+Params: {}
+Query: {
+  categoryId: '0',
+  productId: '0',
+  cylinderSizeId: '0',
+  addedStockQty: '0',
+  addedAtDate: '2022-07-12T07:45:49.976Z'
+}
+Body: {
+  categoryId: 0,
+  productId: 0,
+  cylinderSizeId: 0,
+  addedStockQty: 0,
+  addedAtDate: '2022-07-12T07:45:49.976Z'
+}
+QueryFailedError: ER_NO_REFERENCED_ROW_2: Cannot add or update a child row: a foreign key constraint fails (`propane_fix`.`vendor_stocks`, CONSTRAINT `FK_d2b29d140ec7463e7edcd27d0e6` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`))
+[2022-07-12T12:00:00.031Z][backend][info] driver assignment completed at 08:00 AM.
+[2022-07-12T12:24:06.358Z][backend][info] Gracefully shutting down
+[2022-07-12T12:24:06.372Z][backend][info] Gracefully shutting down

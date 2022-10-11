@@ -1,0 +1,454 @@
+[2022-06-30T05:05:49.160Z][backend][info] Server started - PORT: 3333
+[2022-06-30T05:07:11.666Z][backend][info] Gracefully shutting down
+[2022-06-30T05:07:11.670Z][backend][info] Gracefully shutting down
+[2022-06-30T05:07:15.593Z][backend][info] Server started - PORT: 3333
+[2022-06-30T05:13:32.963Z][backend][error] GET /earnings/cancelled?page=1&perPage=5 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: { page: 1, perPage: 5, search: '' }
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #6 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.orderdetail.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-30T05:13:36.477Z][backend][error] GET /earnings/cancelled?page=1&perPage=5 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: { page: 1, perPage: 5, search: '' }
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #6 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.orderdetail.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-30T05:13:55.139Z][backend][error] GET /earnings/cancelled?page=1&perPage=5 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: { page: 1, perPage: 5, search: '' }
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #6 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.orderdetail.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-30T05:14:05.428Z][backend][error] GET /reports/vendor?page=1&perPage=5&sort=ASC 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: { page: 1, perPage: 5, sort: 'ASC', search: '', sortBy: 'fullName' }
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #9 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.orderdetails.status' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-30T05:21:58.429Z][backend][info] Server started - PORT: 3333
+[2022-06-30T05:22:21.300Z][backend][error] GET /cart 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {}
+Body: {}
+TypeError: moment.tz is not a function
+[2022-06-30T05:23:20.976Z][backend][info] Server started - PORT: 3333
+[2022-06-30T05:35:13.920Z][backend][info] Server started - PORT: 3333
+[2022-06-30T05:37:44.019Z][backend][info] Server started - PORT: 3333
+[2022-06-30T05:39:10.112Z][backend][info] Server started - PORT: 3333
+[2022-06-30T05:42:32.466Z][backend][error] GET /dashboard/vendor 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {}
+Body: {}
+QueryFailedError: ER_MIX_OF_GROUP_FUNC_AND_FIELDS: In aggregated query without GROUP BY, expression #2 of SELECT list contains nonaggregated column 'propane_fix.vendorStocks.added_stock_qty'; this is incompatible with sql_mode=only_full_group_by
+[2022-06-30T05:47:07.967Z][backend][info] Server started - PORT: 3333
+[2022-06-30T05:49:49.048Z][backend][info] Server started - PORT: 3333
+[2022-06-30T05:51:36.019Z][backend][error] GET /reports/vendor?page=1&perPage=5&sort=ASC 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: { page: 1, perPage: 5, sort: 'ASC', search: '', sortBy: 'fullName' }
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #9 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.orderdetails.status' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-30T06:04:06.221Z][backend][info] Server started - PORT: 3333
+[2022-06-30T06:07:31.876Z][backend][info] Server started - PORT: 3333
+[2022-06-30T06:09:25.348Z][backend][error] GET /timeslots/product/all?date=2022-06-30T06:12:23.732Z&vendorIds[]=1a3db8b3-57d5-4946-bf64-a86ab6a42e39 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar.b@peerbits.com'
+}
+Params: {}
+Query: {
+  date: '2022-06-30T06:12:23.732Z',
+  vendorIds: [ '1a3db8b3-57d5-4946-bf64-a86ab6a42e39', [length]: 1 ]
+}
+Body: {}
+TypeError: Assignment to constant variable.
+[2022-06-30T06:09:40.874Z][backend][info] Server started - PORT: 3333
+[2022-06-30T06:11:52.428Z][backend][error] GET /reports/vendor?page=1&perPage=5&sort=ASC 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: { page: 1, perPage: 5, sort: 'ASC', search: '', sortBy: 'fullName' }
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #9 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.orderdetails.status' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-30T06:13:15.854Z][backend][error] GET /reports/product?page=1&perPage=5 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: { page: 1, perPage: 5, search: '' }
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.products.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-30T06:13:28.659Z][backend][error] GET /reports/product?page=1&perPage=5 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: { page: 1, perPage: 5, search: '' }
+Body: {}
+QueryFailedError: ER_WRONG_FIELD_WITH_GROUP: Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'propane_fix.products.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[2022-06-30T06:17:23.662Z][backend][info] Server started - PORT: 3333
+[2022-06-30T06:18:21.897Z][backend][info] Server started - PORT: 3333
+[2022-06-30T06:18:52.061Z][backend][info] Server started - PORT: 3333
+[2022-06-30T06:20:05.664Z][backend][info] Server started - PORT: 3333
+[2022-06-30T06:20:37.113Z][backend][info] Server started - PORT: 3333
+[2022-06-30T06:21:48.510Z][backend][info] Server started - PORT: 3333
+[2022-06-30T06:23:11.588Z][backend][info] Server started - PORT: 3333
+[2022-06-30T06:23:26.865Z][backend][info] Server started - PORT: 3333
+[2022-06-30T06:23:40.799Z][backend][info] Server started - PORT: 3333
+[2022-06-30T06:23:52.850Z][backend][info] Server started - PORT: 3333
+[2022-06-30T06:26:17.482Z][backend][info] Server started - PORT: 3333
+[2022-06-30T06:26:22.442Z][backend][error] GET /cart 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {}
+Body: {}
+TypeError: momentTimeZone.weekdays(...).get is not a function
+[2022-06-30T06:26:40.252Z][backend][info] Server started - PORT: 3333
+[2022-06-30T06:26:41.591Z][backend][error] GET /cart 
+User: {
+  id: '706dd907-3b96-4ad7-84a4-f5ac91ebd68c',
+  email: 'admin@gmail.com'
+}
+Params: {}
+Query: {}
+Body: {}
+TypeError: momentTimeZone is not a function
+[2022-06-30T06:26:46.977Z][backend][error] GET /cart 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar.b@peerbits.com'
+}
+Params: {}
+Query: {}
+Body: {}
+TypeError: momentTimeZone is not a function
+[2022-06-30T06:26:51.355Z][backend][error] GET /cart 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar.b@peerbits.com'
+}
+Params: {}
+Query: {}
+Body: {}
+TypeError: momentTimeZone is not a function
+[2022-06-30T06:27:38.114Z][backend][info] Server started - PORT: 3333
+[2022-06-30T06:28:50.665Z][backend][info] Server started - PORT: 3333
+[2022-06-30T06:29:28.268Z][backend][info] Server started - PORT: 3333
+[2022-06-30T06:32:29.399Z][backend][info] Server started - PORT: 3333
+[2022-06-30T06:32:52.951Z][backend][info] Server started - PORT: 3333
+[2022-06-30T06:34:49.638Z][backend][info] Server started - PORT: 3333
+[2022-06-30T07:37:34.959Z][backend][error] Error in sending the mail
+[2022-06-30T07:42:49.949Z][backend][info] Server started - PORT: 3333
+[2022-06-30T07:46:10.657Z][backend][info] Server started - PORT: 3333
+[2022-06-30T07:47:20.678Z][backend][info] Server started - PORT: 3333
+[2022-06-30T07:48:08.882Z][backend][info] Server started - PORT: 3333
+[2022-06-30T07:48:25.042Z][backend][info] Server started - PORT: 3333
+[2022-06-30T07:53:17.216Z][backend][info] Server started - PORT: 3333
+[2022-06-30T07:57:14.411Z][backend][info] Server started - PORT: 3333
+[2022-06-30T08:04:01.293Z][backend][info] Server started - PORT: 3333
+[2022-06-30T08:06:28.915Z][backend][info] Server started - PORT: 3333
+[2022-06-30T08:07:16.774Z][backend][info] Server started - PORT: 3333
+[2022-06-30T08:07:43.164Z][backend][info] Server started - PORT: 3333
+[2022-06-30T08:12:29.046Z][backend][info] Server started - PORT: 3333
+[2022-06-30T08:17:47.544Z][backend][info] Server started - PORT: 3333
+[2022-06-30T08:33:57.074Z][backend][info] Server started - PORT: 3333
+[2022-06-30T08:39:24.882Z][backend][info] Server started - PORT: 3333
+[2022-06-30T08:39:37.145Z][backend][info] Server started - PORT: 3333
+[2022-06-30T08:45:40.017Z][backend][info] Server started - PORT: 3333
+[2022-06-30T08:49:35.054Z][backend][info] Server started - PORT: 3333
+[2022-06-30T09:13:33.701Z][backend][info] Server started - PORT: 3333
+[2022-06-30T09:14:30.750Z][backend][info] Server started - PORT: 3333
+[2022-06-30T09:16:41.708Z][backend][info] Server started - PORT: 3333
+[2022-06-30T09:18:01.611Z][backend][info] Server started - PORT: 3333
+[2022-06-30T09:25:26.368Z][backend][info] Server started - PORT: 3333
+[2022-06-30T09:25:30.563Z][backend][info] Server started - PORT: 3333
+[2022-06-30T09:44:55.117Z][backend][info] Server started - PORT: 3333
+[2022-06-30T09:51:55.394Z][backend][info] Server started - PORT: 3333
+[2022-06-30T10:12:51.158Z][backend][info] Server started - PORT: 3333
+[2022-06-30T10:13:07.779Z][backend][info] Server started - PORT: 3333
+[2022-06-30T10:24:19.983Z][backend][info] Server started - PORT: 3333
+[2022-06-30T11:09:47.017Z][backend][info] Server started - PORT: 3333
+[2022-06-30T11:10:03.833Z][backend][error] GET /timeslots/product/all?date=2022-06-30T11:12:54.678Z&vendorIds[]=b7d43122-dec2-4fe3-a737-499ab5526608&vendorIds[]=1a3db8b3-57d5-4946-bf64-a86ab6a42e39 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar.b@peerbits.com'
+}
+Params: {}
+Query: {
+  date: '2022-06-30T11:12:54.678Z',
+  vendorIds: [
+    'b7d43122-dec2-4fe3-a737-499ab5526608',
+    '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+    [length]: 2
+  ]
+}
+Body: {}
+QueryFailedError: ER_BAD_FIELD_ERROR: Unknown column 'vendorSchedules.vender' in 'on clause'
+[2022-06-30T11:11:15.986Z][backend][info] Server started - PORT: 3333
+[2022-06-30T11:14:49.379Z][backend][info] Server started - PORT: 3333
+[2022-06-30T11:16:39.604Z][backend][info] Server started - PORT: 3333
+[2022-06-30T11:16:46.191Z][backend][info] Server started - PORT: 3333
+[2022-06-30T11:17:30.422Z][backend][info] Server started - PORT: 3333
+[2022-06-30T11:18:11.621Z][backend][info] Server started - PORT: 3333
+[2022-06-30T11:21:45.690Z][backend][info] Server started - PORT: 3333
+[2022-06-30T11:24:43.468Z][backend][info] Server started - PORT: 3333
+[2022-06-30T11:25:17.995Z][backend][info] Server started - PORT: 3333
+[2022-06-30T11:26:19.715Z][backend][info] Server started - PORT: 3333
+[2022-06-30T11:28:06.386Z][backend][info] Server started - PORT: 3333
+[2022-06-30T11:29:28.369Z][backend][info] Server started - PORT: 3333
+[2022-06-30T11:30:21.390Z][backend][info] Server started - PORT: 3333
+[2022-06-30T11:31:00.639Z][backend][info] Server started - PORT: 3333
+[2022-06-30T11:31:58.288Z][backend][info] Server started - PORT: 3333
+[2022-06-30T11:32:55.762Z][backend][info] Server started - PORT: 3333
+[2022-06-30T11:34:39.449Z][backend][info] Server started - PORT: 3333
+[2022-06-30T11:34:45.448Z][backend][info] Server started - PORT: 3333
+[2022-06-30T11:50:14.563Z][backend][info] Server started - PORT: 3333
+[2022-06-30T11:55:14.172Z][backend][error] Unable to connect to database.  Cannot find relation [object Object]. Wrong relation specified for @RelationId decorator. 
+ TypeORMError: Cannot find relation [object Object]. Wrong relation specified for @RelationId decorator.
+    at new TypeORMError (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/src/error/TypeORMError.ts:7:9)
+    at RelationIdMetadata.build (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/src/metadata/RelationIdMetadata.ts:104:19)
+    at /Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/src/metadata-builder/EntityMetadataBuilder.ts:664:69
+    at Array.forEach (<anonymous>)
+    at EntityMetadataBuilder.computeEntityMetadataStep2 (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/src/metadata-builder/EntityMetadataBuilder.ts:664:36)
+    at /Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/src/metadata-builder/EntityMetadataBuilder.ts:116:56
+    at Array.forEach (<anonymous>)
+    at EntityMetadataBuilder.build (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/src/metadata-builder/EntityMetadataBuilder.ts:116:25)
+    at ConnectionMetadataBuilder.buildEntityMetadatas (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/src/connection/ConnectionMetadataBuilder.ts:65:111)
+    at Connection.buildMetadatas (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/src/connection/Connection.ts:510:59)
+[2022-06-30T11:55:29.606Z][backend][error] Unable to connect to database.  Cannot find relation id. Wrong relation specified for @RelationId decorator. 
+ TypeORMError: Cannot find relation id. Wrong relation specified for @RelationId decorator.
+    at new TypeORMError (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/src/error/TypeORMError.ts:7:9)
+    at RelationIdMetadata.build (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/src/metadata/RelationIdMetadata.ts:104:19)
+    at /Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/src/metadata-builder/EntityMetadataBuilder.ts:664:69
+    at Array.forEach (<anonymous>)
+    at EntityMetadataBuilder.computeEntityMetadataStep2 (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/src/metadata-builder/EntityMetadataBuilder.ts:664:36)
+    at /Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/src/metadata-builder/EntityMetadataBuilder.ts:116:56
+    at Array.forEach (<anonymous>)
+    at EntityMetadataBuilder.build (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/src/metadata-builder/EntityMetadataBuilder.ts:116:25)
+    at ConnectionMetadataBuilder.buildEntityMetadatas (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/src/connection/ConnectionMetadataBuilder.ts:65:111)
+    at Connection.buildMetadatas (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/src/connection/Connection.ts:510:59)
+[2022-06-30T11:55:53.001Z][backend][error] Unable to connect to database.  Cannot find relation undefined. Wrong relation specified for @RelationId decorator. 
+ TypeORMError: Cannot find relation undefined. Wrong relation specified for @RelationId decorator.
+    at new TypeORMError (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/src/error/TypeORMError.ts:7:9)
+    at RelationIdMetadata.build (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/src/metadata/RelationIdMetadata.ts:104:19)
+    at /Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/src/metadata-builder/EntityMetadataBuilder.ts:664:69
+    at Array.forEach (<anonymous>)
+    at EntityMetadataBuilder.computeEntityMetadataStep2 (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/src/metadata-builder/EntityMetadataBuilder.ts:664:36)
+    at /Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/src/metadata-builder/EntityMetadataBuilder.ts:116:56
+    at Array.forEach (<anonymous>)
+    at EntityMetadataBuilder.build (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/src/metadata-builder/EntityMetadataBuilder.ts:116:25)
+    at ConnectionMetadataBuilder.buildEntityMetadatas (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/src/connection/ConnectionMetadataBuilder.ts:65:111)
+    at Connection.buildMetadatas (/Users/pratikrajkotiya/Documents/Project/BackEnd/propanebros/src/connection/Connection.ts:510:59)
+[2022-06-30T11:56:06.299Z][backend][info] Server started - PORT: 3333
+[2022-06-30T11:56:15.374Z][backend][info] Server started - PORT: 3333
+[2022-06-30T11:58:41.567Z][backend][info] Server started - PORT: 3333
+[2022-06-30T12:06:47.632Z][backend][info] Server started - PORT: 3333
+[2022-06-30T12:08:33.782Z][backend][info] Server started - PORT: 3333
+[2022-06-30T12:26:01.906Z][backend][info] Server started - PORT: 3333
+[2022-06-30T12:28:50.507Z][backend][info] Server started - PORT: 3333
+[2022-06-30T12:30:46.316Z][backend][info] Server started - PORT: 3333
+[2022-06-30T12:31:53.563Z][backend][info] Server started - PORT: 3333
+[2022-06-30T12:32:24.148Z][backend][info] Server started - PORT: 3333
+[2022-06-30T12:37:16.811Z][backend][info] Server started - PORT: 3333
+[2022-06-30T12:45:16.683Z][backend][info] Server started - PORT: 3333
+[2022-06-30T12:45:28.467Z][backend][error] GET /timeslots/product/all?date=2022-06-30T12:48:26.023Z&vendorIds[]=b7d43122-dec2-4fe3-a737-499ab5526608&vendorIds[]=1a3db8b3-57d5-4946-bf64-a86ab6a42e39 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar.b@peerbits.com'
+}
+Params: {}
+Query: {
+  date: '2022-06-30T12:48:26.023Z',
+  vendorIds: [
+    'b7d43122-dec2-4fe3-a737-499ab5526608',
+    '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+    [length]: 2
+  ]
+}
+Body: {}
+QueryFailedError: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '== '12:30:00' AND end_time == '12:30:00' ) AND ( `orderDetails`.`deleted_at` IS ' at line 1
+[2022-06-30T12:49:27.144Z][backend][info] Server started - PORT: 3333
+[2022-06-30T12:49:32.325Z][backend][error] GET /timeslots/product/all?date=2022-06-30T12:52:31.452Z&vendorIds[]=b7d43122-dec2-4fe3-a737-499ab5526608&vendorIds[]=1a3db8b3-57d5-4946-bf64-a86ab6a42e39 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar.b@peerbits.com'
+}
+Params: {}
+Query: {
+  date: '2022-06-30T12:52:31.452Z',
+  vendorIds: [
+    'b7d43122-dec2-4fe3-a737-499ab5526608',
+    '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+    [length]: 2
+  ]
+}
+Body: {}
+QueryFailedError: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '== '12:30:00' AND CONVERT(end_time, char) == '12:30:00' ) AND ( `orderDetails`.`' at line 1
+[2022-06-30T12:54:05.367Z][backend][info] Server started - PORT: 3333
+[2022-06-30T12:54:09.198Z][backend][error] GET /timeslots/product/all?date=2022-06-30T12:57:08.200Z&vendorIds[]=b7d43122-dec2-4fe3-a737-499ab5526608&vendorIds[]=1a3db8b3-57d5-4946-bf64-a86ab6a42e39 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar.b@peerbits.com'
+}
+Params: {}
+Query: {
+  date: '2022-06-30T12:57:08.200Z',
+  vendorIds: [
+    'b7d43122-dec2-4fe3-a737-499ab5526608',
+    '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+    [length]: 2
+  ]
+}
+Body: {}
+QueryFailedError: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '== '12:30:00' AND end_time == '12:30:00' ) AND ( `orderDetails`.`deleted_at` IS ' at line 1
+[2022-06-30T12:58:44.695Z][backend][info] Server started - PORT: 3333
+[2022-06-30T12:59:47.607Z][backend][info] Server started - PORT: 3333
+[2022-06-30T12:59:52.956Z][backend][error] GET /timeslots/product/all?date=2022-06-30T13:02:51.707Z&vendorIds[]=b7d43122-dec2-4fe3-a737-499ab5526608&vendorIds[]=1a3db8b3-57d5-4946-bf64-a86ab6a42e39 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar.b@peerbits.com'
+}
+Params: {}
+Query: {
+  date: '2022-06-30T13:02:51.707Z',
+  vendorIds: [
+    'b7d43122-dec2-4fe3-a737-499ab5526608',
+    '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+    [length]: 2
+  ]
+}
+Body: {}
+QueryFailedError: ER_BAD_FIELD_ERROR: Unknown column 'startTime' in 'where clause'
+[2022-06-30T13:00:39.770Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:01:16.869Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:03:27.576Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:14:48.729Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:18:04.869Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:18:32.346Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:26:24.150Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:27:21.879Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:27:58.144Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:28:33.549Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:29:35.346Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:31:39.411Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:31:52.137Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:34:22.896Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:35:15.263Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:37:01.229Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:37:26.708Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:37:57.363Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:41:01.328Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:41:18.100Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:41:31.308Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:42:10.668Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:43:32.251Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:45:22.197Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:46:14.230Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:46:29.202Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:47:10.545Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:48:31.249Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:49:05.852Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:49:53.014Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:50:50.839Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:51:53.872Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:52:27.106Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:53:50.102Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:53:55.007Z][backend][error] GET /timeslots/product/all?date=2022-06-30T13:56:53.886Z&vendorIds[]=b7d43122-dec2-4fe3-a737-499ab5526608&vendorIds[]=1a3db8b3-57d5-4946-bf64-a86ab6a42e39 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar.b@peerbits.com'
+}
+Params: {}
+Query: {
+  date: '2022-06-30T13:56:53.886Z',
+  vendorIds: [
+    'b7d43122-dec2-4fe3-a737-499ab5526608',
+    '1a3db8b3-57d5-4946-bf64-a86ab6a42e39',
+    [length]: 2
+  ]
+}
+Body: {}
+TypeError: Cannot read properties of undefined (reading 'toString')
+[2022-06-30T13:54:08.012Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:55:06.938Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:57:34.619Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:58:43.966Z][backend][info] Server started - PORT: 3333
+[2022-06-30T13:59:34.263Z][backend][info] Server started - PORT: 3333
+[2022-06-30T14:00:55.240Z][backend][info] Server started - PORT: 3333
+[2022-06-30T14:03:40.203Z][backend][info] Server started - PORT: 3333
+[2022-06-30T14:23:24.448Z][backend][info] Server started - PORT: 3333
+[2022-06-30T14:25:35.638Z][backend][info] Server started - PORT: 3333
+[2022-06-30T14:27:33.535Z][backend][info] Server started - PORT: 3333
+[2022-06-30T14:27:52.309Z][backend][info] Server started - PORT: 3333
+[2022-06-30T14:29:24.442Z][backend][info] Server started - PORT: 3333
+[2022-06-30T14:29:37.652Z][backend][info] Server started - PORT: 3333
+[2022-06-30T14:31:16.179Z][backend][info] Server started - PORT: 3333
+[2022-06-30T14:31:59.399Z][backend][info] Server started - PORT: 3333
+[2022-06-30T14:34:48.516Z][backend][info] Server started - PORT: 3333
+[2022-06-30T14:36:58.988Z][backend][info] Server started - PORT: 3333
+[2022-06-30T14:37:27.309Z][backend][info] Server started - PORT: 3333
+[2022-06-30T14:38:18.006Z][backend][info] Server started - PORT: 3333
+[2022-06-30T14:57:33.268Z][backend][info] Server started - PORT: 3333
+[2022-06-30T15:00:57.237Z][backend][info] Server started - PORT: 3333
+[2022-06-30T15:10:54.255Z][backend][info] Server started - PORT: 3333
+[2022-06-30T15:11:40.266Z][backend][info] Server started - PORT: 3333
+[2022-06-30T15:12:14.389Z][backend][info] Server started - PORT: 3333
+[2022-06-30T15:12:29.719Z][backend][info] Server started - PORT: 3333
+[2022-06-30T15:17:43.436Z][backend][info] Server started - PORT: 3333
+[2022-06-30T15:19:54.933Z][backend][info] Server started - PORT: 3333
+[2022-06-30T15:20:14.024Z][backend][error] POST /orders?stripeCardId=card_1LFFizJegOrZGWtL3anWKu0p 
+User: {
+  id: 'acece1c1-6344-42aa-801a-0e716d387844',
+  email: 'asgar.b@peerbits.com'
+}
+Params: {}
+Query: { stripeCardId: 'card_1LFFizJegOrZGWtL3anWKu0p' }
+Body: { stripeCardId: 'card_1LFFizJegOrZGWtL3anWKu0p' }
+Error: Cart is empty
+[2022-06-30T15:30:17.052Z][backend][info] Server started - PORT: 3333
+[2022-06-30T15:30:54.314Z][backend][info] Server started - PORT: 3333
+[2022-06-30T15:31:44.968Z][backend][info] Gracefully shutting down
+[2022-06-30T15:31:44.973Z][backend][info] Gracefully shutting down
+[2022-06-30T15:31:49.637Z][backend][info] Server started - PORT: 3333
+[2022-06-30T15:32:26.324Z][backend][info] Gracefully shutting down
+[2022-06-30T15:32:26.328Z][backend][info] Gracefully shutting down
+[2022-06-30T15:32:36.437Z][backend][info] Server started - PORT: 3333
+[2022-06-30T15:40:20.799Z][backend][info] Server started - PORT: 3333
+[2022-06-30T15:41:33.976Z][backend][info] Server started - PORT: 3333
+[2022-06-30T15:42:13.226Z][backend][info] Server started - PORT: 3333
+[2022-06-30T15:43:38.003Z][backend][info] Server started - PORT: 3333
+[2022-06-30T15:44:24.130Z][backend][info] Server started - PORT: 3333
+[2022-06-30T15:44:48.990Z][backend][info] Server started - PORT: 3333
+[2022-06-30T15:45:19.990Z][backend][info] Server started - PORT: 3333
+[2022-06-30T15:46:26.783Z][backend][info] Server started - PORT: 3333

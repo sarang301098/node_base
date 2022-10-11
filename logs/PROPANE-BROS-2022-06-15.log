@@ -1,0 +1,69 @@
+[2022-06-15T05:19:27.229Z][backend][info] Server started - PORT: 3333
+[2022-06-15T05:42:48.216Z][backend][error] User does not have access to API : [/cart]
+[2022-06-15T05:56:27.170Z][backend][info] Server started - PORT: 3333
+[2022-06-15T06:12:27.016Z][backend][info] Server started - PORT: 3333
+[2022-06-15T06:35:44.898Z][backend][error] POST /usercards 
+User: {
+  id: 'a6fe9ca6-5447-4435-9736-9881c8a5c26f',
+  email: 'pratik.r@peerbits.com'
+}
+Params: {}
+Query: {}
+Body: {
+  cardNumber: '400000000000322',
+  expMonth: '12',
+  expYear: '25',
+  cvc: '122',
+  name: 'Sarang Test',
+  isDefault: true
+}
+Error: Your card number is incorrect.
+[2022-06-15T06:37:48.278Z][backend][info] Server started - PORT: 3333
+[2022-06-15T08:06:14.557Z][backend][info] Server started - PORT: 3333
+[2022-06-15T08:12:02.824Z][backend][error] User does not have access to API : [/drivers]
+[2022-06-15T08:14:18.134Z][backend][error] User does not have access to API : [/drivers]
+[2022-06-15T08:14:19.429Z][backend][error] User does not have access to API : [/drivers]
+[2022-06-15T08:14:20.104Z][backend][error] User does not have access to API : [/drivers]
+[2022-06-15T08:14:20.729Z][backend][error] User does not have access to API : [/drivers]
+[2022-06-15T08:14:21.345Z][backend][error] User does not have access to API : [/drivers]
+[2022-06-15T08:14:21.928Z][backend][error] User does not have access to API : [/drivers]
+[2022-06-15T08:14:22.431Z][backend][error] User does not have access to API : [/drivers]
+[2022-06-15T08:14:23.019Z][backend][error] User does not have access to API : [/drivers]
+[2022-06-15T08:14:23.578Z][backend][error] User does not have access to API : [/drivers]
+[2022-06-15T08:14:24.101Z][backend][error] User does not have access to API : [/drivers]
+[2022-06-15T08:14:24.673Z][backend][error] User does not have access to API : [/drivers]
+[2022-06-15T08:14:51.663Z][backend][error] User does not have access to API : [/drivers]
+[2022-06-15T08:14:52.602Z][backend][error] User does not have access to API : [/drivers]
+[2022-06-15T08:14:53.106Z][backend][error] User does not have access to API : [/drivers]
+[2022-06-15T08:14:53.618Z][backend][error] User does not have access to API : [/drivers]
+[2022-06-15T08:14:54.118Z][backend][error] User does not have access to API : [/drivers]
+[2022-06-15T08:14:54.629Z][backend][error] User does not have access to API : [/drivers]
+[2022-06-15T08:14:55.156Z][backend][error] User does not have access to API : [/drivers]
+[2022-06-15T08:14:55.660Z][backend][error] User does not have access to API : [/drivers]
+[2022-06-15T08:14:56.214Z][backend][error] User does not have access to API : [/drivers]
+[2022-06-15T09:22:05.659Z][backend][error] User does not have access to API : [/drivers]
+[2022-06-15T09:37:12.520Z][backend][info] Server started - PORT: 3333
+[2022-06-15T09:37:26.289Z][backend][info] Server started - PORT: 3333
+[2022-06-15T09:43:11.881Z][backend][error] POST /drivers/ 
+User: {
+  id: '038f5a1a-edf1-43e2-ade5-fb0e741be1d1',
+  email: 'testvendor+1@gmail.com'
+}
+Params: {}
+Query: {}
+Body: {
+  email: 'sarang.p+303@peerbits.com',
+  fullName: 'sarang.p+303',
+  vehicalNo: 'edasdsd',
+  orderType: 2,
+  countryCode: '+1',
+  mobileNumber: '1111111303',
+  orderCapacity: 10
+}
+Error: Email address already Used
+[2022-06-15T09:57:09.542Z][backend][error] User does not have access to API : [/orders/users]
+[2022-06-15T09:59:01.242Z][backend][error] User does not have access to API : [/orders/users]
+[2022-06-15T09:59:02.237Z][backend][error] User does not have access to API : [/orders/users]
+[2022-06-15T09:59:03.085Z][backend][error] User does not have access to API : [/orders/users]
+[2022-06-15T09:59:18.682Z][backend][error] User does not have access to API : [/orders/users]
+[2022-06-15T09:59:40.607Z][backend][error] User does not have access to API : [/orders/users]

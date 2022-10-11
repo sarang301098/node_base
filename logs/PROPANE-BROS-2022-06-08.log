@@ -1,0 +1,14 @@
+[2022-06-08T05:03:31.795Z][backend][info] Server started - PORT: 3333
+[2022-06-08T07:17:01.988Z][backend][error] POST /orders 
+User: {
+  id: 'a6fe9ca6-5447-4435-9736-9881c8a5c26f',
+  email: 'pratik.r@peerbits.com'
+}
+Params: {}
+Query: {}
+Body: {
+  stripeCardId: 'card_1KuytPSBJPMsjmROxQq7u6c4',
+  promocodeAppliedCartId: 1,
+  promocodeId: 3
+}
+Error: Cart is empty
