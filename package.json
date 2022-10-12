@@ -1,7 +1,7 @@
 {
-  "name": "propanebros-backend",
+  "name": "node_base",
   "version": "0.0.1",
-  "description": "Backend for PropaneBros",
+  "description": "Base code Nodejs",
   "main": "dist/server.js",
   "private": true,
   "engines": {
