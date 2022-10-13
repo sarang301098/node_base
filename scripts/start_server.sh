@@ -4,7 +4,7 @@ set -e
 echo "Deleting old images"
 docker system prune -f 2>/dev/null; true
 
-echo "Updating Docker Image"
+echo "-----------------  Updating Docker Image  -----------------------"
 docker login --username sarangpatel --password cloud@sarang_3010
 docker pull sarangpatel/node-base-api:latest
 
