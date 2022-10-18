@@ -8,11 +8,11 @@
     "node": ">=14.17.0 <17"
   },
   "scripts": {
-    "start": "pm2 start propane-backend.json",
-    "stop": "pm2 stop propane-backend.json",
-    "restart": "pm2 startOrRestart propane-backend.json --update-env",
-    "reload": "pm2 startOrReload propane-backend.json --update-env",
-    "docker:start": "pm2-runtime propane-backend.json",
+    "start": "pm2 start node-base.json",
+    "stop": "pm2 stop node-base.json",
+    "restart": "pm2 startOrRestart node-base.json --update-env",
+    "reload": "pm2 startOrReload node-base.json --update-env",
+    "docker:start": "pm2-runtime node-base.json",
     "dev": "nodemon",
     "ts-node": "node -r ts-node/register/transpile-only src/server.ts",
     "typeorm": "ts-node ./node_modules/typeorm/cli.js --config src/config/mySqlTypeorm.ts",

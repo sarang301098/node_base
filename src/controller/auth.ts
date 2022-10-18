@@ -20,10 +20,10 @@ import config from '../config';
 
 import {
   ITokenBase,
-  verifyToken,
   isRefreshToken,
   signAccessToken,
   signRefreshToken,
+  verifyToken,
 } from '../service/token';
 
 const namePattern = '^[A-za-z]';
