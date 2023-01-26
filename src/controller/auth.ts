@@ -7,14 +7,13 @@ import { BadRequestError } from '../error';
 
 import logger from '../service/log';
 import { MailService } from '../service/Mail';
-import StripeCustomersService from '../service/StripeCustomers';
 import { hashPassword, comparePassword } from '../service/password';
 
 import { UsersRepository } from '../repository/Users';
 import { TokensRepository } from '../repository/Tokens';
 import { Users } from '../model/Users';
 
-import { PropaneUserType, Token, Actions } from '../constants';
+import { PropaneUserType, Token } from '../constants';
 import { ApiMessages } from '../api-message-constants';
 import config from '../config';
 
@@ -78,8 +77,6 @@ export const signUp = () => async (req: Request, res: Response): Promise<void> =
   user = await userRepository.save(user);
 
   const link = `${config.FRONTEND_BASE_URL}${config.FRONTEND_VERIFY_EMAIL_URL}?token=${emailToken}`;
-  // TODO: send sms and email.
-  // sendSms(user, mobileOtp);
 
   try {
     sendMail(user, link);
@@ -88,24 +85,6 @@ export const signUp = () => async (req: Request, res: Response): Promise<void> =
   }
 
   if (user && user.password) user.password = '';
-
-  if (
-    !user?.stripeCustomerId &&
-    !(user?.userType === PropaneUserType.ADMIN || user?.userType === PropaneUserType.SUB_ADMIN)
-  ) {
-    try {
-      const service = new StripeCustomersService();
-      const result = await service.execute({
-        userId: user?.id,
-        email: user?.email,
-        name: user?.fullName,
-        action: Actions.CREATE,
-      });
-      await userRepository.update(user?.id, { stripeCustomerId: result?.stripeCustomerId });
-    } catch (error) {
-      logger.error('Error in creation of stripe customer');
-    }
-  }
 
   const accessToken = await signAccessToken(user.id);
   const refreshToken = await signRefreshToken(user.id);
@@ -224,26 +203,6 @@ export const login = () => async (req: Request, res: Response): Promise<void> =>
 
   if (user.deletedAt != null) {
     throw new BadRequestError(ApiMessages.account_deleted_message, 'ACCOUNT_IS_DELETED');
-  }
-
-  if (
-    !user?.stripeCustomerId &&
-    !(user?.userType === PropaneUserType.ADMIN || user?.userType === PropaneUserType.SUB_ADMIN)
-  ) {
-    try {
-      const service = new StripeCustomersService();
-      const result = await service.execute({
-        userId: user?.id,
-        email: user?.email,
-        name: user?.fullName,
-        action: Actions.CREATE,
-      });
-      await userRepository.update(user?.id, { stripeCustomerId: result?.stripeCustomerId });
-    } catch (error) {
-      logger.error(
-        `Error in generate the stripe customer \n for user id: ${user?.id}, fullName: ${user?.fullName}`,
-      );
-    }
   }
 
   const passwordMatched = await comparePassword(password, user.password);

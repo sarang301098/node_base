@@ -1,7 +1,6 @@
 import { getRepository, FindConditions, In } from 'typeorm';
 
 import { MailService } from '../service/Mail';
-import { SmsService } from '../service/Sms';
 import { BadRequestError } from '../error';
 import { Users } from '../model/Users';
 
@@ -10,7 +9,6 @@ import logger from './log';
 
 import { signForgetPasswordToken } from '../service/token';
 import { PropaneUserType } from '../constants';
-import { createOtp } from '../service/random';
 
 interface Request {
   email?: string;
@@ -63,20 +61,9 @@ class ForgetPasswordService {
     }
 
     try {
-      if (isSms) {
-        const otp = (await createOtp()).toString();
-        verification = otp;
-        await userRepository.update(user.id, { otp });
-        // TODO: sent an SMS with the link
-        await this.sendSms(user, otp);
-      } else {
-        const { link } = await this.getForgetPasswordLink(user.id as string);
-        verification = link;
-
-        // TODO: when credentials available then impliment using oAuth2 Currently using testing credential.
-        // TODO https://developers.google.com/oauthplayground/
-        this.sendMail(user, link);
-      }
+      const { link } = await this.getForgetPasswordLink(user.id as string);
+      verification = link;
+      this.sendMail(user, link);
     } catch (e) {
       throw new Error('Please contact admin.');
     }
@@ -108,15 +95,6 @@ class ForgetPasswordService {
       email: user.email,
     };
     await mailService.send(mailBody);
-  }
-
-  private async sendSms(user: Users, otp: string) {
-    const smsService = new SmsService();
-    const smsBody = {
-      to: `${user?.countryCode}${user?.mobileNumber}`,
-      body: `Your Code for the Forget Password is: ${otp}`,
-    };
-    await smsService.send(smsBody);
   }
 }
 

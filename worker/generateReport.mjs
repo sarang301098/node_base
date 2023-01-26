@@ -1,7 +1,6 @@
 import { parentPort, workerData } from 'worker_threads';
 import { existsSync, statSync } from 'fs';
 
-// import { sendMail } from './helper/sendMailUsingSendGrid.mjs';
 import { sendMail } from './helper/sendMail.mjs';
 import { createPdf } from './helper/createPdf.mjs';
 
@@ -24,7 +23,7 @@ async function init() {
       isAttachmentRequired = true;
     }
 
-    if (user.email || (recipients && recipients.length)) {
+    if (user?.email || (recipients && recipients?.length)) {
       await sendMail(
         {
           email: recipients && recipients.length ? recipients : user.email,
@@ -37,8 +36,8 @@ async function init() {
 
     if (parentPort) {
       parentPort.postMessage(
-        `Mail sent on: [${recipients && recipients.length ? recipients.join(',') : user.email}${
-          additionalEmails && additionalEmails.length ? ', ' + additionalEmails.join(',') : ''
+        `Mail sent on: [${recipients && recipients?.length ? recipients.join(',') : user.email}${
+          additionalEmails && additionalEmails?.length ? ', ' + additionalEmails?.join(',') : ''
         }]`,
       );
     }
